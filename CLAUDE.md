@@ -7,6 +7,21 @@ A Roblox co-op dungeon crawler. Players are spiders: they gear up in a lobby hub
 ## Preferences
 - Keep everything modular and scalable: config tables and registries, not hardcoded values.
 - You have standing permission to playtest and take screenshots to check your own work.
+### Project scope
+- The game being built is **Spider Quest**.
+- **Game code lives in Studio**, not in this repo. This repo holds only **docs and Blender files** (see "Repo layout" below).
+- **Pursuit of Immortality** (the user's other game, often open in Studio) is **read-only**. Never edit it in any way.
+  - You may take its assets and code when they fit Spider Quest. Copy them into Spider Quest and adapt them there.
+  - You are encouraged to reuse its modular setup (registries, config and service patterns) and its data store layer. Look at how Pursuit of Immortality does something before building it fresh.
+### Repo layout
+```
+CLAUDE.md            this brief + rules
+blender/             headless Blender pipeline (see blender/README.md)
+  scripts/           config-driven build scripts; spider_config.py holds forms and clips
+  sources/           generated .blend files (rebuild, don't hand-edit)
+  exports/           FBX for Studio import
+  renders/           preview sheets for review
+```
 ### UI rules
 - All UI is authored in Studio as real instances. Scripts only clone and fill templates; they never build UI with `Instance.new`. Dynamic lists clone a Studio-authored template row.
 - House style is the fantasy stylized.
@@ -18,13 +33,14 @@ A Roblox co-op dungeon crawler. Players are spiders: they gear up in a lobby hub
 - Uploads through the asset bridge publish to the group, so **ask me before every upload batch**.
 - Run Blender headless. The live Blender belongs to other sessions.
 ### Animations
-- Clips are made in headless Blender on the R6 rig, with easing.
+- Clips are made in headless Blender, with easing. **Player spiders use the custom Spider rig** (`blender/`). **Human-shaped NPCs use the R6 rig.**
 - Before reusing a borrowed clip, check its length and `Loop`. A skill fades out every track it starts.
+- Every spider form shares the Spider rig's bone names and hierarchy, and only the proportions change. Spider clips key **rotations only** (apart from small body bobs), so one clip plays on every form.
 ### Code rules (proposed with the plan; confirm or edit)
 - **Server-authoritative.** The client sends intents ("use ability `venom_bite` toward X"). The server checks ownership, range, cooldown and cost, then applies the result. Damage, prices, drops and rewards are never taken from the client.
 - **Content is data.** Every form, ability, item, affix, enemy, room, dungeon, banner, shop and panel is an entry in a registry, keyed by a stable snake_case id (`venom_t2`). Code refers to ids, never to display names or inline asset ids.
 - **Registries validate at boot**: unique ids, required fields, and cross-references that resolve (for example, a form's ability ids must exist). In Studio, a bad entry fails loudly.
-- **Saved data holds only ids and numbers.** No instances and no display strings. It carries a schema version plus a migration list.
+- **Saved data holds only ids and numbers.** No instances and no display strings. It carries a schema version plus a migration list. Build it on Pursuit of Immortality's data store layer.
 - **One `Remotes` module declares every remote.** Server handlers type-check their arguments and rate-limit.
 
 ---
@@ -76,7 +92,7 @@ Spiderling (T0) ──Lv 10──► Path T1 ──Lv 25──► Path T2 ──
  Bite + Silk Line          + Q, passive        + E                + R (ultimate), apex tweaks
 ```
 - An evolution costs **Molt Shards** (dungeon drops) plus **Amber**. Levels and costs live in `ProgressionConfig` and each form's `requirements`.
-- **Recommended model (collect-and-switch):** player level is account-wide and gates tiers. Each path has its own **Mastery** track. Unlocking another path costs Molt Shards. You switch your active path at the Molting Shrine, and only in the lobby. This keeps every path worth trying and lets new paths drop in as content. See the open questions in §17.
+- **Collect-and-switch (decided):** player level is account-wide and gates tiers. Each path has its own **Mastery** track. Unlocking another path costs Molt Shards. You switch your active path at the Molting Shrine, and only in the lobby. This keeps every path worth trying and lets new paths drop in as content.
 
 ### 4.3 Launch paths (4)
 | Path | Role | T1 → T2 → T3 apex options | Q (T1) | E (T2) | Passive | R ultimate (by apex) |
@@ -199,6 +215,13 @@ All screens are Studio-authored under `StarterGui`, and every list clones a row 
 - The look follows the Art rules above: Deepwoken-like, stylized, low-tri and vertex-painted, with painterly lighting and strong silhouettes.
 - **Selling the scale:** oversized props, depth fog, and big soft light shafts.
 - **Proposed triangle budgets** (starting points to tune, with the Art rules taking precedence): a player spider is about 3k at T1 and about 6k at an apex. Small enemies are about 1.5k, bosses about 8k, room-kit pieces 0.5–2k. VFX stay at 2k or less, per the rules.
+- **Spider rig (built; see `blender/README.md`):**
+  - One shared 37-bone skeleton for every player form: `Root → HumanoidRootPart → Cephalothorax`, then the abdomen, chelicerae and fangs, pedipalps, and 8 legs × Femur/Tibia/Tarsus.
+  - Skinning is rigid, one bone per vertex.
+  - `Spinnerets` and `Fang_L/R` double as VFX anchors.
+  - The Spiderling base form (2.3k tris) comes with Idle and Walk clips.
+  - It has not yet been checked in Studio. The import checklist is in the README.
+- **Other creatures:** insect enemies (ants, centipedes, wasps) get their own rig per body plan, built with the same config-driven pipeline.
 - **VFX:** alpha-textured particles and beams. Silk lines are `Beam`s, and web decals, venom drips and pollen puffs are particles.
 - **Audio:** skittering footsteps sized per form, a silk "thwip", chitters and hisses, and a music bed per biome.
 
@@ -208,7 +231,8 @@ All screens are Studio-authored under `StarterGui`, and every list clones a row 
 - There are two places: a **Lobby place** and a **Dungeon place**. Dungeon runs use reserved servers through `TeleportService:TeleportAsync` with `TeleportOptions.ReservedServerAccessCode`.
 - Teleport data passes through the client and can be spoofed. So the lobby writes a **run record** (party, dungeon id, difficulty, seed) to `MemoryStoreService`, keyed by run id, and the dungeon server reads that record instead of trusting teleport data.
 
-### 14.2 Layout
+### 14.2 Studio layout
+Mirror Pursuit of Immortality's structure where it fits. This is the default where it doesn't.
 ```
 ReplicatedStorage/
   Shared/
@@ -232,7 +256,7 @@ StarterGui/        Studio-authored panels + Templates
 - The API is `get(id)`, `all()` and `where(predicate)`. Nothing outside the registry and config files should hold content data.
 
 ### 14.4 Data
-- **ProfileStore** with session locking. The profile template lives in `DataConfig`, along with a `schemaVersion` and an ordered migration list.
+- **Reuse Pursuit of Immortality's data store layer** (copy it in, never edit it there). Keep session locking, a profile template in `DataConfig`, a `schemaVersion`, and an ordered migration list. Add whichever of these its layer lacks.
 - **Saved:** currencies, inventory, equipped gear, unlocked forms with mastery, Broodlings, pity counters, quests and settings.
 
 ### 14.5 Movement tech (biggest risk, so prototype it first)
@@ -254,8 +278,8 @@ StarterGui/        Studio-authored panels + Templates
 ## 16. Roadmap
 | Milestone | Scope | Done when |
 |---|---|---|
-| **M0 Foundations** | Registry loader and validator, Remotes, ProfileStore data, UI panel framework (template cloning + `UIFit`), lobby greybox | You can join, data saves, and a panel opens and closes on PC and phone. |
-| **M1 Spider feel** | Wall and ceiling walking, Silk Line, jump and leap, camera, Spiderling model and anim set, Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
+| **M0 Foundations** | Port Pursuit of Immortality's modular setup and data layer, registry validation, Remotes, UI panel framework (template cloning + `UIFit`), lobby greybox | You can join, data saves, and a panel opens and closes on PC and phone. |
+| **M1 Spider feel** | Wall and ceiling walking, Silk Line, jump and leap, camera, Spiderling model and anim set (rig, mesh, Idle and Walk are built in `blender/`, import pending), Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
 | **M2 Combat core** | Ability framework, status effects, 2 enemy archetypes, damage numbers, cocoon and revive | 2 players clear a test room. |
 | **M3 Dungeon run** | Room generator, Mossy Hollow kit, mini-boss and Ant Queen, loot drops, results screen, lobby↔dungeon travel with the MemoryStore run record | A full run works end to end and the loot banks. **This is the vertical slice.** |
 | **M4 Lobby economy** | Inventory and equip, gear and affixes, Merchant, Outfitter, Stash, currencies | You can sell, buy, equip and store. |
@@ -264,10 +288,12 @@ StarterGui/        Studio-authored panels + Templates
 | **M7 Launch prep** | Onboarding, dailies, analytics funnels, economy tuning, monetization | Soft launch. |
 
 ## 17. Open questions
-1. **Spider rig vs R6.** The Animations rule says clips go on the R6 rig, but spiders have eight legs. Options: keep R6 for humanoid clips (and lobby NPCs, if any) and add a dedicated **spider rig** (Humanoid root + Motor6D legs) with its own headless-Blender anim sets. Or define how spiders map onto R6.
-2. **Paths:** collect-and-switch (recommended, §4.2) or one permanent path per character?
-3. **Summoning:** are Broodling companions what you had in mind, or did you mean a gear gacha or in-combat summons?
-4. **PvE only?** A PvP arena could come later as its own registry-driven mode.
-5. **Tooling:** should code live in this repo and sync with Rojo (plus Wally for ProfileStore and similar packages), or stay Studio-only with the repo holding docs and Blender sources?
-6. **Wipe penalty:** what share of run loot is kept on a wipe?
-7. **Target run length and party size:** 10–20 min and 1–4 players are the current assumptions.
+1. **PvE only?** A PvP arena could come later as its own registry-driven mode.
+2. **Wipe penalty:** what share of run loot is kept on a wipe?
+3. **Target run length and party size:** 10–20 min and 1–4 players are the current assumptions.
+
+**Decided:**
+- Players use a custom Spider rig, and human-shaped NPCs use R6.
+- Paths are collect-and-switch.
+- Summoning means hatching Egg Sacs into Broodlings.
+- Code stays in Studio, and this repo holds docs and Blender files only.

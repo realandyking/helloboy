@@ -4,8 +4,8 @@ Headless only:
     blender -b -P blender/scripts/build_spider.py -- --form spiderling
     python blender/scripts/build_spider.py --form spiderling     (with the `bpy` module)
 
-Writes blender/sources/<form>.blend, blender/exports/<form>.fbx (mesh + rig, rest pose)
-and blender/exports/<form>_<Clip>.fbx (one baked clip each).
+Writes blender/sources/<form>.blend (mesh, rig, and each clip as a named action for the asset bridge)
+and blender/exports/<form>.fbx (mesh + rig, rest pose). --clip-fbx also writes one baked FBX per clip.
 """
 
 import argparse
@@ -34,6 +34,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--form", default="spiderling", choices=sorted(FORMS))
     parser.add_argument("--no-export", action="store_true")
+    parser.add_argument("--clip-fbx", action="store_true", help="also bake each clip to FBX (the bridge reads actions directly)")
     return parser.parse_args(argv)
 
 
@@ -411,7 +412,7 @@ def main():
         rig.data.pose_position = "REST"
         export_fbx(os.path.join(BLENDER_DIR, "exports", f"{args.form}.fbx"), rig, body, bake=False)
         rig.data.pose_position = "POSE"
-        for clip_name, action in clips.items():
+        for clip_name, action in clips.items() if args.clip_fbx else ():
             spider_anims.use_clip(rig, action)
             export_fbx(os.path.join(BLENDER_DIR, "exports", f"{args.form}_{clip_name}.fbx"), rig, body, bake=True)
 

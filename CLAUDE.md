@@ -12,16 +12,27 @@ A Roblox co-op dungeon crawler. Players are spiders: they gear up in a lobby hub
 - **Game code lives in Studio**, not in this repo. This repo holds only **docs and Blender files** (see "Repo layout" below).
 - **Pursuit of Immortality** (the user's other game, often open in Studio) is **read-only**. Never edit it in any way.
   - You may take its assets and code when they fit Spider Quest. Copy them into Spider Quest and adapt them there.
-  - You are encouraged to reuse its modular setup (registries, config and service patterns) and its data store layer. Look at how Pursuit of Immortality does something before building it fresh.
+  - You are encouraged to reuse its modular setup (registries, config and service patterns). Look at how Pursuit of Immortality does something before building it fresh.
+- **Data uses ProfileStore** (see §14.4).
+- **Delivering scripts:** with Studio MCP access, work in Studio directly. Without it, hand scripts over as a **Command Bar installer** the user pastes and runs. Installers must be idempotent and a single undo step, must refuse to run during a playtest or in Pursuit of Immortality, and must never overwrite a script they didn't create.
 ### Repo layout
 ```
 CLAUDE.md            this brief + rules
 blender/             headless Blender pipeline (see blender/README.md)
   scripts/           config-driven build scripts; spider_config.py holds forms and clips
   sources/           generated .blend files (rebuild, don't hand-edit)
-  exports/           FBX for Studio import
+  exports/           mesh + rig FBX for Studio import (clips go through the asset bridge)
   renders/           preview sheets for review
 ```
+### Networking rules
+- **One RemoteEvent (`ReplicatedStorage.Net`) carries everything.** A new message is a new channel in `NetConfig`, never a new remote. Don't use RemoteFunctions: request/response runs over the same remote (`Net.request`).
+- Packets are batched and fired once per frame. The server checks every client packet's channel, direction, rate limit and argument types before a handler sees it.
+- Send small payloads: ids and numbers, not names or instances the other side can look up. Replicate deltas, not whole tables, and send only to the players who need them.
+- Replicated tables are pure arrays or string-keyed dictionaries, never mixed or sparse (remotes drop those).
+### Platform rules
+- **PC, console and mobile are all first-class.** Every action has a keyboard/mouse binding, a gamepad binding and a touch button in `InputConfig`. Gameplay code listens for named actions and never checks devices.
+- Every panel works with a gamepad: a default selected button, sensible selection order, and B/back to close. Button prompts swap with the current input mode (`PlatformController`).
+- Console players sit far from the screen, so keep text large and HUD elements inside the safe area.
 ### UI rules
 - All UI is authored in Studio as real instances. Scripts only clone and fill templates; they never build UI with `Instance.new`. Dynamic lists clone a Studio-authored template row.
 - House style is the fantasy stylized.
@@ -36,12 +47,13 @@ blender/             headless Blender pipeline (see blender/README.md)
 - Clips are made in headless Blender, with easing. **Player spiders use the custom Spider rig** (`blender/`). **Human-shaped NPCs use the R6 rig.**
 - Before reusing a borrowed clip, check its length and `Loop`. A skill fades out every track it starts.
 - Every spider form shares the Spider rig's bone names and hierarchy, and only the proportions change. Spider clips key **rotations only** (apart from small body bobs), so one clip plays on every form.
+- **The asset bridge converts Blender actions directly.** Keep each clip as a named action (with a fake user) in the form's `.blend`.
 ### Code rules (proposed with the plan; confirm or edit)
 - **Server-authoritative.** The client sends intents ("use ability `venom_bite` toward X"). The server checks ownership, range, cooldown and cost, then applies the result. Damage, prices, drops and rewards are never taken from the client.
 - **Content is data.** Every form, ability, item, affix, enemy, room, dungeon, banner, shop and panel is an entry in a registry, keyed by a stable snake_case id (`venom_t2`). Code refers to ids, never to display names or inline asset ids.
 - **Registries validate at boot**: unique ids, required fields, and cross-references that resolve (for example, a form's ability ids must exist). In Studio, a bad entry fails loudly.
-- **Saved data holds only ids and numbers.** No instances and no display strings. It carries a schema version plus a migration list. Build it on Pursuit of Immortality's data store layer.
-- **One `Remotes` module declares every remote.** Server handlers type-check their arguments and rate-limit.
+- **Saved data holds only ids and numbers.** No instances and no display strings. It carries a schema version plus a migration list. Change it only through `DataService`, so the client receives deltas.
+- **Networking** follows the Networking rules above.
 
 ---
 
@@ -52,6 +64,7 @@ blender/             headless Blender pipeline (see blender/README.md)
   1. **Spider movement feels special.** You can walk on any wall or ceiling, swing or zip on silk, and ambush from above.
   2. **Evolution is the progression.** Each path changes how you play, not just your numbers.
   3. **Short co-op runs with big loot moments.** Runs take 10–20 min with 1–4 players, and you bring the loot back to sell or equip.
+- **Focus:** PvE dungeons come first. A PvP arena comes later as its own registry-driven mode.
   4. **Readable on phones.** Telegraphs, UI and controls work on a small screen first.
 
 ## 2. Core loop
@@ -181,7 +194,7 @@ return {
 ### 9.4 Loot
 - `LootTableRegistry` holds weighted entries and nested tables. Difficulty and luck modify the rarity roll.
 - **Personal loot:** each player rolls their own drops, so nobody fights over loot.
-- A run's loot is banked on a successful extraction. On a wipe you keep X% (`DungeonConfig.wipeKeepPercent`).
+- A run's loot is banked on a successful extraction. **A wipe keeps no loot**, only a small Amber payout (`DungeonConfig.wipeAmber`).
 
 ## 10. Progression summary
 - **Player Level**, from run XP, gates evolution tiers and difficulties.
@@ -199,7 +212,9 @@ return {
 | Jump / leap off wall | Space | A | Jump |
 | Interact / revive | G | B | Prompt button |
 
-On mobile, keep every button at least ~42 px and cluster them around the right thumb.
+- On mobile, keep every button at least ~42 px and cluster them around the right thumb.
+- Movement, jump and camera stay on Roblox's default controls until the spider movement controller replaces them.
+- Menus follow the Platform rules: gamepad navigation, and prompts that swap with the input mode.
 
 ## 12. UI screens
 All screens are Studio-authored under `StarterGui`, and every list clones a row from its `Templates` folder.
@@ -231,33 +246,47 @@ All screens are Studio-authored under `StarterGui`, and every list clones a row 
 - There are two places: a **Lobby place** and a **Dungeon place**. Dungeon runs use reserved servers through `TeleportService:TeleportAsync` with `TeleportOptions.ReservedServerAccessCode`.
 - Teleport data passes through the client and can be spoofed. So the lobby writes a **run record** (party, dungeon id, difficulty, seed) to `MemoryStoreService`, keyed by run id, and the dungeon server reads that record instead of trusting teleport data.
 
-### 14.2 Studio layout
-Mirror Pursuit of Immortality's structure where it fits. This is the default where it doesn't.
+### 14.2 Studio layout (installed by the core installer)
 ```
 ReplicatedStorage/
+  Net                  the one RemoteEvent
   Shared/
-    Config/        CombatConfig, EconomyConfig, ProgressionConfig, DungeonConfig, InputConfig, DataConfig
-    Registries/    Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Currencies, Enemies,
-                   Dungeons, Rooms, LootTables, Banners, Broods, Shops, Quests, Panels, Models, AnimSets
-    Modules/       Registry (base loader + validator), Signal, Rng, Formulas
-    Remotes        single source of every RemoteEvent / RemoteFunction
-  Assets/          Models, Animations, VFX, Sounds (looked up through the registries)
+    Config/            NetConfig (channels), InputConfig (bindings per platform)
+    Registries/        Currencies (more registries join here)
+    Modules/           Net, NetCodec, Registry, Signal, TableUtil, Boot
 ServerScriptService/
-  Services/        Data, Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status,
-                   Enemy, Dungeon, Loot, Party, Travel, Quest
-ServerStorage/     RoomTemplates, EnemyModels
-StarterPlayer/StarterPlayerScripts/
-  Controllers/     UI, Input, Ability, Movement (climb + silk), Camera, VFX, Audio
-StarterGui/        Studio-authored panels + Templates
+  Packages/            ProfileStore (inserted by hand)
+  Server/
+    Main               boots Net, then every Service
+    Config/            DataConfig (template, schemaVersion, migrations)
+    Modules/           ProfileUtil
+    Services/          DataService
+StarterPlayerScripts/
+  Client/
+    Main               boots every Controller; pings the server in Studio
+    Controllers/       PlatformController, InputController, DataController
 ```
+- **Planned additions** go in the same folders:
+  - Configs: Combat, Economy, Progression, Dungeon.
+  - Registries: Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Enemies, Dungeons, Rooms, LootTables, Banners, Broods, Shops, Quests, Panels, Models, AnimSets.
+  - Services: Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status, Enemy, Dungeon, Loot, Party, Travel, Quest.
+  - Controllers: UI, Ability, Movement (climb + silk), Camera, VFX, Audio.
+  - Elsewhere: `ServerStorage` (RoomTemplates, EnemyModels) and `StarterGui` (panels + Templates).
+- Each service or controller is a ModuleScript with optional `priority`, `init()` and `start()`.
+- `Boot` runs every `init` (highest priority first), then every `start`.
+- Where Pursuit of Immortality has a better pattern for something, adapt it into this layout.
 
 ### 14.3 Registry pattern
 - Each registry is a folder of ModuleScripts (or one table for small sets). At boot it is loaded, frozen and validated.
 - The API is `get(id)`, `all()` and `where(predicate)`. Nothing outside the registry and config files should hold content data.
 
 ### 14.4 Data
-- **Reuse Pursuit of Immortality's data store layer** (copy it in, never edit it there). Keep session locking, a profile template in `DataConfig`, a `schemaVersion`, and an ordered migration list. Add whichever of these its layer lacks.
-- **Saved:** currencies, inventory, equipped gear, unlocked forms with mastery, Broodlings, pity counters, quests and settings.
+- **ProfileStore** (`ServerScriptService.Packages.ProfileStore`) with session locking, through `DataService`.
+- `DataConfig` holds the store name, the template, `schemaVersion` and the ordered `migrations`. Data newer than the server's schema is never loaded, and the player is sent to a fresh server.
+- Currencies are filled in from the Currencies registry, so adding a currency needs no data change.
+- The owner gets a snapshot on load (`DataInit`), then one `DataSet` delta per change. `DataConfig.private` keys never leave the server.
+- **Saved:** currencies, inventory, equipped gear, unlocked forms with mastery, Broodlings, pity counters, stats and settings.
+- **Studio:** turn on Game Settings > Security > Studio Access to API Services to test real saves. Otherwise ProfileStore runs on its mock store (or set `mockInStudio`).
 
 ### 14.5 Movement tech (biggest risk, so prototype it first)
 - **Wall and ceiling walking:** `ControllerManager` + `GroundController`, with `UpDirection` driven by raycasts that read the surface normal. The fallback is a custom controller built on `AlignOrientation` and `LinearVelocity`.
@@ -265,7 +294,7 @@ StarterGui/        Studio-authored panels + Templates
 - The camera must handle ceilings (up-vector aware) without making players motion-sick. Add a settings toggle.
 
 ### 14.6 Networking and performance
-- Remotes follow the Code rules above: type checks and rate limits on the server, cosmetic prediction on the client.
+- Networking follows the Networking rules above. The client predicts cosmetics; the server decides outcomes.
 - Turn on `StreamingEnabled` in dungeons. Pool VFX and projectiles, cap enemies per room, and reuse kit meshes.
 - Test on a low-end phone at every milestone.
 
@@ -278,7 +307,7 @@ StarterGui/        Studio-authored panels + Templates
 ## 16. Roadmap
 | Milestone | Scope | Done when |
 |---|---|---|
-| **M0 Foundations** | Port Pursuit of Immortality's modular setup and data layer, registry validation, Remotes, UI panel framework (template cloning + `UIFit`), lobby greybox | You can join, data saves, and a panel opens and closes on PC and phone. |
+| **M0 Foundations** | **Core installer delivered:** Net (one remote), Registry, ProfileStore DataService, Platform/Input/Data controllers, Boot. **Still to do:** UI panel framework (template cloning, `UIFit`, gamepad navigation), lobby greybox | You can join, data saves, and a panel opens and closes on PC, console and phone. |
 | **M1 Spider feel** | Wall and ceiling walking, Silk Line, jump and leap, camera, Spiderling model and anim set (rig, mesh, Idle and Walk are built in `blender/`, import pending), Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
 | **M2 Combat core** | Ability framework, status effects, 2 enemy archetypes, damage numbers, cocoon and revive | 2 players clear a test room. |
 | **M3 Dungeon run** | Room generator, Mossy Hollow kit, mini-boss and Ant Queen, loot drops, results screen, lobby↔dungeon travel with the MemoryStore run record | A full run works end to end and the loot banks. **This is the vertical slice.** |
@@ -287,13 +316,17 @@ StarterGui/        Studio-authored panels + Templates
 | **M6 Content and polish** | T3 apexes, The Cellar, more bosses, VFX and audio pass, mobile and performance pass | The launch content set is complete. |
 | **M7 Launch prep** | Onboarding, dailies, analytics funnels, economy tuning, monetization | Soft launch. |
 
-## 17. Open questions
-1. **PvE only?** A PvP arena could come later as its own registry-driven mode.
-2. **Wipe penalty:** what share of run loot is kept on a wipe?
-3. **Target run length and party size:** 10–20 min and 1–4 players are the current assumptions.
+## 17. Decisions
+- **Rig:** players use a custom Spider rig; human-shaped NPCs use R6.
+- **Paths:** collect-and-switch.
+- **Summoning:** hatching Egg Sacs into Broodlings.
+- **Where things live:** code in Studio; this repo holds docs and Blender files only.
+- **Clips:** the asset bridge converts Blender actions.
+- **Modes:** PvE dungeons first, PvP arena later.
+- **Wipes:** no loot, only a small Amber payout.
+- **Runs:** 10–20 min, 1–4 players.
+- **Data:** ProfileStore.
+- **Networking:** one RemoteEvent.
+- **Platforms:** PC, console and mobile.
 
-**Decided:**
-- Players use a custom Spider rig, and human-shaped NPCs use R6.
-- Paths are collect-and-switch.
-- Summoning means hatching Egg Sacs into Broodlings.
-- Code stays in Studio, and this repo holds docs and Blender files only.
+No open questions right now.

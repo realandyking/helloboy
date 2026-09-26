@@ -6,11 +6,11 @@ Everything here is built **headless** from scripts, so a rebuild is repeatable a
 blender/
   scripts/
     spider_config.py    forms (proportions, palette, tri budget) and clip settings: edit this first
-    build_spider.py     mesh + Spider rig + clips -> sources/<form>.blend, exports/<form>*.fbx
+    build_spider.py     mesh + Spider rig + clips -> sources/<form>.blend, exports/<form>.fbx
     spider_anims.py     clip builders (Idle, Walk); all keys eased Bezier
     render_preview.py   Cycles CPU preview sheets -> renders/
   sources/              .blend files (generated; rebuild instead of hand-editing)
-  exports/              FBX for Studio import
+  exports/              mesh + rig FBX for Studio import
   renders/              preview sheets for review
 ```
 
@@ -58,13 +58,14 @@ To add a form, add an entry to `FORMS` in `spider_config.py` (proportions, palet
 - **Idle:** breathing abdomen, palp taps, a fang flex, and a small weight shift. It loops.
 - **Walk:** an alternating tetrapod gait (L1, R2, L3, R4 against the other four), with a body bob and roll. It loops. In game, scale its speed to walk speed. Foot sliding is expected until procedural foot placement (`IKControl`) lands with the wall-walk controller.
 - Loop clips end on their first pose. After import set `Loop = true`, with priority Idle for Idle and Movement for Walk.
+- **The asset bridge converts Blender actions directly.** Each clip is a named action (`Idle`, `Walk`) with a fake user in `sources/<form>.blend`. The custom properties `frames` and `loop` on each action carry its length and loop flag. Pass `--clip-fbx` only if you need a baked FBX per clip.
 
 ## Studio import checklist (do this on the first import; not yet verified in Studio)
 
 1. Import `exports/spiderling.fbx` as a rig. Check the size against the table above. If it's off, change the importer's scale unit, not the source.
 2. Check that the spider faces the model's forward (LookVector). If it faces backwards, fix the export axis in `build_spider.py` and re-export.
 3. Check that the vertex colours show, and that the bones sit under the MeshPart with the names above.
-4. Import `spiderling_Idle.fbx` and `spiderling_Walk.fbx` as animations onto that rig, then set Loop and Priority.
+4. Convert the `Idle` and `Walk` actions from `sources/spiderling.blend` with the asset bridge, then set Loop and Priority.
 5. **Ask before uploading.** Asset-bridge uploads publish to the group.
 
 Write anything you learn here back into this checklist and into `build_spider.py`.

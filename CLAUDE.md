@@ -15,6 +15,9 @@ A Roblox co-op dungeon crawler. Players are spiders: they gear up in a lobby hub
   - You are encouraged to reuse its modular setup (registries, config and service patterns). Look at how Pursuit of Immortality does something before building it fresh.
 - **Data uses ProfileStore** (see §14.4).
 - **Delivering scripts:** with Studio MCP access, work in Studio directly. Without it, hand scripts over as a **Command Bar installer** the user pastes and runs. Installers must be idempotent and a single undo step, must refuse to run during a playtest or in Pursuit of Immortality, and must never overwrite a script they didn't create.
+  - Keep each file small enough to paste (about 40 KB or less); split scripts into numbered parts.
+  - UI and character templates are **create-only**, so re-runs never undo restyling done in Studio.
+  - Before handing over, compile every file, type-check it against the Roblox API, and run the installers against a mock DataModel generated from Roblox's API dump.
 ### Repo layout
 ```
 CLAUDE.md            this brief + rules
@@ -33,6 +36,20 @@ blender/             headless Blender pipeline (see blender/README.md)
 - **PC, console and mobile are all first-class.** Every action has a keyboard/mouse binding, a gamepad binding and a touch button in `InputConfig`. Gameplay code listens for named actions and never checks devices.
 - Every panel works with a gamepad: a default selected button, sensible selection order, and B/back to close. Button prompts swap with the current input mode (`PlatformController`).
 - Console players sit far from the screen, so keep text large and HUD elements inside the safe area.
+### Map rules (Blender maps → Studio)
+- **Separate places:** the Main Menu (start place), the Lobby, and one place per dungeon. Each place's map is built in headless Blender (`blender/`).
+- Every exported object name starts with a prefix, and the map prep tool (Command Bar, run on the imported model) applies it:
+  - `COL_`: walkable/climbable, precise collision.
+  - `PROP_`: solid props, hull collision.
+  - `DECO_`: no collision.
+  - `MARKER_<Type>[_<Id>]`: turned into invisible anchored parts in a `Markers` folder. Code finds them with the `Markers` module. `MARKER_Station_<id>` gets that station's ProximityPrompt.
+- **Marker types:** `PlayerSpawn_n`, `Station_<id>`, `Connector_<N|E|S|W>`, `EnemySpawn_n`, `BossSpawn`, `Chest_n`, `Extraction`, `MenuCamera`, `MenuFocus`, `SpiderPose`, `DungeonGate`.
+- **Dungeon rooms:**
+  - Rooms sit on an 80-stud grid.
+  - Every doorway is 24 wide × 20 tall and centred on a room edge, with its connector marker on the floor at the boundary.
+  - Rooms rotate in 90° steps.
+- **Scale:** 1 Blender unit = 1 stud, and Blender +Y is north (Roblox -Z).
+- Every mesh object stays at or under 10k tris. Repeated props are linked duplicates, so Roblox can instance them.
 ### UI rules
 - All UI is authored in Studio as real instances. Scripts only clone and fill templates; they never build UI with `Instance.new`. Dynamic lists clone a Studio-authored template row.
 - House style is the fantasy stylized.
@@ -175,7 +192,7 @@ return {
 ### 9.1 Run structure
 - A party of 1–4 picks a **dungeon** and a **difficulty** (Normal / Hard / Nightmare). Difficulty scales enemy HP and damage, and those multipliers also scale with party size (`DungeonConfig`).
 - **Room flow:** entry → combat, event and treasure rooms → mini-boss → boss → extraction chest.
-- **Generator:** assembles Studio-built **room templates** by snapping together connector attachments. The room pool, counts and weights come from `DungeonRegistry` and `RoomRegistry`. RNG is seeded, so a run can be reproduced for debugging.
+- **Generator:** assembles **room templates** (built in Blender, see Map rules) by snapping their `MARKER_Connector_<dir>` doorways together. The room pool, counts and weights come from `DungeonRegistry` and `RoomRegistry`. RNG is seeded, so a run can be reproduced for debugging.
 - **Vertical design:** spiders climb, so rooms use walls and ceilings: ceiling routes, hidden nooks, drop ambushes and falling hazards.
 
 ### 9.2 Biomes
@@ -217,14 +234,19 @@ return {
 - Menus follow the Platform rules: gamepad navigation, and prompts that swap with the input mode.
 
 ## 12. UI screens
-All screens are Studio-authored under `StarterGui`, and every list clones a row from its `Templates` folder.
-- **HUD:** health, Silk, ability bar with cooldowns, party frames, Broodling, and the run loot counter.
-- **Inventory and equip:** gear slots, stat compare, lock toggle.
-- **Merchant, Outfitter and Stash.**
-- **Hatchery:** banner, odds table, pity counter, hatch reveal.
-- **Molting Shrine:** path tree, requirements, evolve and switch.
-- **Party / Dungeon select, Run results, Quests, Settings.**
-- **Pattern:** `UIController` opens panels by id from `PanelRegistry`. Each panel module binds to its Studio instance, clones template rows, and applies `UIFit` on phones.
+All screens are ScreenGui templates in `StarterGui`. The templates installer authors them once, and after that they are restyled in Studio. Every list clones a row from the panel's `Templates` folder.
+- **HUD:** Amber counter, Menu button, control hints (keyboard keys or gamepad glyphs), touch action buttons, notice toasts. Later: health, Silk, ability cooldowns, party frames, Broodling, run loot.
+- **Crosshair:** its own ScreenGui with no insets, so its centre is the camera's. Silk Line aims through it.
+- **Settings:** rows from the Settings registry. In a dungeon it also shows "Return to Lobby".
+- **Dungeon Gate:** rows from the Dungeons registry. Opened by the lobby station prompt.
+- **Main Menu:** title, Play (travels to the Lobby), status line.
+- **Still to build:** Inventory and equip, Merchant, Outfitter, Stash, Hatchery, Molting Shrine, Party / Dungeon select, Run results, Quests.
+- **How panels work:**
+  - `UIController` opens panels by id from the Panels registry. Each panel module (`Client/Panels`) fills its template.
+  - Modal panels stack. They block gameplay input, close with B / Backspace, and start gamepad selection on their default button.
+  - Menu is M or D-pad up.
+  - `UIFit` scales tall panels down on small screens (each panel has a UIScale). If Pursuit of Immortality's `UIFit` differs, adopt it.
+  - `InputPrompts` swaps key and glyph hints by input mode. Configure it with the `ShowOn`, `InputAction` and `InputDevice` attributes.
 
 ## 13. Art and audio direction
 - The look follows the Art rules above: Deepwoken-like, stylized, low-tri and vertex-painted, with painterly lighting and strong silhouettes.
@@ -243,37 +265,53 @@ All screens are Studio-authored under `StarterGui`, and every list clones a row 
 ## 14. Technical architecture
 
 ### 14.1 Places
-- There are two places: a **Lobby place** and a **Dungeon place**. Dungeon runs use reserved servers through `TeleportService:TeleportAsync` with `TeleportOptions.ReservedServerAccessCode`.
-- Teleport data passes through the client and can be spoofed. So the lobby writes a **run record** (party, dungeon id, difficulty, seed) to `MemoryStoreService`, keyed by run id, and the dungeon server reads that record instead of trusting teleport data.
+- **Three kinds of place,** all running the same code:
+  - **Main Menu** (the start place): no characters. The camera frames the menu map.
+  - **Lobby.**
+  - **One Dungeon place per dungeon.** A dungeon's `place` in the Dungeons registry is a PlaceConfig key.
+- **Role:** a place's role comes from the workspace attribute `PlaceRole` (`MainMenu`, `Lobby` or `Dungeon`), else from matching `game.PlaceId` in `PlaceConfig`. Each Service and Controller lists the `roles` it runs in.
+- **Travel** (`TravelService`, Net `Travel` request):
+  - Main Menu → Lobby.
+  - Lobby → Dungeon: a new reserved server through `TeleportOptions.ShouldReserveServer`. `ReserveServer` is deprecated.
+  - Dungeon → Lobby.
+- **Run records:** teleport data passes through the client, so the lobby writes the **run record** (dungeon id, seed, party) to MemoryStore, keyed by the new server's `PrivateServerId`. The dungeon server reads it. In Studio (no teleports) a dungeon place runs a test run instead, using the workspace attribute `DungeonId`.
+- **Data:** the Main Menu never opens a ProfileStore session, so the Lobby gets the profile without waiting on a session lock.
 
-### 14.2 Studio layout (installed by the core installer)
+### 14.2 Studio layout (installed by the Command Bar installers)
 ```
 ReplicatedStorage/
   Net                  the one RemoteEvent
+  Assets/VFX/SilkBeam  Beam template
   Shared/
-    Config/            NetConfig (channels), InputConfig (bindings per platform)
-    Registries/        Currencies (more registries join here)
-    Modules/           Net, NetCodec, Registry, Signal, TableUtil, Boot
+    Config/            NetConfig, InputConfig, PlaceConfig, MovementConfig, NoticeConfig
+    Registries/        Currencies, Settings, Panels, Stations, Dungeons
+    Modules/           Net, NetCodec, Registry, RegistryChecks, Signal, TableUtil, Boot, Place,
+                       Markers, SurfaceMath, UIFit
 ServerScriptService/
   Packages/            ProfileStore (inserted by hand)
   Server/
-    Main               boots Net, then every Service
-    Config/            DataConfig (template, schemaVersion, migrations)
+    Main               registry checks, Net, then the Services for this role
+    Config/            DataConfig
     Modules/           ProfileUtil
-    Services/          DataService
-StarterPlayerScripts/
-  Client/
-    Main               boots every Controller; pings the server in Studio
-    Controllers/       PlatformController, InputController, DataController
+    Services/          DataService, SettingsService, TravelService, SpawnService, SilkService
+StarterGui/            HUD, Crosshair, SettingsPanel, DungeonGate, MainMenu (templates)
+StarterPlayer/
+  StarterCharacter     placeholder spider (physics root + constraints); swap the body for the Spiderling
+  StarterPlayerScripts/Client/
+    Main               registry checks, then the Controllers for this role; pings in Studio
+    Controllers/       PlatformController, InputController, DataController, NoticeController,
+                       UIController, MovementController, MenuCameraController
+    Panels/            Hud, Crosshair, SettingsPanel, DungeonGate, MainMenu
+    Modules/           InputPrompts, SilkVfx
 ```
 - **Planned additions** go in the same folders:
   - Configs: Combat, Economy, Progression, Dungeon.
-  - Registries: Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Enemies, Dungeons, Rooms, LootTables, Banners, Broods, Shops, Quests, Panels, Models, AnimSets.
-  - Services: Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status, Enemy, Dungeon, Loot, Party, Travel, Quest.
-  - Controllers: UI, Ability, Movement (climb + silk), Camera, VFX, Audio.
-  - Elsewhere: `ServerStorage` (RoomTemplates, EnemyModels) and `StarterGui` (panels + Templates).
-- Each service or controller is a ModuleScript with optional `priority`, `init()` and `start()`.
-- `Boot` runs every `init` (highest priority first), then every `start`.
+  - Registries: Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Enemies, Rooms, LootTables, Banners, Broods, Shops, Quests, Models, AnimSets.
+  - Services: Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status, Enemy, Dungeon, Loot, Party, Quest.
+  - Controllers: Ability, Camera, VFX, Audio.
+  - `ServerStorage`: RoomTemplates, EnemyModels.
+- Each service or controller is a ModuleScript with optional `roles`, `priority`, `init()` and `start()`. `Boot` skips systems whose roles leave out this place, then runs every `init` (highest priority first), then every `start`.
+- ModuleScript names are unique across the game. For example, the Settings registry and the `SettingsPanel` panel module have different names.
 - Where Pursuit of Immortality has a better pattern for something, adapt it into this layout.
 
 ### 14.3 Registry pattern
@@ -288,10 +326,26 @@ StarterPlayerScripts/
 - **Saved:** currencies, inventory, equipped gear, unlocked forms with mastery, Broodlings, pity counters, stats and settings.
 - **Studio:** turn on Game Settings > Security > Studio Access to API Services to test real saves. Otherwise ProfileStore runs on its mock store (or set `mockInStudio`).
 
-### 14.5 Movement tech (biggest risk, so prototype it first)
-- **Wall and ceiling walking:** `ControllerManager` + `GroundController`, with `UpDirection` driven by raycasts that read the surface normal. The fallback is a custom controller built on `AlignOrientation` and `LinearVelocity`.
-- **Silk Line:** a raycast picks the anchor point. Swinging uses a `RopeConstraint` or a spring, zipping uses a velocity pull, and a `Beam` draws the thread.
-- The camera must handle ceilings (up-vector aware) without making players motion-sick. Add a settings toggle.
+### 14.5 Movement (prototype built; not yet felt in Studio)
+- **Custom controller** on the owning client (`MovementController`). The Humanoid keeps health and animation but has `EvaluateStateMachine = false`.
+  - `SurfaceAlign` (AlignOrientation) turns the spider's up to the surface normal.
+  - `SurfaceMover` (LinearVelocity) moves it along the surface and holds it `hipHeight` off it. In the air the mover is off and gravity acts.
+- **Probes:**
+  - A ray ahead steps onto walls and ceilings.
+  - A ray down follows curvature.
+  - When the ground ray misses past an edge, a ray back under the edge wraps onto the far face.
+  - In the air, rays along the velocity and down land on any surface.
+  - `NoClimb`-tagged parts can't be stuck to.
+- **Controls:**
+  - Input is camera-relative and projected onto the surface (`SurfaceMath`): forward climbs a wall that faces the camera, keeps going down over an edge, and right is never mirrored on ceilings.
+  - Right after crossing onto a new face, "forward" stays pinned for `lockTime`.
+  - Moving and jumping use Roblox's default controls on every platform, including the touch thumbstick and jump button.
+  - Jumping pushes off along the normal; from a ceiling it drops.
+- **Silk Line:** aims through the crosshair and zips to the hit point (range 110), then sticks there.
+  - The line is a `SilkBeam` between the `SilkOrigin` attachment and a Terrain attachment.
+  - Other players see it through `SilkService` (Net `SilkLine` / `SilkLineShown`), after a range check.
+- **Camera:** stays world-up (Roblox's default camera), which is the comfortable choice. A ceiling camera assist can come later.
+- **Next:** feel-tuning in Studio (all numbers in MovementConfig), procedural foot placement (`IKControl`) and the Spiderling mesh + Idle/Walk ids, swinging silk and Silk Drop.
 
 ### 14.6 Networking and performance
 - Networking follows the Networking rules above. The client predicts cosmetics; the server decides outcomes.
@@ -307,8 +361,8 @@ StarterPlayerScripts/
 ## 16. Roadmap
 | Milestone | Scope | Done when |
 |---|---|---|
-| **M0 Foundations** | **Core installer delivered:** Net (one remote), Registry, ProfileStore DataService, Platform/Input/Data controllers, Boot. **Still to do:** UI panel framework (template cloning, `UIFit`, gamepad navigation), lobby greybox | You can join, data saves, and a panel opens and closes on PC, console and phone. |
-| **M1 Spider feel** | Wall and ceiling walking, Silk Line, jump and leap, camera, Spiderling model and anim set (rig, mesh, Idle and Walk are built in `blender/`, import pending), Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
+| **M0 Foundations** | **Delivered as installers:** Net (one remote), Registry, ProfileStore DataService, Platform/Input/Data controllers, Boot, place roles and travel, UI panel framework and templates (HUD, Settings, Dungeon Gate, Main Menu), map prep tool. **Maps:** Main Menu, Lobby and Mossy Hollow rooms being built in Blender. **To do:** install, import and check in Studio | You can join, data saves, and a panel opens and closes on PC, console and phone. |
+| **M1 Spider feel** | **Prototype delivered:** wall and ceiling walking, edge wrapping, jump and drop, landing on any surface, Silk Line zip. **To do:** tune the feel in Studio, Spiderling mesh and animations (built in `blender/`, import pending), foot IK, Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
 | **M2 Combat core** | Ability framework, status effects, 2 enemy archetypes, damage numbers, cocoon and revive | 2 players clear a test room. |
 | **M3 Dungeon run** | Room generator, Mossy Hollow kit, mini-boss and Ant Queen, loot drops, results screen, lobby↔dungeon travel with the MemoryStore run record | A full run works end to end and the loot banks. **This is the vertical slice.** |
 | **M4 Lobby economy** | Inventory and equip, gear and affixes, Merchant, Outfitter, Stash, currencies | You can sell, buy, equip and store. |
@@ -328,5 +382,6 @@ StarterPlayerScripts/
 - **Data:** ProfileStore.
 - **Networking:** one RemoteEvent.
 - **Platforms:** PC, console and mobile.
+- **Places:** separate places for the Main Menu, the Lobby and the dungeons. Their maps are made in Blender.
 
 No open questions right now.

@@ -278,8 +278,8 @@ def build_lobby(map_id, cfg, material):
     def inner_color(x, y, z):
         r = math.hypot(x, y)
         n1, n2, n3 = noise((x, y), 1 / 16, 2), noise((x + 300, y), 1 / 7), noise((x, y + 500), 1 / 16)
-        c = K.mix(P["mulch"], P["mulch_light"], K.smoothstep(-0.35, 0.45, n1) * 0.8)
-        c = K.mix(c, P["wood_dark"], K.smoothstep(0.2, 0.55, n2) * 0.4)
+        c = K.mix(P["mulch"], P["mulch_light"], 0.25 + K.smoothstep(-0.35, 0.45, n1) * 0.65)
+        c = K.mix(c, P["wood_dark"], K.smoothstep(0.2, 0.55, n2) * 0.28)
         c = K.mix(c, P["leaf_orange"], K.smoothstep(0.3, 0.6, -n2) * 0.3)
         lane = K.smoothstep(26, 8, abs(x)) * K.smoothstep(-20, -60, y)
         ring = K.smoothstep(12, 2, abs(r - 58))
@@ -374,10 +374,11 @@ def build_lobby(map_id, cfg, material):
 
     def c_in(th, z, co):
         streak = snoise((math.cos(th) * 5, math.sin(th) * 5, z * 0.018), 1.0, 2)
-        c = K.mix(P["wood_rot"], P["wood_pale"], 0.25 + K.smoothstep(-0.2, 0.5, streak) * 0.55)
-        c = K.mix(c, P["wood_dark"], K.smoothstep(0.35, 0.65, -streak) * 0.35)
-        c = K.mix(c, P["mulch"], K.smoothstep(40, 0, z) * 0.35)
-        c = K.mix(c, P["moss"], K.smoothstep(12, 0, z) * 0.5)
+        c = K.mix(P["wood_rot"], P["wood_pale"], 0.42 + K.smoothstep(-0.2, 0.5, streak) * 0.45)
+        c = K.mix(c, P["wood_dark"], K.smoothstep(0.35, 0.65, -streak) * 0.22)
+        c = K.mix(c, P["mulch_light"], K.smoothstep(40, 0, z) * 0.25)
+        c = K.mix(c, P["wood_pale"], K.smoothstep(70, 140, z) * 0.25)
+        c = K.mix(c, P["moss"], K.smoothstep(12, 0, z) * 0.45)
         return c, 0.3
 
     def c_rim(th, z, co):
@@ -404,7 +405,7 @@ def build_lobby(map_id, cfg, material):
         d = Vector((math.cos(th), math.sin(th), 0))
         side = Vector((-d.y, d.x, 0))
         bend = rng.uniform(-1, 1)
-        reach = rng.uniform(70, 100)
+        reach = rng.uniform(*cfg["rootReach"])
         pts = []
         for k, (f, z) in enumerate(((0.0, 46), (0.12, 30), (0.3, 16), (0.5, 8), (0.72, 3), (1.0, -5))):
             wig = side * (bend * 18 * f * f + rng.uniform(-4, 4) * f)
@@ -470,26 +471,32 @@ def build_lobby(map_id, cfg, material):
     anchors += [Vector(p) for p in web["freeCorners"]]
     center = sum(anchors, Vector()) / len(anchors)
     center.z = sum(p.z for p in anchors) / len(anchors) - web["sag"]
-    ring_t = (0.0, 0.3, 0.55, 0.8, 1.0)
-    top_rings, bot_rings = [], []
-    for ri, t in enumerate(ring_t):
+    ring_t = (0.0, 0.18, 0.36, 0.54, 0.72, 0.88, 1.0)
+    wnoise = K.Noise(map_id, "sheet")
+    deep = K.mix(P["silk_shade"], P["bark_dark"], 0.72)  # dense, dusky silk down in the funnel
+    top_rings = [[g.vert(center + Vector((0, 0, 0.5)), deep)]]  # the funnel bottom is a single pole vertex
+    bot_rings = [[g.vert(center - Vector((0, 0, 0.5)), K.mix(P["silk_shade"], P["bark_dark"], 0.4))]]
+    for ri, t in enumerate(ring_t[1:], start=1):
         tr, br = [], []
-        for p in anchors:
+        for k, p in enumerate(anchors):
             q = center.lerp(p, t)
             q.z = K.lerp(center.z, p.z, t ** 1.6)
-            c = K.mix(P["silk_shade"], P["silk"], 0.55 if ri % 2 else 0.15)
+            if ri < len(ring_t) - 1:  # soft radial ridges so the sheet catches light like layered silk
+                q.z += web["relief"] * (1 if k % 2 else -0.6) * math.sin(math.pi * t) + wnoise(q, 1 / 9) * 0.8
+            # funnel gradient (dark centre -> pale rim), alternating radial bands, faint concentric rings
+            c = K.mix(deep, P["silk"], K.smoothstep(0.15, 1.0, t) ** 1.4 * 0.62 + (0.32 if k % 2 else 0.0))
+            c = K.mix(c, P["silk_shade"], 0.2 if ri % 2 else 0.0)
             tr.append(g.vert(q + Vector((0, 0, 0.5)), c))
-            br.append(g.vert(q - Vector((0, 0, 0.5)), P["silk_shade"]))
+            br.append(g.vert(q - Vector((0, 0, 0.5)), K.mix(P["silk_shade"], P["bark_dark"], 0.3)))
         top_rings.append(tr)
         bot_rings.append(br)
     for ra, rb in zip(top_rings, top_rings[1:]):
         g.bridge(ra, rb)
     for ra, rb in zip(bot_rings, bot_rings[1:]):
         g.bridge(ra, rb)
-    g.face(top_rings[0])
-    g.face(list(reversed(bot_rings[0])))
     g.bridge(top_rings[-1], bot_rings[-1])
     sheet_lines = [(center.lerp(p, 0.05), p) for p in anchors]
+    sheet_rings = [[v.co.copy() + Vector((0, 0, 0.35)) for v in top_rings[i]] for i in (2, 4)]
     b.add_geo("COL", "SheetWeb", g, numbered=False)
     g = b.geo("strands")
     for p0, p1 in sheet_lines:  # radial threads over the sheet read as silk, not a tarp
@@ -497,6 +504,8 @@ def build_lobby(map_id, cfg, material):
         for q in mids:
             q.z = K.lerp(center.z, p1.z, (q - center).length / max(1e-3, (p1 - center).length)) + 0.75
         g.sweep(mids, 0.3, 3, lambda *a: P["silk"], caps=(False, False))
+    for ring_pts in sheet_rings:  # concentric threads over the sheet
+        g.sweep(ring_pts + ring_pts[:1], 0.25, 3, lambda *a: P["silk"], caps=(False, False))
     for p in web["freeCorners"]:
         p = Vector(p)
         for a, z in web["cornerLines"]:
@@ -512,6 +521,49 @@ def build_lobby(map_id, cfg, material):
         g.strand((x, y, z), (x, y, height(x, y) + 3), 0.35, P["silk"], segments=1)
         MP.dew(g, K.rng_for(map_id, "drop", x), radius=0.9, center=(x, y, height(x, y) + 1.6))
     b.add_geo("DECO", "Silk", g, numbered=False, occluder=False)
+
+    # ---- BARRIER_Boundary: convex slabs just inside the grass/pebble ring (invisible, not climbable)
+    bd = cfg["boundary"]
+    n = bd["segments"]
+    for k in range(n):
+        a0, a1 = TAU * k / n, TAU * (k + 1) / n
+        ring_pts = [(r * math.cos(a), r * math.sin(a)) for r, a in
+                    ((bd["inner"], a0), (bd["outer"], a0), (bd["outer"], a1), (bd["inner"], a1))]
+        corners = [(x, y, bd["bottom"]) for x, y in ring_pts] + [(x, y, bd["top"]) for x, y in ring_pts]
+        b.barrier("Boundary", corners)
+
+    def check_boundary():
+        """Nothing climbable straddles the boundary: every COL/PROP (except the ground) is fully inside or outside."""
+        bad = []
+        for obj in b.objects:
+            if not obj.name.startswith(("COL_", "PROP_")) or obj.name == "COL_ForestFloor":
+                continue
+            mw = obj.matrix_world
+            rs = [(mw @ v.co).xy.length for v in obj.data.vertices]
+            if min(rs) < bd["outer"] and max(rs) > bd["inner"]:
+                bad.append((obj.name, round(min(rs), 1), round(max(rs), 1)))
+        if bad:
+            raise RuntimeError(f"[lobby] climbable objects straddle BARRIER_Boundary ({bd['inner']}-{bd['outer']}): {bad}")
+        print(f"[map] lobby: BARRIER_Boundary ring clear ({bd['segments']} segments, r {bd['inner']}-{bd['outer']})")
+        return {"boundary": {"inner": bd["inner"], "outer": bd["outer"], "segments": bd["segments"],
+                             "bottom": bd["bottom"], "top": bd["top"]}}
+
+    def check_sheet():
+        """The walkable sheet web is only anchored in the stump wall: nothing else climbable pokes through it."""
+        from mathutils.bvhtree import BVHTree
+
+        def bvh(o):
+            return BVHTree.FromPolygons([o.matrix_world @ v.co for v in o.data.vertices],
+                                        [list(p.vertices) for p in o.data.polygons])
+        sheet = next(o for o in b.objects if o.name == "COL_SheetWeb")
+        sb = bvh(sheet)
+        bad = [o.name for o in b.objects if o.name.startswith(("COL_", "PROP_")) and o is not sheet
+               and not o.name.startswith("COL_StumpWall") and sb.overlap(bvh(o))]
+        if bad:
+            raise RuntimeError(f"[lobby] these climbable objects cut through COL_SheetWeb: {bad}")
+        return {}
+
+    b.checks = [check_boundary, check_sheet]
 
     # ---- markers: player spawns
     for i, (x, y) in enumerate(cfg["spawns"], start=1):
@@ -806,16 +858,19 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
             return m @ Vector((u, -T * 0.5 - depth(u, top(u)) * 0.4, z)), K.mix(P["moss"], P["moss_light"], 0.4), 0.8
 
         pieces = []
+        # outer ends tuck just inside the neighbouring wall (whose back is backInset in), so no end cap is
+        # coplanar with another wall's back or with the floor slab's side
+        end = L / 2 - 2 * wall["backInset"]
         if has_door:
-            left = (-L / 2, -hw)
-            right = (hw, L / 2)
+            left = (-end, -hw)
+            right = (hw, end)
             for a, b_ in (left, right):
                 n = max(1, int(math.ceil((b_ - a) / wall["maxPiece"])))
                 pieces += [(K.lerp(a, b_, k / n), K.lerp(a, b_, (k + 1) / n), "wall") for k in range(n)]
             pieces.append((-hw, hw, "lintel"))
         else:
             n = max(1, int(math.ceil(L / wall["maxPiece"])))
-            pieces = [(K.lerp(-L / 2, L / 2, k / n), K.lerp(-L / 2, L / 2, (k + 1) / n), "wall") for k in range(n)]
+            pieces = [(K.lerp(-end, end, k / n), K.lerp(-end, end, (k + 1) / n), "wall") for k in range(n)]
         for u0, u1, kind in pieces:
             ncols = door["lintelColumns"] if kind == "lintel" else max(2, int(round((u1 - u0) / wall["colStep"])))
             us = [K.lerp(u0, u1, c / ncols) for c in range(ncols + 1)]
@@ -823,7 +878,7 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
             g = b.geo("wall", edge, u0)
             g.thick_panel(us, wall["rows"],
                           lambda u, z, m=m, depth=depth: m @ Vector((u, -(T + depth(u, z)), z)),
-                          lambda u, z, m=m: m @ Vector((u, 0.0, z)),
+                          lambda u, z, m=m: m @ Vector((u, -wall["backInset"], z)),
                           lambda u, bot=bot, top=top: (bot(u), top(u)),
                           lambda u, bot=bot, top=top: (bot(u), top(u)),
                           col_front, col_back, col_back, top_mid=mid)
@@ -850,14 +905,17 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
         cn = K.Noise(b.map_id, room_id, "corner", k)
         hz = rng.uniform(H0 * 0.55, H0 * 0.8)
 
-        def clip(n, co, c=c, hz=hz):
-            p = co + c
-            p.x = max(-W / 2, min(W / 2, p.x))
-            p.y = max(-D / 2, min(D / 2, p.y))
-            p.z = min(max(-2.0, p.z), b.interior_max)
-            return p - c
+        center = c + Vector((0, 0, hz * 0.5))
 
-        g.ico(c + Vector((0, 0, hz * 0.5)), (r, r, hz * 0.75), 2,
+        def clip(n, co, center=center):
+            p = co + center
+            hx, hy = W / 2 - 0.3, D / 2 - 0.3  # stay off the boundary plane (no coplanar faces with wall backs)
+            p.x = max(-hx, min(hx, p.x))
+            p.y = max(-hy, min(hy, p.y))
+            p.z = min(max(-2.0, p.z), b.interior_max)
+            return p - center
+
+        g.ico(center, (r, r, hz * 0.75), 2,
               lambda n, co: (K.mix(P["stone"], P["stone_warm"], 0.5 + 0.5 * n.x), 0.8),
               displace=lambda n, cn=cn: 0.14 * cn(n, 1.5, 2), adjust=clip)
         b.add_geo("COL", "Corner", g)
@@ -1230,7 +1288,7 @@ def main():
         total = b.finish(budget, shading, args.draft)
         checks = {}
         for check in getattr(b, "checks", ()):
-            checks = check()
+            checks.update(check() or {})
         if cfg["kind"] != "rooms":
             fbx = os.path.join(exports, f"{args.map}.fbx")
             man = os.path.join(exports, f"{args.map}.manifest.json")
@@ -1244,6 +1302,8 @@ def main():
             W, D = b.footprint
             reports[unit_id].update({"cells": list(cfg["rooms"][unit_id]["cells"]), "footprint": [W, D],
                                      "doors": list(cfg["rooms"][unit_id]["doors"]), **checks})
+        if cfg["kind"] != "rooms" and checks:
+            reports[unit_id].update(checks)
         if cfg["kind"] == "diorama":
             reports[unit_id]["menuCamera"] = {"fieldOfView": cfg["camera"]["fov"],
                                               "note": "CFrame.lookAt(MenuCamera, MenuFocus); UI covers the left third"}

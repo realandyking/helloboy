@@ -79,7 +79,22 @@ python blender/scripts/maps/build_map.py  --map lobby     # sources/maps/lobby.b
 python blender/scripts/maps/render_map.py --map lobby     # renders/maps/lobby_*.jpg
 ```
 
-- **Names.** Every exported object starts with `COL_` (walkable solid), `PROP_` (solid prop), `DECO_` (no collision) or `MARKER_` (a tiny tetrahedron whose origin, and bounds centre, is the position).
+- **Names.** Every exported object starts with one of these prefixes:
+  - `COL_`: walkable solid.
+  - `PROP_`: solid prop.
+  - `DECO_`: no collision.
+  - `BARRIER_`: invisible collision the spider can't stick to. In Studio it is made invisible, it collides, and it is excluded from raycasts, so the movement controller can't climb it. Barriers are simple convex boxes or slabs (12 tris each), one flat grey vertex colour, never baked, and hidden in preview renders.
+  - `MARKER_`: a tiny tetrahedron whose origin, and bounds centre, is the position.
 - **Materials and colour.** Each map has one vertex-colour material. Colour lives in the corner attribute `Col`, and repeated props are linked duplicates.
 - **Budgets.** Every object is capped at 10k tris, and each map or room has a total budget. The build raises when either is exceeded.
-- **Room kit.** Mossy Hollow rooms are exported one FBX per room, each at its own origin. The build also raises unless every connector sits exactly on the boundary, the floor is at z = 0 in every doorway, a 24 × 20 passage is clear, and everything stays inside the footprint.
+- **Room kit.** Mossy Hollow rooms are exported one FBX per room, each at its own origin. The build raises unless all of these hold:
+  - every connector sits exactly on the boundary;
+  - the floor is at z = 0 in every doorway;
+  - a 24 × 20 passage is clear of every solid, `BARRIER_` included;
+  - everything stays inside the footprint.
+- **Room lids.** Each room has a `BARRIER_Lid`: a flat box over its whole footprint, underside 1 stud below the lowest wall top (`lid` in `map_config.py`). Spiders can't climb over a wall and walk out along its back.
+  - Every climbable interior piece (logs, overhead roots, canopies, pillars, corner boulders) must stay 3 studs under the lid. The build lowers hanging pieces and shrinks standing ones that poke above, and the check raises if anything is still over.
+  - Walls are exempt, because their tops are above the lid by design.
+- **Lobby boundary.** `BARRIER_Boundary` is a ring of 36 convex slabs, 200 tall, at r 218–222, just inside the grass and pebble ring. The entrance and every station stay inside it.
+  - The build raises if any `COL_`/`PROP_` object (the forest floor aside) straddles the ring.
+  - It also raises if anything but the stump wall cuts through the walkable sheet web.

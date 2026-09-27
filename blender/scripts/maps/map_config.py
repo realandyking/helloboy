@@ -203,7 +203,7 @@ MAPS["lobby"] = {
     "kind": "hub",
     "title": "Webhollow",
     "budget": 60000,
-    "shading": {"aoDistance": 40.0},
+    "shading": {"aoDistance": 40.0, "occlusion": 0.45, "light": (0.74, 1.06)},   # a lighter hollow than the default
     "stump": {
         "rIn": 105.0, "rOut": 130.0, "height": 150.0,
         "segments": 16, "colsPerSegment": 6,           # 16 closed wall segments (COL_StumpWall_01..16)
@@ -238,18 +238,22 @@ MAPS["lobby"] = {
     # (angle, height, width, depth, thickness): a spiral of shelf-fungus ledges up the inner wall
     "ledges": (
         (325, 36, 36, 22, 11), (352, 48, 30, 19, 10), (20, 60, 40, 24, 12), (48, 72, 32, 20, 11),
-        (78, 84, 42, 26, 12), (108, 96, 34, 21, 11), (138, 106, 40, 24, 12), (166, 114, 30, 19, 10),
-        (194, 121, 44, 26, 13), (222, 130, 34, 21, 11), (250, 128, 38, 22, 11),
+        (78, 84, 42, 26, 12), (108, 94, 34, 21, 11), (138, 99, 40, 24, 12), (166, 96, 30, 19, 10),
+        (194, 102, 44, 26, 13), (224, 112, 34, 21, 11), (252, 128, 38, 22, 11),   # the last five sit under the sheet web's edge
     ),
     "web": {  # a sheet web hammock (walkable COL) slung between the wall and two held-up corners
         "anchors": ((132, 124), (152, 121), (174, 126), (196, 123), (214, 128)),  # (angle, height) on the wall
         "freeCorners": ((-44, -14, 122), (-38, 40, 125)),                         # held up by strands
-        "sag": 9.0,
+        "sag": 15.0, "relief": 3.2,                                                # funnel depth, ridge height
         "cornerLines": ((300, 140), (60, 146), (100, 138)),
         "spans": (((20, 136), (200, 140)), ((320, 132), (110, 146))),
         "dropLines": ((-46, 34, 120), (-48, -6, 118)),
     },
     "roots": (8, 50, 100, 140, 188, 228, 318, 350),
+    "rootReach": (60, 84),
+    # BARRIER_Boundary: invisible convex slabs just inside the grass/pebble ring, so spiders cannot reach the
+    # ring or climb out. Nothing climbable may straddle it (checked); the ring props start outside it.
+    "boundary": {"inner": 218.0, "outer": 222.0, "segments": 36, "bottom": -8.0, "top": 200.0},
     "fairyRing": {"radius": 30, "count": 11, "gapAngle": 270, "gapWidth": 40,
                   "kit": ("mushroom_bell", "mushroom_dome"), "scale": (0.45, 0.65)},
     "exclude": (("circle", 0, 0, 44), ("rect", -26, -140, 26, -36)),     # plaza + entrance lane
@@ -264,43 +268,47 @@ MAPS["lobby"] = {
          "scale": (0.8, 1.2), "prefix": "DECO"},
         {"name": "in_clover", "kit": "clover", "prefix": "DECO", "count": 3, "area": ("annulus", 46, 96),
          "minDist": 12, "cluster": (2, 3, 5)},
-        {"name": "out_pebble", "kit": ("pebble", "pebble_big"), "count": 22, "area": ("annulus", 152, 226),
+        {"name": "out_pebble", "kit": ("pebble", "pebble_big"), "count": 22, "area": ("annulus", 152, 204),
          "minDist": 16, "scale": (0.8, 1.3)},
         {"name": "out_mush", "kit": ("mushroom_dome", "mushroom_red", "mushroom_flat", "mushroom_bell"), "count": 7,
-         "area": ("annulus", 150, 222), "minDist": 26, "scale": (0.8, 1.25), "cluster": (2, 4, 10)},
-        {"name": "out_grass", "kit": "grass_clump", "prefix": "DECO", "count": 16, "area": ("annulus", 150, 228),
+         "area": ("annulus", 150, 190), "minDist": 26, "scale": (0.8, 1.25), "cluster": (2, 4, 10)},
+        {"name": "out_grass", "kit": "grass_clump", "prefix": "DECO", "count": 16, "area": ("annulus", 150, 214),
          "minDist": 16, "scale": (0.8, 1.2)},
         {"name": "out_leaf", "kit": ("leaf_oak", "leaf_round"), "prefix": "DECO", "count": 13,
-         "area": ("annulus", 148, 226), "minDist": 18, "scale": (0.85, 1.15), "sink": 0.2},
-        {"name": "out_twig", "kit": "twig", "prefix": "DECO", "count": 8, "area": ("annulus", 150, 222),
+         "area": ("annulus", 148, 212), "minDist": 18, "scale": (0.85, 1.15), "sink": 0.2},
+        {"name": "out_twig", "kit": "twig", "prefix": "DECO", "count": 8, "area": ("annulus", 150, 206),
          "minDist": 24},
-        {"name": "out_moss", "kit": "moss_mound", "prefix": "DECO", "count": 12, "area": ("annulus", 150, 226),
+        {"name": "out_moss", "kit": "moss_mound", "prefix": "DECO", "count": 12, "area": ("annulus", 150, 212),
          "minDist": 18, "scale": (0.9, 1.5)},
-        {"name": "out_acorn", "kit": ("acorn", "acorn_cap"), "count": 8, "area": ("annulus", 150, 222),
+        {"name": "out_acorn", "kit": ("acorn", "acorn_cap"), "count": 8, "area": ("annulus", 150, 204),
          "minDist": 14},
-        {"name": "out_clover", "kit": "clover", "prefix": "DECO", "count": 5, "area": ("annulus", 150, 222),
+        {"name": "out_clover", "kit": "clover", "prefix": "DECO", "count": 5, "area": ("annulus", 150, 208),
          "minDist": 14, "cluster": (2, 3, 6)},
     ),
     "ring": {  # boundary: rows of (radius, spacing, kits, scale); visual only, Studio adds the invisible wall
-        "rows": ((238, 26, ("grass_tall", "grass_tall", "pebble_big"), (1.0, 1.4)),
-                 (256, 36, ("grass_tall", "leaf_oak", "pebble_big"), (1.1, 1.5))),
-        "jitter": 5.0,
+        "rows": ((242, 26, ("grass_tall", "grass_tall", "pebble_big"), (1.0, 1.4)),
+                 (258, 36, ("grass_tall", "leaf_oak", "pebble_big"), (1.1, 1.5))),
+        "jitter": 4.0,
         "tilt": {"leaf_oak": 50},
-        "stalks": 10, "stalkRadius": (246, 272), "stalkHeight": (80, 120),
+        "stalks": 10, "stalkRadius": (250, 274), "stalkHeight": (80, 120),
     },
     "render": {
         "look": {"sky": (0.46, 0.53, 0.64), "skyStrength": 1.6, "sun": (66, 150), "sunEnergy": 3.6,
                  "sunColor": (1.0, 0.9, 0.76)},
         "spiders": ("PlayerSpawn", "Station"),
         "sheets": (
-            {"name": "lobby_views", "cols": 2, "views": (
+            {"name": "lobby_views", "cols": 3, "views": (
                 {"label": "overview", "loc": (300, -390, 330), "target": (0, -10, 30), "lens": 30},
                 {"label": "interior (from the entrance, spider height)", "loc": (0, -100, 14), "target": (0, 30, 34),
                  "lens": 16},
                 {"label": "interior from the rim: ledges, sheet web", "loc": (80, -70, 170), "target": (-10, 20, 30),
                  "lens": 18},
-                {"label": "outside, player height: entrance arch", "loc": (40, -236, 9), "target": (0, -120, 34),
+                {"label": "outside, player height: entrance arch", "loc": (34, -206, 9), "target": (0, -120, 34),
                  "lens": 20},
+                {"label": "sheet web (walkable COL) from the rim", "loc": (8, -30, 150), "target": (-62, 14, 112),
+                 "lens": 22},
+                {"label": "boundary side: barrier (hidden) runs just inside the ring", "loc": (150, -150, 40),
+                 "target": (215, -40, 20), "lens": 20},
             )},
             {"name": "lobby_stations", "cols": 4, "views": tuple(
                 {"label": sid, "size": (480, 400), "station": sid, "lens": 18}
@@ -328,7 +336,8 @@ MAPS["mossy_hollow"] = {
         "frameRadius": 3.0,     # root that traces the opening on the room side
     },
     "wall": {"thickness": 10.0, "rows": (0.0, 0.06, 0.15, 0.3, 0.48, 0.66, 0.82, 0.93, 1.0), "colStep": 7.0,
-             "noise": 5.0, "flare": 5.0, "lip": 3.5, "maxPiece": 80.0},
+             "noise": 5.0, "flare": 5.0, "lip": 3.5, "maxPiece": 80.0,
+             "backInset": 0.05},   # wall backs sit just inside the boundary so they never z-fight the floor's sides
     "floor": {"step": 10.0, "noise": 1.4, "flat": 12.0, "fade": 30.0},   # no bumps within `flat` of an edge
     "lane": 13.0,               # doorway-to-centre lanes kept clear of solid props (capsule radius)
     # BARRIER_Lid: a flat invisible box over the whole footprint, its underside `gap` under the lowest wall top,
@@ -485,7 +494,12 @@ MAPS["mossy_hollow"] = {
                  "sunColor": (1.0, 0.9, 0.76)},
         "spiders": ("PlayerSpawn", "EnemySpawn", "Chest", "BossSpawn"),
         "sheets": (
-            {"name": "mossy_hollow_rooms", "cols": 4, "rooms": True, "size": (640, 480)},
+            {"name": "mossy_hollow_rooms", "cols": 4, "rooms": True, "size": (640, 480), "extra": (
+                # rooms snapped at their connectors (entry N -> hall S, hall N -> arena_small S): alignment check
+                {"label": "snapped: entry -> hall -> arena_small (lids hidden)", "size": (640, 480),
+                 "assembly": (("mossy_entry", (0, 0)), ("mossy_hall", (0, 80)), ("mossy_arena_small", (0, 200))),
+                 "loc": (150, -150, 260), "target": (0, 95, 0), "lens": 30},
+            )},
             {"name": "mossy_hollow_close", "cols": 3, "views": (
                 {"label": "arena_large, player height (log bridge overhead)", "room": "mossy_arena_large",
                  "loc": (8, -64, 6), "target": (0, 30, 26), "lens": 18},

@@ -145,6 +145,17 @@ def resolve(p):
 def render_view(scene, cam, view, path, scale):
     size = view.get("size", (800, 600))
     scene.render.resolution_x, scene.render.resolution_y = int(size[0] * scale), int(size[1] * scale)
+    moved = []
+    if view.get("assembly"):  # snap rooms together at their origins in a free spot, render, then restore
+        home = Vector((0, -2000, 0))
+        for rid, (ax, ay) in view["assembly"]:
+            coll = bpy.data.collections[rid]
+            delta = home + Vector((ax, ay, 0)) - Vector((*coll["layoutOffset"], 0))
+            for obj in coll.all_objects:
+                obj.location += delta
+                moved.append((obj, delta))
+        view = dict(view, only=tuple(r for r, _ in view["assembly"]),
+                    loc=tuple(Vector(view["loc"]) + home), target=tuple(Vector(view["target"]) + home))
     if view.get("station"):  # stand behind the station marker (hub side) and look at the station
         m = marker_pos("MARKER_Station_" + view["station"])
         d = Vector((-m.x, -m.y, 0)).normalized()
@@ -168,6 +179,8 @@ def render_view(scene, cam, view, path, scale):
     bpy.ops.render.render(write_still=True)
     for obj in hidden:
         obj.hide_render = False
+    for obj, delta in moved:
+        obj.location -= delta
     return path
 
 
@@ -218,9 +231,10 @@ def main():
             views = []
             for rid, rc in cfg["rooms"].items():
                 W, D = rc["cells"][0] * cfg["grid"], rc["cells"][1] * cfg["grid"]
-                S = max(W, D)  # high three-quarter view that looks down into the room (lid hidden)
+                S = max(W, D)  # high, steep three-quarter view that looks down into the room (lid hidden)
                 views.append({"label": rid, "size": sheet.get("size", (640, 480)), "room": rid, "only": (rid,),
-                              "loc": (W * 0.3, -D * 0.75, S * 1.35 + 12), "target": (0, 2, 8), "lens": 40})
+                              "loc": (W * 0.25, -D * 0.6, S * 1.6 + 24), "target": (0, 4, 6), "lens": 30})
+            views += list(sheet.get("extra", ()))
         else:
             views = sheet["views"]
         for k, view in enumerate(views):

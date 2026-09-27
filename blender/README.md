@@ -69,3 +69,17 @@ To add a form, add an entry to `FORMS` in `spider_config.py` (proportions, palet
 5. **Ask before uploading.** Asset-bridge uploads publish to the group.
 
 Write anything you learn here back into this checklist and into `build_spider.py`.
+
+## Maps
+
+There are three places: `main_menu` (menu backdrop), `lobby` (the Webhollow hub) and `mossy_hollow` (the dungeon room kit). All are built headless from `scripts/maps/` and are config-driven, like the spider pipeline. Current state, triangle totals and rebuild commands are in `MAPS_STATUS.md`.
+
+```
+python blender/scripts/maps/build_map.py  --map lobby     # sources/maps/lobby.blend, exports/maps/lobby.fbx + lobby.manifest.json
+python blender/scripts/maps/render_map.py --map lobby     # renders/maps/lobby_*.jpg
+```
+
+- **Names.** Every exported object starts with `COL_` (walkable solid), `PROP_` (solid prop), `DECO_` (no collision) or `MARKER_` (a tiny tetrahedron whose origin, and bounds centre, is the position).
+- **Materials and colour.** Each map has one vertex-colour material. Colour lives in the corner attribute `Col`, and repeated props are linked duplicates.
+- **Budgets.** Every object is capped at 10k tris, and each map or room has a total budget. The build raises when either is exceeded.
+- **Room kit.** Mossy Hollow rooms are exported one FBX per room, each at its own origin. The build also raises unless every connector sits exactly on the boundary, the floor is at z = 0 in every doorway, a 24 × 20 passage is clear, and everything stays inside the footprint.

@@ -135,6 +135,13 @@ class Builder:
         self.objects.append(obj)
         return obj
 
+    def barrier(self, base, corners, numbered=True):
+        """BARRIER_: invisible collision the spider controller cannot stick to (Studio excludes it from raycasts)."""
+        name = self.uname("BARRIER", base, numbered)
+        obj = K.place(name, K.barrier_mesh(f"{self.unit_id}_{name}", corners, self.material), self.coll)
+        self.objects.append(obj)
+        return obj
+
     def block(self, x, y, r, deco=False):
         (self.deco_taken if deco else self.taken).append((x, y, r))
 
@@ -761,6 +768,7 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
 
     # ---- walls: per edge, jamb pieces + an arched lintel where there is a doorway
     b.wall_depth = {}
+    b.wall_tops = []
     H0, H1 = rc["height"]
     for edge in "NESW":
         L = W if edge in "NS" else D
@@ -818,8 +826,9 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
                           lambda u, z, m=m: m @ Vector((u, 0.0, z)),
                           lambda u, bot=bot, top=top: (bot(u), top(u)),
                           lambda u, bot=bot, top=top: (bot(u), top(u)),
-                          col_front, col_back, col_back, top_mid=mid, simple_b=True)
+                          col_front, col_back, col_back, top_mid=mid)
             b.add_geo("COL", f"Wall{edge}", g)
+            b.wall_tops += [top(u) for u in us]
         if has_door:
             obj = K.place(b.uname("COL", f"DoorFrame{edge}", False), frame_mesh, b.coll,
                           m @ Matrix.Translation((0, -T, 0)))
@@ -827,7 +836,12 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
             dm = m @ Vector((0, 0, 0))
             b.marker(f"MARKER_Connector_{edge}", (round(dm.x, 6), round(dm.y, 6), 0.0))
 
-    # ---- corner boulders (clipped to the footprint)
+    # ---- lid: BARRIER_Lid sits 1 stud under the lowest wall top, so nobody climbs over a wall and out
+    lid = cfg["lid"]
+    b.lid_z = min(b.wall_tops) - lid["gap"]
+    b.interior_max = b.lid_z - lid["clearance"]  # climbable interior tops stay this far under the lid
+
+    # ---- corner boulders (clipped to the footprint and kept under the lid)
     rng = K.rng_for(b.map_id, room_id, "corners")
     for k, (sx, sy) in enumerate(((-1, -1), (1, -1), (1, 1), (-1, 1))):
         r = T + rng.uniform(6, 9)
@@ -840,7 +854,7 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
             p = co + c
             p.x = max(-W / 2, min(W / 2, p.x))
             p.y = max(-D / 2, min(D / 2, p.y))
-            p.z = max(-2.0, p.z)
+            p.z = min(max(-2.0, p.z), b.interior_max)
             return p - c
 
         g.ico(c + Vector((0, 0, hz * 0.5)), (r, r, hz * 0.75), 2,
@@ -1036,6 +1050,32 @@ def build_room(b, cfg, rc, room_id, frame_mesh):
         b.block(x, y, nc["radius"] + 6)
         b.block(x, y, nc["radius"] + 2, deco=True)
 
+    # ---- keep every climbable interior piece under the lid: ceiling pieces drop, standing props shrink
+    b.fitted = []
+    for obj in list(b.objects):
+        if not obj.name.startswith(("COL_", "PROP_")) or obj.name.startswith(("COL_Wall", "COL_Floor")):
+            continue
+        bpy.context.view_layer.update()
+        lo, hi = K.world_bounds(obj)
+        if hi.z <= b.interior_max:
+            continue
+        if lo.z > 8.0:  # hanging / spanning piece: lower it (its ends stay buried in the walls)
+            obj.location.z -= hi.z - b.interior_max
+            b.fitted.append((obj.name, "lowered", round(hi.z - b.interior_max, 2)))
+        elif obj.data.get("kit"):  # standing kit prop: shrink uniformly about its base (its origin)
+            base = obj.location.z
+            f = (b.interior_max - base) / (hi.z - base)
+            obj.scale *= f
+            b.fitted.append((obj.name, "scaled", round(f, 3)))
+        else:           # standing unique piece (origin at the room origin): squash its height only
+            f = b.interior_max / hi.z
+            obj.scale.z *= f
+            b.fitted.append((obj.name, "squashed", round(f, 3)))
+    if b.fitted:
+        print(f"[map] {room_id}: fitted under the lid (z {b.interior_max:.1f}): {b.fitted}")
+    b.barrier("Lid", K.box_corners((-W / 2, -D / 2, b.lid_z), (W / 2, D / 2, b.lid_z + lid["thickness"])),
+              numbered=False)
+
     # ---- filler scatter inside the walls
     inset = T + 7
     area = ("rect", -W / 2 + inset, -D / 2 + inset, W / 2 - inset, D / 2 - inset)
@@ -1059,7 +1099,8 @@ def check_room(b, cfg, rc, room_id):
     cw, ch = door["clear"]
     eps = 1e-3
     markers = {o.name: o.matrix_world.translation for o in b.objects if o.name.startswith("MARKER_")}
-    solids = [o for o in b.objects if o.name.startswith(("COL_", "PROP_")) and o is not b.floor]
+    # doorway passages must be clear of every solid, including invisible BARRIER_ collision
+    solids = [o for o in b.objects if o.name.startswith(("COL_", "PROP_", "BARRIER_")) and o is not b.floor]
     verts, polys = [], []
     for obj in solids:
         base = len(verts)
@@ -1132,8 +1173,25 @@ def check_room(b, cfg, rc, room_id):
         lo, hi = K.world_bounds(obj)
         if lo.x < -W / 2 - eps or hi.x > W / 2 + eps or lo.y < -D / 2 - eps or hi.y > D / 2 + eps:
             raise RuntimeError(f"[{room_id}] {obj.name} leaves the {W}x{D} footprint: {tuple(lo)} {tuple(hi)}")
-    print(f"[map] {room_id}: doorways OK {report}")
-    return report
+    # the lid covers the whole footprint 1 stud under the lowest wall top, and nothing climbable pokes above it
+    lid = [o for o in b.objects if o.name == "BARRIER_Lid"]
+    if len(lid) != 1:
+        raise RuntimeError(f"[{room_id}] needs exactly one BARRIER_Lid")
+    lo, hi = K.world_bounds(lid[0])
+    if abs(lo.x + W / 2) > eps or abs(hi.x - W / 2) > eps or abs(lo.y + D / 2) > eps or abs(hi.y - D / 2) > eps:
+        raise RuntimeError(f"[{room_id}] BARRIER_Lid does not cover the {W}x{D} footprint")
+    if abs(lo.z - (min(b.wall_tops) - cfg["lid"]["gap"])) > eps:
+        raise RuntimeError(f"[{room_id}] BARRIER_Lid underside {lo.z} is not {cfg['lid']['gap']} under the lowest wall top")
+    for obj in b.objects:
+        if obj.name.startswith(("COL_", "PROP_")) and not obj.name.startswith(("COL_Wall", "COL_Floor")):
+            top_z = K.world_bounds(obj)[1].z
+            if top_z > lo.z - cfg["lid"]["clearance"] + eps:
+                raise RuntimeError(f"[{room_id}] {obj.name} reaches z {top_z:.2f}, above the lid clearance "
+                                   f"({lo.z - cfg['lid']['clearance']:.2f})")
+    print(f"[map] {room_id}: doorways OK {report}; lid at z {lo.z:.2f}")
+    return {"doorways": report,
+            "lid": {"underside": round(lo.z, 3), "top": round(hi.z, 3), "clearance": cfg["lid"]["clearance"],
+                    "lowestWallTop": round(min(b.wall_tops), 3), "fitted": [list(f) for f in b.fitted]}}
 
 
 def build_rooms(map_id, cfg, material):
@@ -1185,7 +1243,7 @@ def main():
         if cfg["kind"] == "rooms":
             W, D = b.footprint
             reports[unit_id].update({"cells": list(cfg["rooms"][unit_id]["cells"]), "footprint": [W, D],
-                                     "doors": list(cfg["rooms"][unit_id]["doors"]), "doorways": checks})
+                                     "doors": list(cfg["rooms"][unit_id]["doors"]), **checks})
         if cfg["kind"] == "diorama":
             reports[unit_id]["menuCamera"] = {"fieldOfView": cfg["camera"]["fov"],
                                               "note": "CFrame.lookAt(MenuCamera, MenuFocus); UI covers the left third"}

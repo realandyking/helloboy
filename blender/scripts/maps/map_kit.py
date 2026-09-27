@@ -26,7 +26,8 @@ BLENDER_DIR = os.path.dirname(os.path.dirname(HERE))
 UP = Vector((0.0, 0.0, 1.0))
 IDENTITY = Matrix.Identity(4)
 TAU = math.tau
-PREFIXES = ("COL", "PROP", "DECO", "MARKER")
+PREFIXES = ("COL", "PROP", "DECO", "MARKER", "BARRIER")
+BARRIER_COLOR = (0.5, 0.5, 0.5)  # BARRIER_ parts are invisible in Studio; one flat grey so they read as helpers
 MAX_OBJECT_TRIS = 10000
 DOOR_DIRS = {"N": (0, 1), "E": (1, 0), "S": (0, -1), "W": (-1, 0)}
 
@@ -283,13 +284,12 @@ class Geo:
         self.sweep(pts, radius, sides, lambda *a: color, m=m, caps=(False, False))
 
     # -- slabs
-    def thick_panel(self, us, rows, pos_a, pos_b, z_a, z_b, color_a, color_b, color_rim,
-                    top_mid=None, simple_b=False):
-        """A closed slab between surface A and surface B, sampled on columns `us`.
+    def thick_panel(self, us, rows, pos_a, pos_b, z_a, z_b, color_a, color_b, color_rim, top_mid=None):
+        """A closed slab between surface A and surface B, sampled on columns `us`. Both surfaces are quad grids
+        on the same columns and rows (no big n-gons, so no long triangulation shards).
         z_a(u) / z_b(u) -> (bottom, top). rows: fractions 0..1 up each column.
         pos_a(u, z) / pos_b(u, z) -> Vector. color_*(u, z, co) -> rgb | (rgb, moss).
-        top_mid(u) -> (co, rgb, moss) adds a ridge vertex between the two top edges (e.g. a jagged rim).
-        simple_b: surface B is flat, so it becomes one n-gon of its boundary (hidden backs of walls)."""
+        top_mid(u) -> (co, rgb, moss) adds a ridge vertex between the two top edges (e.g. a jagged rim)."""
         nc, nr = len(us), len(rows)
         cols_a, cols_b = [], []
         for ci, u in enumerate(us):
@@ -302,10 +302,7 @@ class Geo:
             cols_a.append(col)
             zb, zt = z_b(u)
             col = []
-            for ri, s in enumerate(rows):
-                if simple_b and 0 < ci < nc - 1 and 0 < ri < nr - 1:
-                    col.append(None)
-                    continue
+            for s in rows:
                 z = lerp(zb, zt, s)
                 co = pos_b(u, z)
                 col.append(self.vert(co, *_cm(color_b(u, z, co))))
@@ -320,16 +317,9 @@ class Geo:
             for ri in range(nr - 1):
                 self.face((cols_a[ci][ri], cols_a[ci + 1][ri], cols_a[ci + 1][ri + 1], cols_a[ci][ri + 1]))
         # surface B
-        if simple_b:
-            loop = [cols_b[ci][0] for ci in range(nc)]
-            loop += [cols_b[nc - 1][ri] for ri in range(1, nr)]
-            loop += [cols_b[ci][nr - 1] for ci in range(nc - 2, -1, -1)]
-            loop += [cols_b[0][ri] for ri in range(nr - 2, 0, -1)]
-            self.face(loop)
-        else:
-            for ci in range(nc - 1):
-                for ri in range(nr - 1):
-                    self.face((cols_b[ci][ri], cols_b[ci][ri + 1], cols_b[ci + 1][ri + 1], cols_b[ci + 1][ri]))
+        for ci in range(nc - 1):
+            for ri in range(nr - 1):
+                self.face((cols_b[ci][ri], cols_b[ci][ri + 1], cols_b[ci + 1][ri + 1], cols_b[ci + 1][ri]))
         # top and bottom strips
         for ci in range(nc - 1):
             at, at2 = cols_a[ci][-1], cols_a[ci + 1][-1]
@@ -540,6 +530,36 @@ def add_marker(name, pos, coll, material):
     return obj
 
 
+def box_corners(lo, hi):
+    """8 corners (bottom 4 counter-clockwise, then top 4) of an axis-aligned box."""
+    (x0, y0, z0), (x1, y1, z1) = lo, hi
+    return [(x0, y0, z0), (x1, y0, z0), (x1, y1, z0), (x0, y1, z0), (x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)]
+
+
+def barrier_mesh(name, corners, material):
+    """BARRIER_ collision: a closed convex hexahedron (12 tris) from 8 corners, bottom 4 then the matching top 4.
+    Flat grey, flat shaded, never baked and never an occluder (it is invisible in game)."""
+    bm = bmesh.new()
+    vs = [bm.verts.new(Vector(c)) for c in corners]
+    for f in ((0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)):
+        bm.faces.new([vs[i] for i in f])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
+    col = bm.loops.layers.color.new("Col")
+    for f in bm.faces:
+        f.smooth = False
+        for loop in f.loops:
+            loop[col] = (*BARRIER_COLOR, 1.0)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    me.materials.append(material)
+    me["barrier"] = True
+    me["occluder"] = False
+    me.color_attributes.active_color_name = "Col"
+    me.color_attributes.default_color_name = "Col"
+    return me
+
+
 # ---------------------------------------------------------------- vertex-paint bake
 
 def _hemisphere(k):
@@ -574,7 +594,7 @@ def bake_colors(objects, shading, palette):
     moss_noise = Noise("moss")
     for obj in objects:
         me = obj.data
-        if me.get("marker") or me.get("baked"):
+        if me.get("marker") or me.get("barrier") or me.get("baked"):
             continue
         if me.get("kit"):
             bvh = BVHTree.FromPolygons([v.co for v in me.vertices], [list(p.vertices) for p in me.polygons])

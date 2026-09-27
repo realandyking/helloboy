@@ -331,6 +331,10 @@ MAPS["mossy_hollow"] = {
              "noise": 5.0, "flare": 5.0, "lip": 3.5, "maxPiece": 80.0},
     "floor": {"step": 10.0, "noise": 1.4, "flat": 12.0, "fade": 30.0},   # no bumps within `flat` of an edge
     "lane": 13.0,               # doorway-to-centre lanes kept clear of solid props (capsule radius)
+    # BARRIER_Lid: a flat invisible box over the whole footprint, its underside `gap` under the lowest wall top,
+    # so spiders cannot climb over a wall and out along its back. Climbable interior pieces stay `clearance`
+    # under it (the build lowers hanging pieces / shrinks standing ones that poke above, and the check raises).
+    "lid": {"gap": 1.0, "thickness": 2.0, "clearance": 3.0},
     "shading": {"aoDistance": 26.0},
     # default filler per room; counts are multiplied by the room's scatterScale
     "scatter": (
@@ -348,13 +352,13 @@ MAPS["mossy_hollow"] = {
     ),
     "rooms": {
         "mossy_entry": {
-            "cells": (1, 1), "doors": ("N",), "budget": 8000, "height": (46, 54), "layout": (0, 0),
+            "cells": (1, 1), "doors": ("N",), "budget": 8000, "height": (52, 58), "layout": (0, 0),
             "scatterScale": 1.0,
             "spawns": ((-8, -20), (8, -20), (-8, -8), (8, -8)),
             "features": (
-                {"type": "ceilingRoot", "points": ((-37, -14, 52), (-15, -9, 45), (10, -16, 46), (37, -12, 51)), "r": (5.0, 3.5)},
-                {"type": "ceilingRoot", "points": ((-22, -37, 50), (-12, -12, 47), (-3, 18, 46), (5, 37, 52)), "r": (4.5, 3.0)},
-                {"type": "silkDrop", "at": (1, -13), "top": 46},
+                {"type": "ceilingRoot", "points": ((-37, -14, 44), (-15, -9, 38), (10, -16, 39), (37, -12, 43)), "r": (5.0, 3.5)},
+                {"type": "ceilingRoot", "points": ((-22, -37, 43), (-12, -12, 41), (-3, 18, 40), (5, 37, 44)), "r": (4.5, 3.0)},
+                {"type": "silkDrop", "at": (1, -13), "top": 38},
                 {"type": "mushrooms", "at": (-21, -22), "kit": ("mushroom_dome", "mushroom_red", "mushroom_bell"), "n": 4, "radius": 7},
                 {"type": "stack", "at": (21, -22), "scales": (1.2, 0.9, 0.6)},
                 {"type": "mushrooms", "at": (20, 18), "kit": ("mushroom_flat", "mushroom_bell"), "n": 3, "radius": 6},
@@ -363,10 +367,10 @@ MAPS["mossy_hollow"] = {
             ),
         },
         "mossy_hall": {
-            "cells": (1, 1), "doors": ("N", "S"), "budget": 8000, "height": (48, 56), "layout": (320, 0),
+            "cells": (1, 1), "doors": ("N", "S"), "budget": 8000, "height": (52, 58), "layout": (320, 0),
             "scatterScale": 1.0,
             "features": (
-                {"type": "leafCanopy", "at": (0, 6, 50), "yaw": 90, "length": 66, "curl": 0.3},
+                {"type": "leafCanopy", "at": (0, 6, 42), "yaw": 90, "length": 66, "curl": 0.3},
                 {"type": "rootArch", "from": (-24, -22), "to": (-22, 20), "height": 30, "r": (5.0, 3.5)},
                 {"type": "pillar", "at": (23, -18), "scale": 1.0},
                 {"type": "pillar", "at": (22, 18), "scale": 0.75},
@@ -376,10 +380,10 @@ MAPS["mossy_hollow"] = {
             ),
         },
         "mossy_turn": {
-            "cells": (1, 1), "doors": ("S", "E"), "budget": 8000, "height": (46, 54), "layout": (640, 0),
+            "cells": (1, 1), "doors": ("S", "E"), "budget": 8000, "height": (52, 58), "layout": (640, 0),
             "scatterScale": 1.0,
             "features": (
-                {"type": "log", "center": (-12, 12), "z": 40, "yaw": 45, "length": 60, "radius": 8},
+                {"type": "log", "center": (-12, 12), "z": 29, "yaw": 45, "length": 60, "radius": 8},
                 {"type": "pillar", "at": (-22, -20), "scale": 0.85},
                 {"type": "mushrooms", "at": (-22, 22), "kit": ("mushroom_dome", "mushroom_bell"), "n": 3, "radius": 6},
                 {"type": "stack", "at": (22, 22), "scales": (1.3, 1.0, 0.65)},
@@ -389,7 +393,7 @@ MAPS["mossy_hollow"] = {
             ),
         },
         "mossy_arena_small": {
-            "cells": (2, 2), "doors": ("S", "N"), "budget": 15000, "height": (50, 58), "layout": (0, 400),
+            "cells": (2, 2), "doors": ("S", "N"), "budget": 15000, "height": (56, 62), "layout": (0, 400),
             "scatterScale": 2.5,
             "enemies": ((-32, 22), (32, 22), (-42, -18), (42, -18), (0, 34), (0, -30)),
             "features": (
@@ -402,8 +406,8 @@ MAPS["mossy_hollow"] = {
                 {"type": "rootArch", "from": (60, 10), "to": (38, 36), "height": 24, "r": (5.0, 3.5)},
                 {"type": "mushrooms", "at": (-24, -50), "kit": ("mushroom_red", "mushroom_dome"), "n": 4, "radius": 7},
                 {"type": "mushrooms", "at": (28, -4), "kit": ("mushroom_bell", "mushroom_dome"), "n": 3, "radius": 5},
-                {"type": "ceilingRoot", "points": ((-76, 46, 56), (-44, 60, 48), (-8, 64, 52), (20, 76, 57)), "r": (5.5, 3.5)},
-                {"type": "ceilingRoot", "points": ((76, -48, 55), (44, -60, 47), (12, -64, 51), (-18, -76, 56)), "r": (5.5, 3.5)},
+                {"type": "ceilingRoot", "points": ((-76, 46, 48), (-44, 60, 42), (-8, 64, 45), (20, 76, 49)), "r": (5.5, 3.5)},
+                {"type": "ceilingRoot", "points": ((76, -48, 48), (44, -60, 41), (12, -64, 44), (-18, -76, 49)), "r": (5.5, 3.5)},
                 {"type": "ledge", "edge": "W", "u": 22, "z": 24, "size": (26, 16, 8)},
                 {"type": "ledge", "edge": "E", "u": 30, "z": 28, "size": (24, 15, 8)},
                 {"type": "ledge", "edge": "N", "u": 40, "z": 32, "size": (22, 14, 8)},
@@ -411,11 +415,11 @@ MAPS["mossy_hollow"] = {
             ),
         },
         "mossy_arena_large": {
-            "cells": (2, 2), "doors": ("S", "E", "W"), "budget": 15000, "height": (50, 60), "layout": (400, 400),
+            "cells": (2, 2), "doors": ("S", "E", "W"), "budget": 15000, "height": (56, 62), "layout": (400, 400),
             "scatterScale": 2.5,
             "enemies": ((-30, 30), (30, 30), (0, 44), (-45, -30), (45, -30), (-22, -8), (22, 6)),
             "features": (
-                {"type": "log", "center": (0, 50), "z": 36, "yaw": 0, "length": 150, "radius": 11},
+                {"type": "log", "center": (0, 50), "z": 28, "yaw": 0, "length": 150, "radius": 11},
                 {"type": "pillar", "at": (-50, -48), "scale": 1.0},
                 {"type": "pillar", "at": (52, -46), "scale": 0.85},
                 {"type": "stack", "at": (-56, 28), "scales": (1.3, 0.9)},
@@ -423,18 +427,18 @@ MAPS["mossy_hollow"] = {
                 {"type": "rootArch", "from": (-62, -30), "to": (-34, -58), "height": 26, "r": (5.0, 3.5)},
                 {"type": "mushrooms", "at": (30, -22), "kit": ("mushroom_red", "mushroom_dome", "mushroom_bell"), "n": 4, "radius": 7},
                 {"type": "mushrooms", "at": (-28, 50), "kit": ("mushroom_flat", "mushroom_bell"), "n": 3, "radius": 6},
-                {"type": "ceilingRoot", "points": ((76, -40, 56), (50, -58, 48), (30, -76, 55)), "r": (5.0, 3.5)},
+                {"type": "ceilingRoot", "points": ((76, -40, 48), (50, -58, 41), (30, -76, 47)), "r": (5.0, 3.5)},
                 {"type": "ledge", "edge": "N", "u": -40, "z": 22, "size": (24, 15, 8)},
                 {"type": "ledge", "edge": "S", "u": 40, "z": 26, "size": (24, 15, 8)},
                 {"type": "ledge", "edge": "E", "u": 40, "z": 30, "size": (22, 14, 8)},
             ),
         },
         "mossy_treasure": {
-            "cells": (1, 1), "doors": ("S",), "budget": 8000, "height": (48, 56), "layout": (960, 0),
+            "cells": (1, 1), "doors": ("S",), "budget": 8000, "height": (52, 58), "layout": (960, 0),
             "scatterScale": 0.8,
             "chest": {"at": (0, 12), "radius": 12, "height": 5},
             "features": (
-                {"type": "leafCanopy", "at": (0, 16, 50), "yaw": 90, "length": 54, "curl": 0.35},
+                {"type": "leafCanopy", "at": (0, 16, 42), "yaw": 90, "length": 54, "curl": 0.35},
                 {"type": "eggs", "at": (-22, 20), "n": 5, "radius": 6},
                 {"type": "amber", "at": (0, 12), "n": 6, "radius": 15},
                 {"type": "web", "at": (21, 21, 20), "yaw": -45, "radius": 10},
@@ -444,7 +448,7 @@ MAPS["mossy_hollow"] = {
             ),
         },
         "mossy_boss": {
-            "cells": (3, 3), "doors": ("S",), "budget": 25000, "height": (54, 64), "thickness": 14, "layout": (840, 400),
+            "cells": (3, 3), "doors": ("S",), "budget": 25000, "height": (58, 64), "thickness": 14, "layout": (840, 400),
             "scatterScale": 3.0,
             "lanes": (((0, -120), (0, 20)),),
             "boss": (0, 6), "extraction": (0, -44),
@@ -457,10 +461,10 @@ MAPS["mossy_hollow"] = {
                 {"type": "tunnel", "edge": "E", "u": -64, "z": 30, "r": 8},
                 {"type": "tunnel", "edge": "N", "u": -72, "z": 12, "r": 9},
                 {"type": "tunnel", "edge": "N", "u": 64, "z": 14, "r": 8},
-                {"type": "ceilingRoot", "points": ((-112, 56, 62), (-80, 82, 52), (-54, 112, 62)), "r": (7.0, 4.5)},
-                {"type": "ceilingRoot", "points": ((112, 48, 60), (82, 80, 50), (48, 112, 62)), "r": (7.0, 4.5)},
-                {"type": "ceilingRoot", "points": ((112, -64, 58), (84, -86, 50), (62, -112, 60)), "r": (6.0, 4.0)},
-                {"type": "leafCanopy", "at": (-70, -72, 58), "yaw": -40, "length": 64, "curl": 0.3},
+                {"type": "ceilingRoot", "points": ((-112, 56, 50), (-80, 82, 42), (-54, 112, 50)), "r": (7.0, 4.5)},
+                {"type": "ceilingRoot", "points": ((112, 48, 49), (82, 80, 41), (48, 112, 50)), "r": (7.0, 4.5)},
+                {"type": "ceilingRoot", "points": ((112, -64, 48), (84, -86, 41), (62, -112, 49)), "r": (6.0, 4.0)},
+                {"type": "leafCanopy", "at": (-70, -72, 46), "yaw": -40, "length": 64, "curl": 0.3},
                 {"type": "pillar", "at": (-82, -40), "scale": 1.1},
                 {"type": "pillar", "at": (86, -34), "scale": 1.0},
                 {"type": "pillar", "at": (-88, 30), "scale": 0.8},
@@ -482,14 +486,19 @@ MAPS["mossy_hollow"] = {
         "spiders": ("PlayerSpawn", "EnemySpawn", "Chest", "BossSpawn"),
         "sheets": (
             {"name": "mossy_hollow_rooms", "cols": 4, "rooms": True, "size": (640, 480)},
-            {"name": "mossy_hollow_close", "cols": 2, "views": (
+            {"name": "mossy_hollow_close", "cols": 3, "views": (
                 {"label": "arena_large, player height (log bridge overhead)", "room": "mossy_arena_large",
                  "loc": (8, -64, 6), "target": (0, 30, 26), "lens": 18},
                 {"label": "boss, player height (ant nest, wall tunnels)", "room": "mossy_boss",
                  "loc": (10, -80, 8), "target": (0, 50, 22), "lens": 18},
                 {"label": "hall, doorway (S) looking north", "room": "mossy_hall",
                  "loc": (0, -46, 8), "target": (0, 20, 16), "lens": 18},
-                {"label": "entry spawn", "room": "mossy_entry", "loc": (12, -30, 10), "target": (-4, 10, 12), "lens": 18},
+                {"label": "entry, looking back at the spawns (from the N doorway lane)", "room": "mossy_entry",
+                 "loc": (-4, 24, 16), "target": (4, -18, 8), "lens": 18},
+                {"label": "outside: arena_small wall backs from above (lid hidden)", "room": "mossy_arena_small",
+                 "loc": (150, -135, 95), "target": (0, 0, 22), "lens": 26, "only": ("mossy_arena_small",)},
+                {"label": "outside: turn wall backs (lid hidden)", "room": "mossy_turn",
+                 "loc": (-95, 95, 45), "target": (0, 0, 22), "lens": 24, "only": ("mossy_turn",)},
             )},
         ),
     },

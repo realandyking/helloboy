@@ -203,6 +203,9 @@ def main():
     markers = [o for o in bpy.data.objects if o.name.startswith("MARKER_")]
     for m in markers:
         m.hide_render = True
+    for o in bpy.data.objects:  # BARRIER_ collision is invisible in game: keep it out of the previews
+        if o.name.startswith("BARRIER_"):
+            o.hide_render = True
     add_spiders(markers, rcfg.get("spiders", ("PlayerSpawn", "SpiderPose")))
     if rcfg.get("glow"):
         glow_previews(*rcfg["glow"])
@@ -215,8 +218,9 @@ def main():
             views = []
             for rid, rc in cfg["rooms"].items():
                 W, D = rc["cells"][0] * cfg["grid"], rc["cells"][1] * cfg["grid"]
+                S = max(W, D)  # high three-quarter view that looks down into the room (lid hidden)
                 views.append({"label": rid, "size": sheet.get("size", (640, 480)), "room": rid, "only": (rid,),
-                              "loc": (W * 0.55, -D * 1.05, max(W, D) * 0.95), "target": (0, 0, 6), "lens": 24})
+                              "loc": (W * 0.3, -D * 0.75, S * 1.35 + 12), "target": (0, 2, 8), "lens": 40})
         else:
             views = sheet["views"]
         for k, view in enumerate(views):

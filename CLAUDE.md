@@ -42,9 +42,11 @@ blender/             headless Blender pipeline (see blender/README.md)
   - `COL_`: walkable/climbable, precise collision.
   - `PROP_`: solid props, hull collision.
   - `DECO_`: no collision.
+  - `BARRIER_`: invisible collision that raycasts ignore, so spiders can't stick to or climb it. Rooms get a lid at wall-top height so nobody climbs out, and the Lobby gets a boundary ring.
   - `MARKER_<Type>[_<Id>]`: turned into invisible anchored parts in a `Markers` folder. Code finds them with the `Markers` module. `MARKER_Station_<id>` gets that station's ProximityPrompt.
 - **Marker types:** `PlayerSpawn_n`, `Station_<id>`, `Connector_<N|E|S|W>`, `EnemySpawn_n`, `BossSpawn`, `Chest_n`, `Extraction`, `MenuCamera`, `MenuFocus`, `SpiderPose`, `DungeonGate`.
 - **Dungeon rooms:**
+  - Each room is listed in the Rooms registry with its kind, size and doors.
   - Rooms sit on an 80-stud grid.
   - Every doorway is 24 wide × 20 tall and centred on a room edge, with its connector marker on the floor at the boundary.
   - Rooms rotate in 90° steps.
@@ -192,7 +194,12 @@ return {
 ### 9.1 Run structure
 - A party of 1–4 picks a **dungeon** and a **difficulty** (Normal / Hard / Nightmare). Difficulty scales enemy HP and damage, and those multipliers also scale with party size (`DungeonConfig`).
 - **Room flow:** entry → combat, event and treasure rooms → mini-boss → boss → extraction chest.
-- **Generator:** assembles **room templates** (built in Blender, see Map rules) by snapping their `MARKER_Connector_<dir>` doorways together. The room pool, counts and weights come from `DungeonRegistry` and `RoomRegistry`. RNG is seeded, so a run can be reproduced for debugging.
+- **Generator (built):** `DungeonLayout` plans a seeded run on a 40-stud half-cell grid.
+  - The path runs entry → 4–6 path rooms → boss, with 90° rotations and no overlaps.
+  - Every doorway meets exactly one other, so a path room's extra doors get dead ends (treasure) and no doorway ever opens onto nothing.
+  - `DungeonService` then clones each room from `ServerStorage.RoomTemplates`. It finds each template's origin from its connector markers and places the room.
+  - Room data lives in the `Rooms` registry (kind, size, doors, weight), and the path length in the `Dungeons` registry's `layout`.
+  - The same seed always gives the same dungeon.
 - **Vertical design:** spiders climb, so rooms use walls and ceilings: ceiling routes, hidden nooks, drop ambushes and falling hazards.
 
 ### 9.2 Biomes
@@ -283,8 +290,8 @@ ReplicatedStorage/
   Net                  the one RemoteEvent
   Assets/VFX/SilkBeam  Beam template
   Shared/
-    Config/            NetConfig, InputConfig, PlaceConfig, MovementConfig, NoticeConfig
-    Registries/        Currencies, Settings, Panels, Stations, Dungeons
+    Config/            NetConfig, InputConfig, PlaceConfig, MovementConfig, NoticeConfig, DungeonConfig
+    Registries/        Currencies, Settings, Panels, Stations, Dungeons, Rooms
     Modules/           Net, NetCodec, Registry, RegistryChecks, Signal, TableUtil, Boot, Place,
                        Markers, SurfaceMath, UIFit
 ServerScriptService/
@@ -292,8 +299,11 @@ ServerScriptService/
   Server/
     Main               registry checks, Net, then the Services for this role
     Config/            DataConfig
-    Modules/           ProfileUtil
-    Services/          DataService, SettingsService, TravelService, SpawnService, SilkService
+    Modules/           ProfileUtil, DungeonLayout
+    Services/          DataService, SettingsService, TravelService, SpawnService, SilkService,
+                       DungeonService
+ServerStorage/
+  RoomTemplates/       imported, prepped room models (named by Rooms id)
 StarterGui/            HUD, Crosshair, SettingsPanel, DungeonGate, MainMenu (templates)
 StarterPlayer/
   StarterCharacter     placeholder spider (physics root + constraints); swap the body for the Spiderling
@@ -306,10 +316,10 @@ StarterPlayer/
 ```
 - **Planned additions** go in the same folders:
   - Configs: Combat, Economy, Progression, Dungeon.
-  - Registries: Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Enemies, Rooms, LootTables, Banners, Broods, Shops, Quests, Models, AnimSets.
-  - Services: Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status, Enemy, Dungeon, Loot, Party, Quest.
+  - Registries: Forms, Abilities, StatusEffects, Items, Affixes, Rarities, Enemies, LootTables, Banners, Broods, Shops, Quests, Models, AnimSets.
+  - Services: Inventory, Economy, Shop, Hatchery, Evolution, Combat, Ability, Status, Enemy, Loot, Party, Quest.
   - Controllers: Ability, Camera, VFX, Audio.
-  - `ServerStorage`: RoomTemplates, EnemyModels.
+  - `ServerStorage`: EnemyModels.
 - Each service or controller is a ModuleScript with optional `roles`, `priority`, `init()` and `start()`. `Boot` skips systems whose roles leave out this place, then runs every `init` (highest priority first), then every `start`.
 - ModuleScript names are unique across the game. For example, the Settings registry and the `SettingsPanel` panel module have different names.
 - Where Pursuit of Immortality has a better pattern for something, adapt it into this layout.
@@ -364,7 +374,7 @@ StarterPlayer/
 | **M0 Foundations** | **Delivered as installers:** Net (one remote), Registry, ProfileStore DataService, Platform/Input/Data controllers, Boot, place roles and travel, UI panel framework and templates (HUD, Settings, Dungeon Gate, Main Menu), map prep tool. **Maps:** first pass of Main Menu, Lobby and all 7 Mossy Hollow rooms built in Blender, within budget (see `blender/MAPS_STATUS.md`). **To do:** install, import and check in Studio | You can join, data saves, and a panel opens and closes on PC, console and phone. |
 | **M1 Spider feel** | **Prototype delivered:** wall and ceiling walking, edge wrapping, jump and drop, landing on any surface, Silk Line zip. **To do:** tune the feel in Studio, Spiderling mesh and animations (built in `blender/`, import pending), foot IK, Bite on a dummy | Crossing a room over its walls and ceiling feels good on PC and phone. |
 | **M2 Combat core** | Ability framework, status effects, 2 enemy archetypes, damage numbers, cocoon and revive | 2 players clear a test room. |
-| **M3 Dungeon run** | Room generator, Mossy Hollow kit, mini-boss and Ant Queen, loot drops, results screen, lobby↔dungeon travel with the MemoryStore run record | A full run works end to end and the loot banks. **This is the vertical slice.** |
+| **M3 Dungeon run** | **Delivered:** room generator (seeded layout + builder), Mossy Hollow room kit, lobby↔dungeon travel with the MemoryStore run record. **To do:** mini-boss and Ant Queen, enemies in the spawn markers, loot drops, extraction, results screen | A full run works end to end and the loot banks. **This is the vertical slice.** |
 | **M4 Lobby economy** | Inventory and equip, gear and affixes, Merchant, Outfitter, Stash, currencies | You can sell, buy, equip and store. |
 | **M5 Evolution and Hatchery** | Molting Shrine and tree UI, 4 paths at T1–T2, Hatchery with odds and pity, Broodlings | You can evolve, switch paths, and hatch and equip a Broodling. |
 | **M6 Content and polish** | T3 apexes, The Cellar, more bosses, VFX and audio pass, mobile and performance pass | The launch content set is complete. |

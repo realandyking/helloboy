@@ -21,9 +21,9 @@ The maps are FBX files built in Blender: `blender/exports/maps/`.
 1. Import the place's map with the 3D Importer (or the asset bridge; **ask before uploading**, since uploads publish to the group):
    - Main Menu: `main_menu.fbx`
    - Lobby: `lobby.fbx`
-   - Mossy Hollow: the rooms in `mossy_hollow/`. Put them in `ServerStorage.RoomTemplates` for the generator, and drag `mossy_entry` into Workspace to test movement.
+   - Mossy Hollow: the 7 rooms in `mossy_hollow/`. Name each model after its file (`mossy_entry`, `mossy_hall`, ...), run map prep on each, then put them in `ServerStorage.RoomTemplates`. **Leave nothing in Workspace:** the dungeon is built there at runtime, with the entry room at the origin.
 2. Check the size on the first import: the spider is about 4 studs across, and the manifest next to each FBX lists expected bounds.
-3. Select the imported model and run `SpiderQuest_MapPrep.lua` in the Command Bar. It anchors everything, sets collision by prefix (`COL_` precise, `PROP_` hull, `DECO_` none), turns `MARKER_*` into invisible marker parts, and adds the station prompts in the Lobby.
+3. Select the imported model(s) and run `SpiderQuest_MapPrep.lua` in the Command Bar. It anchors everything, sets collision by prefix (`COL_` precise, `PROP_` hull, `DECO_` none, `BARRIER_` invisible and unclimbable), turns `MARKER_*` into invisible marker parts, and adds the station prompts in the Lobby.
 4. Main Menu only: set `Workspace.StreamingEnabled = false` (the scene is small and the menu camera needs it all).
 
 ## 3. Play-test
@@ -42,6 +42,8 @@ The maps are FBX files built in Blender: `blender/exports/maps/`.
 - Test phones and consoles with Studio's device emulator. Touch buttons appear only in touch mode, and key hints swap to gamepad glyphs when you use a controller.
 
 **Main Menu:** the camera frames the menu scene, and Play says teleports only work in the published game.
+
+**Mossy Hollow:** press Play. The server builds a test run from seed 1, and the Output shows `[DungeonService] built mossy_hollow: N rooms (seed 1)`. You spawn in the entry room and can walk the whole dungeon to the boss chamber. To see another layout, run `workspace:SetAttribute("DungeonSeed", 42)` (any number) and play again. Live runs get a random seed from the lobby.
 
 ## 4. Publish and connect the places
 1. Publish each place into the same experience (the Main Menu is the start place).

@@ -1,0 +1,3665 @@
+{
+ "name": "main_menu",
+ "fbx": "exports/maps/main_menu.fbx",
+ "units": "1 Blender unit = 1 stud",
+ "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+ "budget": 25000,
+ "totalTris": 19512,
+ "uniqueMeshTris": 10666,
+ "objectCounts": {
+  "COL": 6,
+  "PROP": 26,
+  "DECO": 84,
+  "MARKER": 3
+ },
+ "objects": [
+  {
+   "name": "COL_Ground",
+   "category": "COL",
+   "tris": 2080,
+   "mesh": "main_menu_COL_Ground",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -420.0,
+     -200.0,
+     -6.0
+    ],
+    "max": [
+     420.0,
+     520.0,
+     9.028
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -420.0,
+     -6.0,
+     -520.0
+    ],
+    "max": [
+     420.0,
+     9.028,
+     200.0
+    ]
+   }
+  },
+  {
+   "name": "COL_Log_01",
+   "category": "COL",
+   "tris": 136,
+   "mesh": "main_menu_COL_Log_01",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -101.35,
+     10.294,
+     -1.766
+    ],
+    "max": [
+     -8.602,
+     61.427,
+     11.023
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -101.35,
+     -1.766,
+     -61.427
+    ],
+    "max": [
+     -8.602,
+     11.023,
+     -10.294
+    ]
+   }
+  },
+  {
+   "name": "COL_Log_02",
+   "category": "COL",
+   "tris": 136,
+   "mesh": "main_menu_COL_Log_02",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -101.856,
+     10.767,
+     11.023
+    ],
+    "max": [
+     -8.477,
+     61.427,
+     23.857
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -101.856,
+     11.023,
+     -61.427
+    ],
+    "max": [
+     -8.477,
+     23.857,
+     -10.767
+    ]
+   }
+  },
+  {
+   "name": "COL_Log_03",
+   "category": "COL",
+   "tris": 136,
+   "mesh": "main_menu_COL_Log_03",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -97.017,
+     -2.509,
+     11.023
+    ],
+    "max": [
+     -2.533,
+     49.378,
+     23.857
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -97.017,
+     11.023,
+     -49.378
+    ],
+    "max": [
+     -2.533,
+     23.857,
+     2.509
+    ]
+   }
+  },
+  {
+   "name": "COL_Log_04",
+   "category": "COL",
+   "tris": 136,
+   "mesh": "main_menu_COL_Log_04",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -96.261,
+     -2.509,
+     -1.766
+    ],
+    "max": [
+     -2.351,
+     49.322,
+     11.023
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -96.261,
+     -1.766,
+     -49.322
+    ],
+    "max": [
+     -2.351,
+     11.023,
+     2.509
+    ]
+   }
+  },
+  {
+   "name": "COL_RootArch",
+   "category": "COL",
+   "tris": 300,
+   "mesh": "main_menu_COL_RootArch",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -32.542,
+     40.679,
+     -8.242
+    ],
+    "max": [
+     55.768,
+     69.66,
+     44.815
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -32.542,
+     -8.242,
+     -69.66
+    ],
+    "max": [
+     55.768,
+     44.815,
+     -40.679
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_01",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     39.292,
+     -38.24,
+     -0.43
+    ],
+    "max": [
+     47.754,
+     -29.814,
+     11.536
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     39.292,
+     -0.43,
+     29.814
+    ],
+    "max": [
+     47.754,
+     11.536,
+     38.24
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_02",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     39.921,
+     -41.206,
+     -0.306
+    ],
+    "max": [
+     47.146,
+     -33.961,
+     7.542
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     39.921,
+     -0.306,
+     33.961
+    ],
+    "max": [
+     47.146,
+     7.542,
+     41.206
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_03",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -53.114,
+     21.096,
+     -0.504
+    ],
+    "max": [
+     -44.006,
+     30.244,
+     10.141
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -53.114,
+     -0.504,
+     -30.244
+    ],
+    "max": [
+     -44.006,
+     10.141,
+     -21.096
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_04",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -56.737,
+     24.807,
+     -0.139
+    ],
+    "max": [
+     -48.723,
+     32.819,
+     10.61
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -56.737,
+     -0.139,
+     -32.819
+    ],
+    "max": [
+     -48.723,
+     10.61,
+     -24.807
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_05",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -60.745,
+     -33.78,
+     -0.136
+    ],
+    "max": [
+     -53.956,
+     -27.063,
+     11.953
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -60.745,
+     -0.136,
+     27.063
+    ],
+    "max": [
+     -53.956,
+     11.953,
+     33.78
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_06",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -64.153,
+     -34.871,
+     -0.103
+    ],
+    "max": [
+     -56.542,
+     -27.264,
+     7.725
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -64.153,
+     -0.103,
+     27.264
+    ],
+    "max": [
+     -56.542,
+     7.725,
+     34.871
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_07",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -62.366,
+     -34.781,
+     0.082
+    ],
+    "max": [
+     -56.764,
+     -29.105,
+     9.988
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -62.366,
+     0.082,
+     29.105
+    ],
+    "max": [
+     -56.764,
+     9.988,
+     34.781
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_08",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     55.631,
+     23.386,
+     -0.747
+    ],
+    "max": [
+     63.832,
+     31.392,
+     16.219
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     55.631,
+     -0.747,
+     -31.392
+    ],
+    "max": [
+     63.832,
+     16.219,
+     -23.386
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_09",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     58.249,
+     20.188,
+     -0.625
+    ],
+    "max": [
+     66.306,
+     28.227,
+     12.318
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     58.249,
+     -0.625,
+     -28.227
+    ],
+    "max": [
+     66.306,
+     12.318,
+     -20.188
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_10",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     54.759,
+     22.405,
+     -0.39
+    ],
+    "max": [
+     61.079,
+     28.689,
+     9.91
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     54.759,
+     -0.39,
+     -28.689
+    ],
+    "max": [
+     61.079,
+     9.91,
+     -22.405
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_11",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     2.891,
+     -46.772,
+     -1.033
+    ],
+    "max": [
+     10.68,
+     -38.909,
+     12.286
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     2.891,
+     -1.033,
+     38.909
+    ],
+    "max": [
+     10.68,
+     12.286,
+     46.772
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_12",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     6.793,
+     -44.047,
+     -1.021
+    ],
+    "max": [
+     14.644,
+     -36.183,
+     7.22
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     6.793,
+     -1.021,
+     36.183
+    ],
+    "max": [
+     14.644,
+     7.22,
+     44.047
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_13",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -41.036,
+     13.679,
+     -1.461
+    ],
+    "max": [
+     -31.808,
+     22.735,
+     16.035
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -41.036,
+     -1.461,
+     -22.735
+    ],
+    "max": [
+     -31.808,
+     16.035,
+     -13.679
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_14",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     61.755,
+     -32.152,
+     -1.316
+    ],
+    "max": [
+     71.099,
+     -22.863,
+     13.929
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     61.755,
+     -1.316,
+     22.863
+    ],
+    "max": [
+     71.099,
+     13.929,
+     32.152
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_15",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -4.119,
+     19.426,
+     -0.83
+    ],
+    "max": [
+     3.631,
+     27.393,
+     16.642
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -4.119,
+     -0.83,
+     -27.393
+    ],
+    "max": [
+     3.631,
+     16.642,
+     -19.426
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_16",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     0.695,
+     24.264,
+     -0.811
+    ],
+    "max": [
+     6.676,
+     30.126,
+     10.753
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     0.695,
+     -0.811,
+     -30.126
+    ],
+    "max": [
+     6.676,
+     10.753,
+     -24.264
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_17",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -70.353,
+     9.733,
+     -0.953
+    ],
+    "max": [
+     -57.352,
+     22.74,
+     12.433
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -70.353,
+     -0.953,
+     -22.74
+    ],
+    "max": [
+     -57.352,
+     12.433,
+     -9.733
+    ]
+   }
+  },
+  {
+   "name": "DECO_Clover_18",
+   "category": "DECO",
+   "tris": 116,
+   "mesh": "kit_clover_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -64.171,
+     10.345,
+     -0.597
+    ],
+    "max": [
+     -55.407,
+     18.945,
+     16.031
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -64.171,
+     -0.597,
+     -18.945
+    ],
+    "max": [
+     -55.407,
+     16.031,
+     -10.345
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_01",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_01",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     42.834,
+     1.8,
+     24.659
+    ],
+    "max": [
+     44.166,
+     3.2,
+     25.759
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     42.834,
+     24.659,
+     -3.2
+    ],
+    "max": [
+     44.166,
+     25.759,
+     -1.8
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_02",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_02",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     50.334,
+     9.3,
+     18.753
+    ],
+    "max": [
+     51.666,
+     10.7,
+     19.853
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     50.334,
+     18.753,
+     -10.7
+    ],
+    "max": [
+     51.666,
+     19.853,
+     -9.3
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_03",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_03",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     30.334,
+     -2.7,
+     8.169
+    ],
+    "max": [
+     31.666,
+     -1.3,
+     9.269
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     30.334,
+     8.169,
+     1.3
+    ],
+    "max": [
+     31.666,
+     9.269,
+     2.7
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_04",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_04",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     59.334,
+     -2.7,
+     26.412
+    ],
+    "max": [
+     60.666,
+     -1.3,
+     27.512
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     59.334,
+     26.412,
+     1.3
+    ],
+    "max": [
+     60.666,
+     27.512,
+     2.7
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_05",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_05",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -21.666,
+     2.3,
+     17.869
+    ],
+    "max": [
+     -20.334,
+     3.7,
+     18.969
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -21.666,
+     17.869,
+     -3.7
+    ],
+    "max": [
+     -20.334,
+     18.969,
+     -2.3
+    ]
+   }
+  },
+  {
+   "name": "DECO_Firefly_06",
+   "category": "DECO",
+   "tris": 80,
+   "mesh": "main_menu_DECO_Firefly_06",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     4.534,
+     27.5,
+     59.45
+    ],
+    "max": [
+     5.866,
+     28.9,
+     60.55
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     4.534,
+     59.45,
+     -28.9
+    ],
+    "max": [
+     5.866,
+     60.55,
+     -27.5
+    ]
+   }
+  },
+  {
+   "name": "DECO_GiantMushroomDome_01",
+   "category": "DECO",
+   "tris": 194,
+   "mesh": "kit_mushroom_dome_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     97.626,
+     128.499,
+     0.797
+    ],
+    "max": [
+     192.065,
+     222.988,
+     87.677
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     97.626,
+     0.797,
+     -222.988
+    ],
+    "max": [
+     192.065,
+     87.677,
+     -128.499
+    ]
+   }
+  },
+  {
+   "name": "DECO_GiantMushroomFlat_01",
+   "category": "DECO",
+   "tris": 194,
+   "mesh": "kit_mushroom_flat_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -159.511,
+     121.013,
+     2.94
+    ],
+    "max": [
+     -81.942,
+     200.926,
+     102.597
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -159.511,
+     2.94,
+     -200.926
+    ],
+    "max": [
+     -81.942,
+     102.597,
+     -121.013
+    ]
+   }
+  },
+  {
+   "name": "DECO_GiantMushroomFlat_02",
+   "category": "DECO",
+   "tris": 194,
+   "mesh": "kit_mushroom_flat_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     6.791,
+     138.036,
+     -4.992
+    ],
+    "max": [
+     122.846,
+     256.226,
+     119.579
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     6.791,
+     -4.992,
+     -256.226
+    ],
+    "max": [
+     122.846,
+     119.579,
+     -138.036
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_01",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     71.247,
+     -6.55,
+     -1.235
+    ],
+    "max": [
+     87.991,
+     14.271,
+     17.447
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     71.247,
+     -1.235,
+     -14.271
+    ],
+    "max": [
+     87.991,
+     17.447,
+     6.55
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_02",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -92.114,
+     -19.434,
+     -0.946
+    ],
+    "max": [
+     -68.607,
+     4.614,
+     22.49
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -92.114,
+     -0.946,
+     -4.614
+    ],
+    "max": [
+     -68.607,
+     22.49,
+     19.434
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_03",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -94.31,
+     16.258,
+     -1.422
+    ],
+    "max": [
+     -68.672,
+     42.354,
+     20.763
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -94.31,
+     -1.422,
+     -42.354
+    ],
+    "max": [
+     -68.672,
+     20.763,
+     -16.258
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_04",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     19.726,
+     -28.185,
+     -1.566
+    ],
+    "max": [
+     50.283,
+     1.019,
+     29.362
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     19.726,
+     -1.566,
+     -1.019
+    ],
+    "max": [
+     50.283,
+     29.362,
+     28.185
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_05",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -48.921,
+     -32.887,
+     -1.327
+    ],
+    "max": [
+     -19.419,
+     -2.881,
+     27.772
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -48.921,
+     -1.327,
+     2.881
+    ],
+    "max": [
+     -19.419,
+     27.772,
+     32.887
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_06",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     67.839,
+     -50.814,
+     -1.46
+    ],
+    "max": [
+     103.111,
+     -15.052,
+     35.242
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     67.839,
+     -1.46,
+     15.052
+    ],
+    "max": [
+     103.111,
+     35.242,
+     50.814
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_07",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     72.802,
+     27.73,
+     -0.986
+    ],
+    "max": [
+     93.979,
+     47.946,
+     20.507
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     72.802,
+     -0.986,
+     -47.946
+    ],
+    "max": [
+     93.979,
+     20.507,
+     -27.73
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_08",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     45.09,
+     -6.285,
+     -1.018
+    ],
+    "max": [
+     68.579,
+     18.558,
+     19.922
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     45.09,
+     -1.018,
+     -18.558
+    ],
+    "max": [
+     68.579,
+     19.922,
+     6.285
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_09",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -90.983,
+     -47.223,
+     -1.579
+    ],
+    "max": [
+     -65.384,
+     -21.17,
+     20.571
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -90.983,
+     -1.579,
+     21.17
+    ],
+    "max": [
+     -65.384,
+     20.571,
+     47.223
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_10",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -29.657,
+     -52.073,
+     -1.029
+    ],
+    "max": [
+     1.375,
+     -21.124,
+     27.935
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -29.657,
+     -1.029,
+     21.124
+    ],
+    "max": [
+     1.375,
+     27.935,
+     52.073
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassClump_11",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_clump_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -69.078,
+     -18.727,
+     -1.56
+    ],
+    "max": [
+     -45.979,
+     2.761,
+     23.643
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -69.078,
+     -1.56,
+     -2.761
+    ],
+    "max": [
+     -45.979,
+     23.643,
+     18.727
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassStalks",
+   "category": "DECO",
+   "tris": 1464,
+   "mesh": "main_menu_DECO_GrassStalks",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -178.951,
+     55.071,
+     0.888
+    ],
+    "max": [
+     192.972,
+     139.246,
+     175.626
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -178.951,
+     0.888,
+     -139.246
+    ],
+    "max": [
+     192.972,
+     175.626,
+     -55.071
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_01",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -198.053,
+     25.993,
+     -1.002
+    ],
+    "max": [
+     -144.04,
+     86.18,
+     70.727
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -198.053,
+     -1.002,
+     -86.18
+    ],
+    "max": [
+     -144.04,
+     70.727,
+     -25.993
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_02",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -180.497,
+     25.272,
+     -0.548
+    ],
+    "max": [
+     -109.569,
+     93.248,
+     78.159
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -180.497,
+     -0.548,
+     -93.248
+    ],
+    "max": [
+     -109.569,
+     78.159,
+     -25.272
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_03",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -164.768,
+     35.112,
+     0.716
+    ],
+    "max": [
+     -102.948,
+     97.124,
+     73.133
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -164.768,
+     0.716,
+     -97.124
+    ],
+    "max": [
+     -102.948,
+     73.133,
+     -35.112
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_04",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -136.227,
+     54.574,
+     2.976
+    ],
+    "max": [
+     -87.097,
+     101.636,
+     50.879
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -136.227,
+     2.976,
+     -101.636
+    ],
+    "max": [
+     -87.097,
+     50.879,
+     -54.574
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_05",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -117.967,
+     37.867,
+     0.978
+    ],
+    "max": [
+     -71.066,
+     82.703,
+     47.372
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -117.967,
+     0.978,
+     -82.703
+    ],
+    "max": [
+     -71.066,
+     47.372,
+     -37.867
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_06",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -101.712,
+     46.677,
+     2.54
+    ],
+    "max": [
+     -45.573,
+     104.035,
+     51.683
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -101.712,
+     2.54,
+     -104.035
+    ],
+    "max": [
+     -45.573,
+     51.683,
+     -46.677
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_07",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -75.178,
+     38.624,
+     0.559
+    ],
+    "max": [
+     -22.243,
+     91.378,
+     63.116
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -75.178,
+     0.559,
+     -91.378
+    ],
+    "max": [
+     -22.243,
+     63.116,
+     -38.624
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_08",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -67.568,
+     27.971,
+     0.786
+    ],
+    "max": [
+     5.419,
+     100.945,
+     60.509
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -67.568,
+     0.786,
+     -100.945
+    ],
+    "max": [
+     5.419,
+     60.509,
+     -27.971
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_09",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -43.995,
+     38.928,
+     0.976
+    ],
+    "max": [
+     22.559,
+     104.353,
+     56.999
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -43.995,
+     0.976,
+     -104.353
+    ],
+    "max": [
+     22.559,
+     56.999,
+     -38.928
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_10",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -22.066,
+     41.503,
+     2.552
+    ],
+    "max": [
+     51.772,
+     112.141,
+     84.563
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -22.066,
+     2.552,
+     -112.141
+    ],
+    "max": [
+     51.772,
+     84.563,
+     -41.503
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_11",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -0.02,
+     35.693,
+     0.724
+    ],
+    "max": [
+     56.65,
+     92.39,
+     63.483
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -0.02,
+     0.724,
+     -92.39
+    ],
+    "max": [
+     56.65,
+     63.483,
+     -35.693
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_12",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     16.892,
+     37.261,
+     1.616
+    ],
+    "max": [
+     79.702,
+     99.68,
+     85.972
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     16.892,
+     1.616,
+     -99.68
+    ],
+    "max": [
+     79.702,
+     85.972,
+     -37.261
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_13",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     36.724,
+     38.711,
+     1.558
+    ],
+    "max": [
+     94.244,
+     96.403,
+     68.684
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     36.724,
+     1.558,
+     -96.403
+    ],
+    "max": [
+     94.244,
+     68.684,
+     -38.711
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_14",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     57.767,
+     33.583,
+     0.004
+    ],
+    "max": [
+     128.173,
+     102.614,
+     77.706
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     57.767,
+     0.004,
+     -102.614
+    ],
+    "max": [
+     128.173,
+     77.706,
+     -33.583
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_15",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     83.344,
+     49.021,
+     1.764
+    ],
+    "max": [
+     127.181,
+     85.656,
+     61.21
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     83.344,
+     1.764,
+     -85.656
+    ],
+    "max": [
+     127.181,
+     61.21,
+     -49.021
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_16",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     102.497,
+     32.084,
+     -0.063
+    ],
+    "max": [
+     170.393,
+     99.552,
+     55.611
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     102.497,
+     -0.063,
+     -99.552
+    ],
+    "max": [
+     170.393,
+     55.611,
+     -32.084
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_17",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     123.439,
+     37.047,
+     0.561
+    ],
+    "max": [
+     179.379,
+     93.145,
+     65.501
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     123.439,
+     0.561,
+     -93.145
+    ],
+    "max": [
+     179.379,
+     65.501,
+     -37.047
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_18",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -264.549,
+     61.179,
+     -2.266
+    ],
+    "max": [
+     -194.331,
+     131.783,
+     88.914
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -264.549,
+     -2.266,
+     -131.783
+    ],
+    "max": [
+     -194.331,
+     88.914,
+     -61.179
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_19",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -230.079,
+     60.249,
+     -1.682
+    ],
+    "max": [
+     -161.603,
+     127.109,
+     57.661
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -230.079,
+     -1.682,
+     -127.109
+    ],
+    "max": [
+     -161.603,
+     57.661,
+     -60.249
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_20",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -208.09,
+     45.562,
+     2.074
+    ],
+    "max": [
+     -126.086,
+     127.872,
+     100.371
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -208.09,
+     2.074,
+     -127.872
+    ],
+    "max": [
+     -126.086,
+     100.371,
+     -45.562
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_21",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -172.534,
+     51.498,
+     6.308
+    ],
+    "max": [
+     -105.073,
+     116.004,
+     72.928
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -172.534,
+     6.308,
+     -116.004
+    ],
+    "max": [
+     -105.073,
+     72.928,
+     -51.498
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_22",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -141.212,
+     55.104,
+     5.947
+    ],
+    "max": [
+     -64.487,
+     136.566,
+     97.409
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -141.212,
+     5.947,
+     -136.566
+    ],
+    "max": [
+     -64.487,
+     97.409,
+     -55.104
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_23",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -103.72,
+     54.063,
+     6.741
+    ],
+    "max": [
+     -31.728,
+     128.325,
+     73.666
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -103.72,
+     6.741,
+     -128.325
+    ],
+    "max": [
+     -31.728,
+     73.666,
+     -54.063
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_24",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -90.574,
+     34.976,
+     5.537
+    ],
+    "max": [
+     -3.56,
+     125.606,
+     106.02
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -90.574,
+     5.537,
+     -125.606
+    ],
+    "max": [
+     -3.56,
+     106.02,
+     -34.976
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_25",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -65.017,
+     54.733,
+     6.526
+    ],
+    "max": [
+     8.198,
+     128.279,
+     97.282
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -65.017,
+     6.526,
+     -128.279
+    ],
+    "max": [
+     8.198,
+     97.282,
+     -54.733
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_26",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -37.589,
+     57.555,
+     6.388
+    ],
+    "max": [
+     43.866,
+     138.282,
+     96.43
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -37.589,
+     6.388,
+     -138.282
+    ],
+    "max": [
+     43.866,
+     96.43,
+     -57.555
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_27",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -10.308,
+     58.087,
+     6.66
+    ],
+    "max": [
+     59.467,
+     128.275,
+     99.262
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -10.308,
+     6.66,
+     -128.275
+    ],
+    "max": [
+     59.467,
+     99.262,
+     -58.087
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_28",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     13.108,
+     61.298,
+     6.45
+    ],
+    "max": [
+     80.756,
+     128.344,
+     111.577
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     13.108,
+     6.45,
+     -128.344
+    ],
+    "max": [
+     80.756,
+     111.577,
+     -61.298
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_29",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     32.791,
+     62.232,
+     6.564
+    ],
+    "max": [
+     105.364,
+     139.601,
+     93.743
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     32.791,
+     6.564,
+     -139.601
+    ],
+    "max": [
+     105.364,
+     93.743,
+     -62.232
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_30",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     59.669,
+     57.686,
+     6.072
+    ],
+    "max": [
+     130.728,
+     127.038,
+     67.79
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     59.669,
+     6.072,
+     -127.038
+    ],
+    "max": [
+     130.728,
+     67.79,
+     -57.686
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_31",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     84.008,
+     60.112,
+     6.651
+    ],
+    "max": [
+     157.469,
+     133.162,
+     102.133
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     84.008,
+     6.651,
+     -133.162
+    ],
+    "max": [
+     157.469,
+     102.133,
+     -60.112
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_32",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     110.735,
+     62.017,
+     5.916
+    ],
+    "max": [
+     181.65,
+     137.675,
+     91.226
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     110.735,
+     5.916,
+     -137.675
+    ],
+    "max": [
+     181.65,
+     91.226,
+     -62.017
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_33",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     123.807,
+     67.11,
+     3.06
+    ],
+    "max": [
+     193.781,
+     131.948,
+     82.906
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     123.807,
+     3.06,
+     -131.948
+    ],
+    "max": [
+     193.781,
+     82.906,
+     -67.11
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_34",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     155.963,
+     63.291,
+     -1.578
+    ],
+    "max": [
+     229.062,
+     137.82,
+     61.707
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     155.963,
+     -1.578,
+     -137.82
+    ],
+    "max": [
+     229.062,
+     61.707,
+     -63.291
+    ]
+   }
+  },
+  {
+   "name": "DECO_GrassTall_35",
+   "category": "DECO",
+   "tris": 128,
+   "mesh": "kit_grass_tall_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     185.404,
+     43.149,
+     -2.318
+    ],
+    "max": [
+     268.476,
+     124.872,
+     67.424
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     185.404,
+     -2.318,
+     -124.872
+    ],
+    "max": [
+     268.476,
+     67.424,
+     -43.149
+    ]
+   }
+  },
+  {
+   "name": "DECO_LeafOak_01",
+   "category": "DECO",
+   "tris": 138,
+   "mesh": "kit_leaf_oak_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -67.813,
+     -35.592,
+     -1.045
+    ],
+    "max": [
+     -18.752,
+     6.929,
+     2.625
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -67.813,
+     -1.045,
+     -6.929
+    ],
+    "max": [
+     -18.752,
+     2.625,
+     35.592
+    ]
+   }
+  },
+  {
+   "name": "DECO_LeafOak_02",
+   "category": "DECO",
+   "tris": 138,
+   "mesh": "kit_leaf_oak_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     60.26,
+     -10.058,
+     -0.871
+    ],
+    "max": [
+     108.565,
+     27.566,
+     2.798
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     60.26,
+     -0.871,
+     -27.566
+    ],
+    "max": [
+     108.565,
+     2.798,
+     10.058
+    ]
+   }
+  },
+  {
+   "name": "DECO_LeafOak_03",
+   "category": "DECO",
+   "tris": 138,
+   "mesh": "kit_leaf_oak_1",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     49.368,
+     -87.898,
+     -0.804
+    ],
+    "max": [
+     90.19,
+     -46.531,
+     2.435
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     49.368,
+     -0.804,
+     46.531
+    ],
+    "max": [
+     90.19,
+     2.435,
+     87.898
+    ]
+   }
+  },
+  {
+   "name": "DECO_LeafRound_01",
+   "category": "DECO",
+   "tris": 98,
+   "mesh": "kit_leaf_round_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     13.74,
+     -41.134,
+     -0.588
+    ],
+    "max": [
+     50.064,
+     -10.527,
+     3.87
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     13.74,
+     -0.588,
+     10.527
+    ],
+    "max": [
+     50.064,
+     3.87,
+     41.134
+    ]
+   }
+  },
+  {
+   "name": "DECO_MossMound_01",
+   "category": "DECO",
+   "tris": 72,
+   "mesh": "kit_moss_mound_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     20.427,
+     30.084,
+     -1.13
+    ],
+    "max": [
+     38.579,
+     49.148,
+     4.675
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     20.427,
+     -1.13,
+     -49.148
+    ],
+    "max": [
+     38.579,
+     4.675,
+     -30.084
+    ]
+   }
+  },
+  {
+   "name": "DECO_MossMound_02",
+   "category": "DECO",
+   "tris": 72,
+   "mesh": "kit_moss_mound_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -13.374,
+     -10.308,
+     -0.725
+    ],
+    "max": [
+     1.844,
+     4.414,
+     3.632
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -13.374,
+     -0.725,
+     -4.414
+    ],
+    "max": [
+     1.844,
+     3.632,
+     10.308
+    ]
+   }
+  },
+  {
+   "name": "DECO_MossMound_03",
+   "category": "DECO",
+   "tris": 72,
+   "mesh": "kit_moss_mound_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -54.489,
+     -62.552,
+     -0.917
+    ],
+    "max": [
+     -34.72,
+     -41.85,
+     5.291
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -54.489,
+     -0.917,
+     41.85
+    ],
+    "max": [
+     -34.72,
+     5.291,
+     62.552
+    ]
+   }
+  },
+  {
+   "name": "DECO_MossMound_04",
+   "category": "DECO",
+   "tris": 72,
+   "mesh": "kit_moss_mound_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     4.163,
+     -32.652,
+     -0.548
+    ],
+    "max": [
+     24.884,
+     -12.276,
+     5.346
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     4.163,
+     -0.548,
+     12.276
+    ],
+    "max": [
+     24.884,
+     5.346,
+     32.652
+    ]
+   }
+  },
+  {
+   "name": "DECO_MossMound_05",
+   "category": "DECO",
+   "tris": 72,
+   "mesh": "kit_moss_mound_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -75.437,
+     -64.296,
+     -0.889
+    ],
+    "max": [
+     -57.166,
+     -45.637,
+     4.748
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -75.437,
+     -0.889,
+     45.637
+    ],
+    "max": [
+     -57.166,
+     4.748,
+     64.296
+    ]
+   }
+  },
+  {
+   "name": "DECO_OrbWeb",
+   "category": "DECO",
+   "tris": 2072,
+   "mesh": "main_menu_DECO_OrbWeb",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     3.958,
+     19.85,
+     0.632
+    ],
+    "max": [
+     48.001,
+     28.17,
+     46.378
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     3.958,
+     0.632,
+     -28.17
+    ],
+    "max": [
+     48.001,
+     46.378,
+     -19.85
+    ]
+   }
+  },
+  {
+   "name": "PROP_AcornCap_01",
+   "category": "PROP",
+   "tris": 160,
+   "mesh": "kit_acorn_cap_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -10.574,
+     -18.437,
+     -0.491
+    ],
+    "max": [
+     -1.335,
+     -9.563,
+     4.903
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -10.574,
+     -0.491,
+     9.563
+    ],
+    "max": [
+     -1.335,
+     4.903,
+     18.437
+    ]
+   }
+  },
+  {
+   "name": "PROP_Acorn_01",
+   "category": "PROP",
+   "tris": 212,
+   "mesh": "kit_acorn_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -18.882,
+     -14.344,
+     -1.077
+    ],
+    "max": [
+     -5.052,
+     -1.618,
+     7.123
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -18.882,
+     -1.077,
+     1.618
+    ],
+    "max": [
+     -5.052,
+     7.123,
+     14.344
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomBell_01",
+   "category": "PROP",
+   "tris": 168,
+   "mesh": "kit_mushroom_bell_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     26.763,
+     -7.247,
+     -1.525
+    ],
+    "max": [
+     35.388,
+     1.357,
+     8.406
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     26.763,
+     -1.525,
+     -1.357
+    ],
+    "max": [
+     35.388,
+     8.406,
+     7.247
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomBell_02",
+   "category": "PROP",
+   "tris": 168,
+   "mesh": "kit_mushroom_bell_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     25.029,
+     -13.964,
+     -0.991
+    ],
+    "max": [
+     34.13,
+     -4.86,
+     6.457
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     25.029,
+     -0.991,
+     4.86
+    ],
+    "max": [
+     34.13,
+     6.457,
+     13.964
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomDome_01",
+   "category": "PROP",
+   "tris": 194,
+   "mesh": "kit_mushroom_dome_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     32.237,
+     -11.639,
+     -1.567
+    ],
+    "max": [
+     43.969,
+     0.279,
+     11.706
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     32.237,
+     -1.567,
+     -0.279
+    ],
+    "max": [
+     43.969,
+     11.706,
+     11.639
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomDome_02",
+   "category": "PROP",
+   "tris": 194,
+   "mesh": "kit_mushroom_dome_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -29.762,
+     -6.186,
+     -1.335
+    ],
+    "max": [
+     -9.542,
+     14.157,
+     17.971
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -29.762,
+     -1.335,
+     -14.157
+    ],
+    "max": [
+     -9.542,
+     17.971,
+     6.186
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomFlat_01",
+   "category": "PROP",
+   "tris": 194,
+   "mesh": "kit_mushroom_flat_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     46.619,
+     -14.626,
+     -1.293
+    ],
+    "max": [
+     76.883,
+     15.722,
+     26.736
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     46.619,
+     -1.293,
+     -15.722
+    ],
+    "max": [
+     76.883,
+     26.736,
+     14.626
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomFlat_02",
+   "category": "PROP",
+   "tris": 194,
+   "mesh": "kit_mushroom_flat_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -48.352,
+     -1.563,
+     -2.449
+    ],
+    "max": [
+     -14.902,
+     32.384,
+     31.808
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -48.352,
+     -2.449,
+     -32.384
+    ],
+    "max": [
+     -14.902,
+     31.808,
+     1.563
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomRed_01",
+   "category": "PROP",
+   "tris": 266,
+   "mesh": "kit_mushroom_red_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     32.212,
+     -8.918,
+     -2.32
+    ],
+    "max": [
+     57.278,
+     16.301,
+     25.116
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     32.212,
+     -2.32,
+     -16.301
+    ],
+    "max": [
+     57.278,
+     25.116,
+     8.918
+    ]
+   }
+  },
+  {
+   "name": "PROP_MushroomRed_02",
+   "category": "PROP",
+   "tris": 266,
+   "mesh": "kit_mushroom_red_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     42.595,
+     3.733,
+     -1.707
+    ],
+    "max": [
+     58.576,
+     19.567,
+     17.498
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     42.595,
+     -1.707,
+     -19.567
+    ],
+    "max": [
+     58.576,
+     17.498,
+     -3.733
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleBig_01",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_big_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -16.622,
+     35.261,
+     -1.356
+    ],
+    "max": [
+     -0.092,
+     48.608,
+     4.99
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -16.622,
+     -1.356,
+     -48.608
+    ],
+    "max": [
+     -0.092,
+     4.99,
+     -35.261
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleSmall_01",
+   "category": "PROP",
+   "tris": 20,
+   "mesh": "kit_pebble_small_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     34.969,
+     -46.168,
+     -0.632
+    ],
+    "max": [
+     38.355,
+     -43.359,
+     0.573
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     34.969,
+     -0.632,
+     43.359
+    ],
+    "max": [
+     38.355,
+     0.573,
+     46.168
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleSmall_02",
+   "category": "PROP",
+   "tris": 20,
+   "mesh": "kit_pebble_small_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     7.664,
+     -53.107,
+     -0.189
+    ],
+    "max": [
+     9.978,
+     -51.307,
+     0.836
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     7.664,
+     -0.189,
+     51.307
+    ],
+    "max": [
+     9.978,
+     0.836,
+     53.107
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleSmall_03",
+   "category": "PROP",
+   "tris": 20,
+   "mesh": "kit_pebble_small_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     82.981,
+     23.997,
+     -0.403
+    ],
+    "max": [
+     86.741,
+     27.67,
+     0.845
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     82.981,
+     -0.403,
+     -27.67
+    ],
+    "max": [
+     86.741,
+     0.845,
+     -23.997
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleSmall_04",
+   "category": "PROP",
+   "tris": 20,
+   "mesh": "kit_pebble_small_1",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -20.568,
+     -60.698,
+     -0.501
+    ],
+    "max": [
+     -16.932,
+     -57.857,
+     0.873
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -20.568,
+     -0.501,
+     57.857
+    ],
+    "max": [
+     -16.932,
+     0.873,
+     60.698
+    ]
+   }
+  },
+  {
+   "name": "PROP_PebbleSmall_05",
+   "category": "PROP",
+   "tris": 20,
+   "mesh": "kit_pebble_small_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -25.42,
+     31.735,
+     -0.931
+    ],
+    "max": [
+     -21.78,
+     35.104,
+     0.557
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -25.42,
+     -0.931,
+     -35.104
+    ],
+    "max": [
+     -21.78,
+     0.557,
+     -31.735
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_01",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     54.041,
+     19.939,
+     -1.301
+    ],
+    "max": [
+     65.984,
+     32.109,
+     4.089
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     54.041,
+     -1.301,
+     -32.109
+    ],
+    "max": [
+     65.984,
+     4.089,
+     -19.939
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_02",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -88.045,
+     -45.722,
+     -1.068
+    ],
+    "max": [
+     -81.72,
+     -39.121,
+     1.437
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -88.045,
+     -1.068,
+     39.121
+    ],
+    "max": [
+     -81.72,
+     1.437,
+     45.722
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_03",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_2",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -75.668,
+     8.06,
+     -0.797
+    ],
+    "max": [
+     -66.113,
+     17.336,
+     2.568
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -75.668,
+     -0.797,
+     -17.336
+    ],
+    "max": [
+     -66.113,
+     2.568,
+     -8.06
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_04",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_3",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -58.198,
+     -1.358,
+     -1.254
+    ],
+    "max": [
+     -49.19,
+     5.495,
+     2.87
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -58.198,
+     -1.254,
+     -5.495
+    ],
+    "max": [
+     -49.19,
+     2.87,
+     1.358
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_05",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_0",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     17.864,
+     -27.228,
+     -0.425
+    ],
+    "max": [
+     25.853,
+     -19.044,
+     3.393
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     17.864,
+     -0.425,
+     19.044
+    ],
+    "max": [
+     25.853,
+     3.393,
+     27.228
+    ]
+   }
+  },
+  {
+   "name": "PROP_Pebble_06",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "kit_pebble_3",
+   "sharedMesh": true,
+   "boundsBlender": {
+    "min": [
+     -58.13,
+     -56.63,
+     -1.365
+    ],
+    "max": [
+     -49.774,
+     -47.688,
+     2.402
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -58.13,
+     -1.365,
+     47.688
+    ],
+    "max": [
+     -49.774,
+     2.402,
+     56.63
+    ]
+   }
+  },
+  {
+   "name": "PROP_SpiderPerch",
+   "category": "PROP",
+   "tris": 80,
+   "mesh": "main_menu_PROP_SpiderPerch",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     9.574,
+     -3.271,
+     -0.851
+    ],
+    "max": [
+     24.218,
+     9.295,
+     3.147
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     9.574,
+     -0.851,
+     -9.295
+    ],
+    "max": [
+     24.218,
+     3.147,
+     3.271
+    ]
+   }
+  },
+  {
+   "name": "PROP_Twig_01",
+   "category": "PROP",
+   "tris": 142,
+   "mesh": "kit_twig_0",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -52.68,
+     -17.391,
+     0.044
+    ],
+    "max": [
+     -15.124,
+     -0.837,
+     3.392
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -52.68,
+     0.044,
+     0.837
+    ],
+    "max": [
+     -15.124,
+     3.392,
+     17.391
+    ]
+   }
+  },
+  {
+   "name": "PROP_WebStalk_01",
+   "category": "PROP",
+   "tris": 122,
+   "mesh": "main_menu_PROP_WebStalk_01",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     -2.797,
+     20.441,
+     -1.347
+    ],
+    "max": [
+     10.347,
+     36.797,
+     73.363
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     -2.797,
+     -1.347,
+     -36.797
+    ],
+    "max": [
+     10.347,
+     73.363,
+     -20.441
+    ]
+   }
+  },
+  {
+   "name": "PROP_WebStalk_02",
+   "category": "PROP",
+   "tris": 122,
+   "mesh": "main_menu_PROP_WebStalk_02",
+   "sharedMesh": false,
+   "boundsBlender": {
+    "min": [
+     41.474,
+     11.593,
+     -0.874
+    ],
+    "max": [
+     56.576,
+     36.747,
+     83.026
+    ]
+   },
+   "boundsRoblox": {
+    "min": [
+     41.474,
+     -0.874,
+     -36.747
+    ],
+    "max": [
+     56.576,
+     83.026,
+     -11.593
+    ]
+   }
+  }
+ ],
+ "markers": [
+  {
+   "name": "MARKER_MenuCamera",
+   "type": "MenuCamera",
+   "id": null,
+   "blender": [
+    -4.0,
+    -36.0,
+    10.0
+   ],
+   "roblox": [
+    -4.0,
+    10.0,
+    36.0
+   ]
+  },
+  {
+   "name": "MARKER_MenuFocus",
+   "type": "MenuFocus",
+   "id": null,
+   "blender": [
+    10.0,
+    16.0,
+    16.0
+   ],
+   "roblox": [
+    10.0,
+    16.0,
+    -16.0
+   ]
+  },
+  {
+   "name": "MARKER_SpiderPose",
+   "type": "SpiderPose",
+   "id": null,
+   "blender": [
+    17.0,
+    3.0,
+    3.147
+   ],
+   "roblox": [
+    17.0,
+    3.147,
+    -3.0
+   ]
+  }
+ ],
+ "menuCamera": {
+  "fieldOfView": 50,
+  "note": "CFrame.lookAt(MenuCamera, MenuFocus); UI covers the left third"
+ },
+ "map": "main_menu"
+}

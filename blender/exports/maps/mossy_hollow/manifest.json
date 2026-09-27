@@ -1,0 +1,11988 @@
+{
+ "map": "mossy_hollow",
+ "grid": 80.0,
+ "door": {
+  "clearWidth": 24.0,
+  "clearHeight": 20.0,
+  "openingWidth": 28.0,
+  "springHeight": 17.0,
+  "crownHeight": 29.0,
+  "rule": "connector = doorway centre on the floor, exactly on the room boundary"
+ },
+ "rooms": {
+  "mossy_entry": {
+   "name": "mossy_entry",
+   "fbx": "exports/maps/mossy_hollow/mossy_entry.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 8000,
+   "totalTris": 4650,
+   "uniqueMeshTris": 3986,
+   "objectCounts": {
+    "COL": 16,
+    "PROP": 11,
+    "DECO": 2,
+    "MARKER": 5
+   },
+   "objects": [
+    {
+     "name": "COL_CeilingRoot_01",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_entry_COL_CeilingRoot_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -39.01,
+       -20.119,
+       41.164
+      ],
+      "max": [
+       37.774,
+       -4.897,
+       55.661
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -39.01,
+       41.164,
+       4.897
+      ],
+      "max": [
+       37.774,
+       55.661,
+       20.119
+      ]
+     }
+    },
+    {
+     "name": "COL_CeilingRoot_02",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_entry_COL_CeilingRoot_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -25.905,
+       -38.846,
+       42.758
+      ],
+      "max": [
+       8.049,
+       38.4,
+       54.071
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -25.905,
+       42.758,
+       -38.4
+      ],
+      "max": [
+       8.049,
+       54.071,
+       38.846
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_entry_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       10.684
+      ],
+      "max": [
+       -16.555,
+       -16.314,
+       31.688
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       10.684,
+       16.314
+      ],
+      "max": [
+       -16.555,
+       31.688,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_entry_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       17.684,
+       -40.0,
+       12.661
+      ],
+      "max": [
+       40.0,
+       -16.555,
+       36.534
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.684,
+       12.661,
+       16.555
+      ],
+      "max": [
+       40.0,
+       36.534,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_entry_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       16.664,
+       15.656,
+       14.754
+      ],
+      "max": [
+       40.0,
+       40.0,
+       42.051
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       16.664,
+       14.754,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       42.051,
+       -15.656
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_entry_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       18.841,
+       13.47
+      ],
+      "max": [
+       -18.981,
+       40.0,
+       39.075
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       13.47,
+       -40.0
+      ],
+      "max": [
+       -18.981,
+       39.075,
+       -18.841
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameN",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -28.335,
+       24.892,
+       -2.027
+      ],
+      "max": [
+       28.346,
+       32.854,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.335,
+       -2.027,
+       -32.854
+      ],
+      "max": [
+       28.346,
+       36.181,
+       -24.892
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 222,
+     "mesh": "mossy_entry_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -6.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       0.363
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -6.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       0.363,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_entry_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -34.991,
+       0.45,
+       21.468
+      ],
+      "max": [
+       -15.087,
+       23.828,
+       29.015
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.991,
+       21.468,
+       -23.828
+      ],
+      "max": [
+       -15.087,
+       29.015,
+       -0.45
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_entry_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       16.491,
+       -15.808,
+       29.743
+      ],
+      "max": [
+       34.736,
+       4.135,
+       36.404
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       16.491,
+       29.743,
+       -4.135
+      ],
+      "max": [
+       34.736,
+       36.404,
+       15.808
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_entry_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       21.878,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       52.158
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.878,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       52.158,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_entry_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       21.141,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       40.0,
+       50.271
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -14.0,
+       50.271,
+       -21.141
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_entry_COL_WallN_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       22.943,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       53.067
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       53.067,
+       -22.943
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_entry_COL_WallN_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       30.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       40.0,
+       51.566
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       -40.0
+      ],
+      "max": [
+       14.0,
+       51.566,
+       -30.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_entry_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       -21.94,
+       54.013
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       21.94
+      ],
+      "max": [
+       40.0,
+       54.013,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_entry_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -21.817,
+       40.0,
+       52.95
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -21.817,
+       52.95,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -26.416,
+       5.616,
+       -0.757
+      ],
+      "max": [
+       -11.022,
+       20.78,
+       3.027
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -26.416,
+       -0.757,
+       -20.78
+      ],
+      "max": [
+       -11.022,
+       3.027,
+       -5.616
+      ]
+     }
+    },
+    {
+     "name": "DECO_SilkDrop_01",
+     "category": "DECO",
+     "tris": 86,
+     "mesh": "mossy_entry_DECO_SilkDrop_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       0.049,
+       -14.0,
+       1.191
+      ],
+      "max": [
+       1.951,
+       -12.0,
+       46.0
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       0.049,
+       1.191,
+       12.0
+      ],
+      "max": [
+       1.951,
+       46.0,
+       14.0
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -28.213,
+       -27.641,
+       -2.002
+      ],
+      "max": [
+       -14.593,
+       -14.04,
+       10.864
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.213,
+       -2.002,
+       14.04
+      ],
+      "max": [
+       -14.593,
+       10.864,
+       27.641
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_02",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -19.898,
+       -23.736,
+       -1.55
+      ],
+      "max": [
+       -11.574,
+       -15.437,
+       9.452
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -19.898,
+       -1.55,
+       15.437
+      ],
+      "max": [
+       -11.574,
+       9.452,
+       23.736
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_03",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       14.221,
+       13.349,
+       -1.779
+      ],
+      "max": [
+       25.523,
+       24.688,
+       13.337
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.221,
+       -1.779,
+       -24.688
+      ],
+      "max": [
+       25.523,
+       13.337,
+       -13.349
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_04",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       16.866,
+       10.673,
+       -1.303
+      ],
+      "max": [
+       23.587,
+       17.351,
+       9.359
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       16.866,
+       -1.303,
+       -17.351
+      ],
+      "max": [
+       23.587,
+       9.359,
+       -10.673
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_05",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       13.877,
+       15.382,
+       -0.911
+      ],
+      "max": [
+       19.553,
+       21.039,
+       6.666
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       13.877,
+       -0.911,
+       -21.039
+      ],
+      "max": [
+       19.553,
+       6.666,
+       -15.382
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_2",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -35.231,
+       -26.659,
+       -1.31
+      ],
+      "max": [
+       -19.174,
+       -10.635,
+       13.646
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -35.231,
+       -1.31,
+       10.635
+      ],
+      "max": [
+       -19.174,
+       13.646,
+       26.659
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_01",
+     "category": "PROP",
+     "tris": 266,
+     "mesh": "kit_mushroom_red_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -25.992,
+       -33.174,
+       -1.38
+      ],
+      "max": [
+       -8.776,
+       -16.033,
+       16.515
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -25.992,
+       -1.38,
+       16.033
+      ],
+      "max": [
+       -8.776,
+       16.515,
+       33.174
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_01",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -17.039,
+       17.714,
+       -0.761
+      ],
+      "max": [
+       -13.248,
+       21.097,
+       0.517
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -17.039,
+       -0.761,
+       -21.097
+      ],
+      "max": [
+       -13.248,
+       0.517,
+       -17.714
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       9.044,
+       -33.144,
+       -4.018
+      ],
+      "max": [
+       32.43,
+       -11.29,
+       8.27
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       9.044,
+       -4.018,
+       11.29
+      ],
+      "max": [
+       32.43,
+       8.27,
+       33.144
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       10.298,
+       -29.513,
+       3.654
+      ],
+      "max": [
+       28.566,
+       -11.144,
+       11.953
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       10.298,
+       3.654,
+       11.144
+      ],
+      "max": [
+       28.566,
+       11.953,
+       29.513
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       15.858,
+       -27.766,
+       8.54
+      ],
+      "max": [
+       26.908,
+       -18.553,
+       15.184
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.858,
+       8.54,
+       18.553
+      ],
+      "max": [
+       26.908,
+       15.184,
+       27.766
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Connector_N",
+     "type": "Connector",
+     "id": "N",
+     "blender": [
+      0.0,
+      40.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      -40.0
+     ]
+    },
+    {
+     "name": "MARKER_PlayerSpawn_1",
+     "type": "PlayerSpawn",
+     "id": "1",
+     "blender": [
+      -8.0,
+      -20.0,
+      -0.1047
+     ],
+     "roblox": [
+      -8.0,
+      -0.1047,
+      20.0
+     ]
+    },
+    {
+     "name": "MARKER_PlayerSpawn_2",
+     "type": "PlayerSpawn",
+     "id": "2",
+     "blender": [
+      8.0,
+      -20.0,
+      0.0621
+     ],
+     "roblox": [
+      8.0,
+      0.0621,
+      20.0
+     ]
+    },
+    {
+     "name": "MARKER_PlayerSpawn_3",
+     "type": "PlayerSpawn",
+     "id": "3",
+     "blender": [
+      -8.0,
+      -8.0,
+      -0.1171
+     ],
+     "roblox": [
+      -8.0,
+      -0.1171,
+      8.0
+     ]
+    },
+    {
+     "name": "MARKER_PlayerSpawn_4",
+     "type": "PlayerSpawn",
+     "id": "4",
+     "blender": [
+      8.0,
+      -8.0,
+      0.3066
+     ],
+     "roblox": [
+      8.0,
+      0.3066,
+      8.0
+     ]
+    }
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "footprint": [
+    80.0,
+    80.0
+   ],
+   "doors": [
+    "N"
+   ],
+   "doorways": {
+    "N": {
+     "connector": [
+      0.0,
+      40.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_hall": {
+   "name": "mossy_hall",
+   "fbx": "exports/maps/mossy_hollow/mossy_hall.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 8000,
+   "totalTris": 5018,
+   "uniqueMeshTris": 4366,
+   "objectCounts": {
+    "COL": 19,
+    "PROP": 5,
+    "DECO": 6,
+    "MARKER": 2
+   },
+   "objects": [
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_hall_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       15.492
+      ],
+      "max": [
+       -17.68,
+       -16.825,
+       44.144
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       15.492,
+       16.825
+      ],
+      "max": [
+       -17.68,
+       44.144,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_hall_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       17.563,
+       -40.0,
+       11.678
+      ],
+      "max": [
+       40.0,
+       -18.227,
+       34.842
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.563,
+       11.678,
+       18.227
+      ],
+      "max": [
+       40.0,
+       34.842,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_hall_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       19.103,
+       17.994,
+       11.881
+      ],
+      "max": [
+       40.0,
+       40.0,
+       34.354
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       19.103,
+       11.881,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       34.354,
+       -17.994
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_hall_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       16.21,
+       12.934
+      ],
+      "max": [
+       -17.227,
+       40.0,
+       37.404
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       12.934,
+       -40.0
+      ],
+      "max": [
+       -17.227,
+       37.404,
+       -16.21
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameN",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.335,
+       24.892,
+       -2.027
+      ],
+      "max": [
+       28.346,
+       32.854,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.335,
+       -2.027,
+       -32.854
+      ],
+      "max": [
+       28.346,
+       36.181,
+       -24.892
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -32.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -24.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       24.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       32.854
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 222,
+     "mesh": "mossy_hall_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -6.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       0.406
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -6.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       0.406,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_LeafCanopy_01",
+     "category": "COL",
+     "tris": 138,
+     "mesh": "mossy_hall_COL_LeafCanopy_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -38.28,
+       -16.144,
+       49.107
+      ],
+      "max": [
+       38.303,
+       28.144,
+       58.139
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -38.28,
+       49.107,
+       -28.144
+      ],
+      "max": [
+       38.303,
+       58.139,
+       16.144
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_hall_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -34.503,
+       -28.849,
+       19.468
+      ],
+      "max": [
+       -15.251,
+       -6.922,
+       26.969
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.503,
+       19.468,
+       6.922
+      ],
+      "max": [
+       -15.251,
+       26.969,
+       28.849
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_hall_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.601,
+       -14.586,
+       27.468
+      ],
+      "max": [
+       34.099,
+       6.812,
+       34.987
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.601,
+       27.468,
+       -6.812
+      ],
+      "max": [
+       34.099,
+       34.987,
+       14.586
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_01",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_hall_COL_RootArch_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -28.267,
+       -26.392,
+       -4.475
+      ],
+      "max": [
+       -19.271,
+       23.103,
+       30.974
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.267,
+       -4.475,
+       -23.103
+      ],
+      "max": [
+       -19.271,
+       30.974,
+       26.392
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_hall_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       21.996,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       57.385
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.996,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       57.385,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_hall_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       21.747,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       40.0,
+       53.471
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -14.0,
+       53.471,
+       -21.747
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_hall_COL_WallN_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       22.489,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       53.381
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       53.381,
+       -22.489
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_hall_COL_WallN_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       30.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       40.0,
+       52.444
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       -40.0
+      ],
+      "max": [
+       14.0,
+       52.444,
+       -30.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_hall_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       -21.76,
+       56.067
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       21.76
+      ],
+      "max": [
+       40.0,
+       56.067,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_hall_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -22.273,
+       55.559
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       22.273
+      ],
+      "max": [
+       -14.0,
+       55.559,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_hall_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -40.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -30.0,
+       54.944
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       30.0
+      ],
+      "max": [
+       14.0,
+       54.944,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_hall_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -22.196,
+       40.0,
+       56.311
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -22.196,
+       56.311,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_01",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -26.499,
+       -25.34,
+       -0.79
+      ],
+      "max": [
+       -17.223,
+       -16.086,
+       11.866
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -26.499,
+       -0.79,
+       16.086
+      ],
+      "max": [
+       -17.223,
+       11.866,
+       25.34
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_02",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.876,
+       -23.669,
+       -0.737
+      ],
+      "max": [
+       -21.296,
+       -16.131,
+       10.388
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.876,
+       -0.737,
+       16.131
+      ],
+      "max": [
+       -21.296,
+       10.388,
+       23.669
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_03",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -28.613,
+       -26.185,
+       -0.604
+      ],
+      "max": [
+       -22.912,
+       -20.527,
+       7.245
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.613,
+       -0.604,
+       20.527
+      ],
+      "max": [
+       -22.912,
+       7.245,
+       26.185
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -26.025,
+       10.53,
+       -1.019
+      ],
+      "max": [
+       -2.711,
+       33.622,
+       5.063
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -26.025,
+       -1.019,
+       -33.622
+      ],
+      "max": [
+       -2.711,
+       5.063,
+       -10.53
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_02",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -8.145,
+       -23.451,
+       -0.645
+      ],
+      "max": [
+       10.586,
+       -4.671,
+       4.053
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -8.145,
+       -0.645,
+       4.671
+      ],
+      "max": [
+       10.586,
+       4.053,
+       23.451
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_03",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -1.332,
+       1.755,
+       -1.251
+      ],
+      "max": [
+       10.078,
+       14.026,
+       3.022
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -1.332,
+       -1.251,
+       -14.026
+      ],
+      "max": [
+       10.078,
+       3.022,
+       -1.755
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -25.663,
+       -7.601,
+       -1.368
+      ],
+      "max": [
+       -17.236,
+       0.85,
+       9.683
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -25.663,
+       -1.368,
+       -0.85
+      ],
+      "max": [
+       -17.236,
+       9.683,
+       7.601
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -34.145,
+       -12.01,
+       -1.845
+      ],
+      "max": [
+       -6.946,
+       15.225,
+       23.222
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.145,
+       -1.845,
+       -15.225
+      ],
+      "max": [
+       -6.946,
+       23.222,
+       12.01
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -27.755,
+       -7.45,
+       -1.086
+      ],
+      "max": [
+       -15.168,
+       4.93,
+       13.154
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -27.755,
+       -1.086,
+       -4.93
+      ],
+      "max": [
+       -15.168,
+       13.154,
+       7.45
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       2.374,
+       -36.648,
+       -2.054
+      ],
+      "max": [
+       39.5,
+       0.522,
+       43.262
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       2.374,
+       -2.054,
+       -0.522
+      ],
+      "max": [
+       39.5,
+       43.262,
+       36.648
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       10.269,
+       2.299,
+       -1.623
+      ],
+      "max": [
+       39.5,
+       31.002,
+       33.562
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       10.269,
+       -1.623,
+       -31.002
+      ],
+      "max": [
+       39.5,
+       33.562,
+       -2.299
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Connector_N",
+     "type": "Connector",
+     "id": "N",
+     "blender": [
+      0.0,
+      40.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      -40.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      40.0
+     ]
+    }
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "footprint": [
+    80.0,
+    80.0
+   ],
+   "doors": [
+    "N",
+    "S"
+   ],
+   "doorways": {
+    "N": {
+     "connector": [
+      0.0,
+      40.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    },
+    "S": {
+     "connector": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_turn": {
+   "name": "mossy_turn",
+   "fbx": "exports/maps/mossy_hollow/mossy_turn.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 8000,
+   "totalTris": 5576,
+   "uniqueMeshTris": 4916,
+   "objectCounts": {
+    "COL": 22,
+    "PROP": 8,
+    "DECO": 6,
+    "MARKER": 2
+   },
+   "objects": [
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_turn_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       15.293
+      ],
+      "max": [
+       -17.539,
+       -16.419,
+       42.667
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       15.293,
+       16.419
+      ],
+      "max": [
+       -17.539,
+       42.667,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_turn_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       17.664,
+       -40.0,
+       12.859
+      ],
+      "max": [
+       40.0,
+       -17.632,
+       37.166
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.664,
+       12.859,
+       17.632
+      ],
+      "max": [
+       40.0,
+       37.166,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_turn_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       19.312,
+       18.426,
+       10.814
+      ],
+      "max": [
+       40.0,
+       40.0,
+       31.172
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       19.312,
+       10.814,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       31.172,
+       -18.426
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_turn_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       18.493,
+       14.946
+      ],
+      "max": [
+       -19.551,
+       40.0,
+       43.621
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       14.946,
+       -40.0
+      ],
+      "max": [
+       -19.551,
+       43.621,
+       -18.493
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameE",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       24.892,
+       -28.346,
+       -2.027
+      ],
+      "max": [
+       32.854,
+       28.335,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       24.892,
+       -2.027,
+       -28.335
+      ],
+      "max": [
+       32.854,
+       36.181,
+       28.346
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -32.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -24.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       24.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       32.854
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 222,
+     "mesh": "mossy_turn_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -6.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       0.486
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -6.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       0.486,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_turn_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -19.055,
+       16.017,
+       23.468
+      ],
+      "max": [
+       2.608,
+       34.733,
+       30.932
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -19.055,
+       23.468,
+       -34.733
+      ],
+      "max": [
+       2.608,
+       30.932,
+       -16.017
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_turn_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -33.831,
+       -25.022,
+       17.743
+      ],
+      "max": [
+       -16.747,
+       -7.222,
+       24.323
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.831,
+       17.743,
+       7.222
+      ],
+      "max": [
+       -16.747,
+       24.323,
+       25.022
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_01",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_turn_COL_Log_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -38.769,
+       -9.375,
+       39.349
+      ],
+      "max": [
+       9.856,
+       38.931,
+       47.36
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -38.769,
+       39.349,
+       -38.931
+      ],
+      "max": [
+       9.856,
+       47.36,
+       9.375
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_02",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_turn_COL_Log_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -39.974,
+       -9.019,
+       47.36
+      ],
+      "max": [
+       9.876,
+       38.931,
+       55.229
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -39.974,
+       47.36,
+       -38.931
+      ],
+      "max": [
+       9.876,
+       55.229,
+       9.019
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_03",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_turn_COL_Log_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -33.727,
+       -16.102,
+       47.36
+      ],
+      "max": [
+       15.566,
+       33.876,
+       55.229
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.727,
+       47.36,
+       -33.876
+      ],
+      "max": [
+       15.566,
+       55.229,
+       16.102
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_04",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_turn_COL_Log_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -33.375,
+       -16.102,
+       39.349
+      ],
+      "max": [
+       15.566,
+       33.856,
+       47.36
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.375,
+       39.349,
+       -33.856
+      ],
+      "max": [
+       15.566,
+       47.36,
+       16.102
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_01",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_turn_COL_RootArch_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -33.68,
+       -32.017,
+       -4.081
+      ],
+      "max": [
+       -16.348,
+       2.163,
+       24.66
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.68,
+       -4.081,
+       -2.163
+      ],
+      "max": [
+       -16.348,
+       24.66,
+       32.017
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_turn_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       21.945,
+       14.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       52.657
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.945,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       52.657,
+       -14.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_turn_COL_WallE_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       22.83,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       -14.0,
+       53.291
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       22.83,
+       -2.0,
+       14.0
+      ],
+      "max": [
+       40.0,
+       53.291,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_turn_COL_WallE_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       30.0,
+       -14.0,
+       17.0
+      ],
+      "max": [
+       40.0,
+       14.0,
+       53.827
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       30.0,
+       17.0,
+       -14.0
+      ],
+      "max": [
+       40.0,
+       53.827,
+       14.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_turn_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       21.181,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       54.2
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       54.2,
+       -21.181
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_turn_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       -22.677,
+       51.297
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       22.677
+      ],
+      "max": [
+       40.0,
+       51.297,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_turn_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -22.236,
+       53.639
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       22.236
+      ],
+      "max": [
+       -14.0,
+       53.639,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_turn_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -40.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -30.0,
+       53.639
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       30.0
+      ],
+      "max": [
+       14.0,
+       53.639,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_turn_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -21.822,
+       40.0,
+       54.909
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -21.822,
+       54.909,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_01",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       15.418,
+       -25.596,
+       -1.082
+      ],
+      "max": [
+       25.718,
+       -15.334,
+       10.504
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.418,
+       -1.082,
+       15.334
+      ],
+      "max": [
+       25.718,
+       10.504,
+       25.596
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_02",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       15.677,
+       -23.341,
+       -0.829
+      ],
+      "max": [
+       20.638,
+       -18.504,
+       9.614
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.677,
+       -0.829,
+       18.504
+      ],
+      "max": [
+       20.638,
+       9.614,
+       23.341
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_03",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       20.942,
+       -23.723,
+       -0.7
+      ],
+      "max": [
+       28.858,
+       -15.783,
+       7.961
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       20.942,
+       -0.7,
+       15.783
+      ],
+      "max": [
+       28.858,
+       7.961,
+       23.723
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -1.9,
+       -7.452,
+       -0.285
+      ],
+      "max": [
+       13.863,
+       7.862,
+       4.094
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -1.9,
+       -0.285,
+       -7.862
+      ],
+      "max": [
+       13.863,
+       4.094,
+       7.452
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_02",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -22.172,
+       -8.061,
+       -0.665
+      ],
+      "max": [
+       -5.741,
+       8.755,
+       4.592
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -22.172,
+       -0.665,
+       -8.755
+      ],
+      "max": [
+       -5.741,
+       4.592,
+       8.061
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_03",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -7.888,
+       -28.696,
+       -0.868
+      ],
+      "max": [
+       9.097,
+       -12.068,
+       3.492
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -7.888,
+       -0.868,
+       12.068
+      ],
+      "max": [
+       9.097,
+       3.492,
+       28.696
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -33.579,
+       8.216,
+       -1.918
+      ],
+      "max": [
+       -8.796,
+       33.04,
+       16.76
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.579,
+       -1.918,
+       -33.04
+      ],
+      "max": [
+       -8.796,
+       16.76,
+       -8.216
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -34.952,
+       15.84,
+       -1.564
+      ],
+      "max": [
+       -20.316,
+       30.265,
+       17.154
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.952,
+       -1.564,
+       -30.265
+      ],
+      "max": [
+       -20.316,
+       17.154,
+       -15.84
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_03",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -27.664,
+       11.791,
+       -1.559
+      ],
+      "max": [
+       -12.826,
+       26.732,
+       12.048
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -27.664,
+       -1.559,
+       -26.732
+      ],
+      "max": [
+       -12.826,
+       12.048,
+       -11.791
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -39.5,
+       -39.5,
+       -1.786
+      ],
+      "max": [
+       -8.126,
+       -7.431,
+       38.091
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -39.5,
+       -1.786,
+       7.431
+      ],
+      "max": [
+       -8.126,
+       38.091,
+       39.5
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       8.848,
+       9.065,
+       -5.438
+      ],
+      "max": [
+       36.611,
+       35.152,
+       9.921
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       8.848,
+       -5.438,
+       -35.152
+      ],
+      "max": [
+       36.611,
+       9.921,
+       -9.065
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       15.863,
+       13.605,
+       3.398
+      ],
+      "max": [
+       31.1,
+       30.982,
+       13.635
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.863,
+       3.398,
+       -30.982
+      ],
+      "max": [
+       31.1,
+       13.635,
+       -13.605
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       19.746,
+       17.49,
+       10.241
+      ],
+      "max": [
+       28.048,
+       27.62,
+       15.656
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       19.746,
+       10.241,
+       -27.62
+      ],
+      "max": [
+       28.048,
+       15.656,
+       -17.49
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       13.988,
+       -20.921,
+       -0.991
+      ],
+      "max": [
+       19.789,
+       -13.746,
+       1.391
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       13.988,
+       -0.991,
+       13.746
+      ],
+      "max": [
+       19.789,
+       1.391,
+       20.921
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Connector_E",
+     "type": "Connector",
+     "id": "E",
+     "blender": [
+      40.0,
+      0.0,
+      0.0
+     ],
+     "roblox": [
+      40.0,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      40.0
+     ]
+    }
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "footprint": [
+    80.0,
+    80.0
+   ],
+   "doors": [
+    "S",
+    "E"
+   ],
+   "doorways": {
+    "E": {
+     "connector": [
+      40.0,
+      0.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    },
+    "S": {
+     "connector": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_arena_small": {
+   "name": "mossy_arena_small",
+   "fbx": "exports/maps/mossy_hollow/mossy_arena_small.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 15000,
+   "totalTris": 10834,
+   "uniqueMeshTris": 7944,
+   "objectCounts": {
+    "COL": 25,
+    "PROP": 23,
+    "DECO": 24,
+    "MARKER": 8
+   },
+   "objects": [
+    {
+     "name": "COL_CeilingRoot_01",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_small_COL_CeilingRoot_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -78.566,
+       41.295,
+       44.263
+      ],
+      "max": [
+       21.504,
+       79.296,
+       59.98
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -78.566,
+       44.263,
+       -79.296
+      ],
+      "max": [
+       21.504,
+       59.98,
+       -41.295
+      ]
+     }
+    },
+    {
+     "name": "COL_CeilingRoot_02",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_small_COL_CeilingRoot_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -19.511,
+       -79.523,
+       43.198
+      ],
+      "max": [
+       78.361,
+       -43.488,
+       59.159
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -19.511,
+       43.198,
+       43.488
+      ],
+      "max": [
+       78.361,
+       59.159,
+       79.523
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_small_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       15.883
+      ],
+      "max": [
+       -59.664,
+       -59.532,
+       43.749
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       15.883,
+       59.532
+      ],
+      "max": [
+       -59.664,
+       43.749,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_small_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       57.801,
+       -80.0,
+       12.638
+      ],
+      "max": [
+       80.0,
+       -57.202,
+       36.688
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       57.801,
+       12.638,
+       57.202
+      ],
+      "max": [
+       80.0,
+       36.688,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_small_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       56.936,
+       55.57,
+       14.932
+      ],
+      "max": [
+       80.0,
+       80.0,
+       42.595
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       56.936,
+       14.932,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       42.595,
+       -55.57
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_small_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       58.148,
+       14.006
+      ],
+      "max": [
+       -57.871,
+       80.0,
+       39.844
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       14.006,
+       -80.0
+      ],
+      "max": [
+       -57.871,
+       39.844,
+       -58.148
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameN",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.335,
+       64.892,
+       -2.027
+      ],
+      "max": [
+       28.346,
+       72.854,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.335,
+       -2.027,
+       -72.854
+      ],
+      "max": [
+       28.346,
+       36.181,
+       -64.892
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -72.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -64.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       64.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       72.854
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 702,
+     "mesh": "mossy_arena_small_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -6.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       0.732
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -6.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       0.732,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_small_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -74.077,
+       9.432,
+       21.468
+      ],
+      "max": [
+       -53.203,
+       34.466,
+       29.083
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -74.077,
+       21.468,
+       -34.466
+      ],
+      "max": [
+       -53.203,
+       29.083,
+       -9.432
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_small_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       54.259,
+       -41.168,
+       25.468
+      ],
+      "max": [
+       73.888,
+       -18.298,
+       32.996
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       54.259,
+       25.468,
+       18.298
+      ],
+      "max": [
+       73.888,
+       32.996,
+       41.168
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_03",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_small_COL_Ledge_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       28.918,
+       56.115,
+       29.468
+      ],
+      "max": [
+       50.863,
+       74.842,
+       36.933
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       28.918,
+       29.468,
+       -74.842
+      ],
+      "max": [
+       50.863,
+       36.933,
+       -56.115
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_04",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_small_COL_Ledge_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       27.34,
+       -74.92,
+       19.468
+      ],
+      "max": [
+       52.954,
+       -54.138,
+       27.076
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       27.34,
+       19.468,
+       54.138
+      ],
+      "max": [
+       52.954,
+       27.076,
+       74.92
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_01",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_arena_small_COL_RootArch_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -66.256,
+       -42.952,
+       -4.397
+      ],
+      "max": [
+       -28.58,
+       -3.252,
+       28.912
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -66.256,
+       -4.397,
+       3.252
+      ],
+      "max": [
+       -28.58,
+       28.912,
+       42.952
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_02",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_arena_small_COL_RootArch_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       34.581,
+       5.483,
+       -4.228
+      ],
+      "max": [
+       63.815,
+       38.549,
+       25.315
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       34.581,
+       -4.228,
+       -38.549
+      ],
+      "max": [
+       63.815,
+       25.315,
+       -5.483
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_small_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       61.282,
+       0.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       56.089
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       61.282,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       56.089,
+       -0.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_small_COL_WallE_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       61.674,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       0.0,
+       55.017
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       61.674,
+       -2.0,
+       -0.0
+      ],
+      "max": [
+       80.0,
+       55.017,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_small_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       62.231,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       80.0,
+       57.359
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       -14.0,
+       57.359,
+       -62.231
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_02",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_small_COL_WallN_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       62.083,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       56.982
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       56.982,
+       -62.083
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_arena_small_COL_WallN_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       70.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       80.0,
+       55.035
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       -80.0
+      ],
+      "max": [
+       14.0,
+       55.035,
+       -70.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_small_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       -61.637,
+       58.638
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       61.637
+      ],
+      "max": [
+       80.0,
+       58.638,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_small_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -62.73,
+       58.869
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       62.73
+      ],
+      "max": [
+       -14.0,
+       58.869,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_arena_small_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -80.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -70.0,
+       56.967
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       70.0
+      ],
+      "max": [
+       14.0,
+       56.967,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_small_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       -61.9,
+       0.0,
+       57.053
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       -0.0
+      ],
+      "max": [
+       -61.9,
+       57.053,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_small_COL_WallW_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -0.0,
+       -2.0
+      ],
+      "max": [
+       -61.62,
+       80.0,
+       57.332
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       -61.62,
+       57.332,
+       0.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_01",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -21.778,
+       10.897,
+       -1.219
+      ],
+      "max": [
+       -9.59,
+       23.019,
+       18.612
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -21.778,
+       -1.219,
+       -23.019
+      ],
+      "max": [
+       -9.59,
+       18.612,
+       -10.897
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_02",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -23.493,
+       12.073,
+       -0.927
+      ],
+      "max": [
+       -12.001,
+       23.57,
+       10.896
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -23.493,
+       -0.927,
+       -23.57
+      ],
+      "max": [
+       -12.001,
+       10.896,
+       -12.073
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_03",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -22.844,
+       12.405,
+       -0.939
+      ],
+      "max": [
+       -13.947,
+       21.265,
+       9.284
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -22.844,
+       -0.939,
+       -21.265
+      ],
+      "max": [
+       -13.947,
+       9.284,
+       -12.405
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_04",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -51.208,
+       4.235,
+       -1.167
+      ],
+      "max": [
+       -41.69,
+       13.578,
+       16.807
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -51.208,
+       -1.167,
+       -13.578
+      ],
+      "max": [
+       -41.69,
+       16.807,
+       -4.235
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_05",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -48.065,
+       8.786,
+       -0.649
+      ],
+      "max": [
+       -42.581,
+       14.297,
+       7.27
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -48.065,
+       -0.649,
+       -14.297
+      ],
+      "max": [
+       -42.581,
+       7.27,
+       -8.786
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_06",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -53.872,
+       9.246,
+       -0.334
+      ],
+      "max": [
+       -48.745,
+       14.426,
+       8.457
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -53.872,
+       -0.334,
+       -14.426
+      ],
+      "max": [
+       -48.745,
+       8.457,
+       -9.246
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_07",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       53.523,
+       -65.573,
+       -0.929
+      ],
+      "max": [
+       64.455,
+       -54.623,
+       10.534
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       53.523,
+       -0.929,
+       54.623
+      ],
+      "max": [
+       64.455,
+       10.534,
+       65.573
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_08",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       55.333,
+       -60.153,
+       -0.76
+      ],
+      "max": [
+       62.165,
+       -53.294,
+       8.913
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       55.333,
+       -0.76,
+       53.294
+      ],
+      "max": [
+       62.165,
+       8.913,
+       60.153
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_09",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       56.783,
+       -60.556,
+       -0.778
+      ],
+      "max": [
+       63.346,
+       -54.036,
+       9.203
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       56.783,
+       -0.778,
+       54.036
+      ],
+      "max": [
+       63.346,
+       9.203,
+       60.556
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_10",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -63.41,
+       -15.549,
+       -0.767
+      ],
+      "max": [
+       -53.227,
+       -5.43,
+       12.357
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -63.41,
+       -0.767,
+       5.43
+      ],
+      "max": [
+       -53.227,
+       12.357,
+       15.549
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_11",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -64.656,
+       -13.409,
+       -0.491
+      ],
+      "max": [
+       -59.33,
+       -7.962,
+       10.464
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -64.656,
+       -0.491,
+       7.962
+      ],
+      "max": [
+       -59.33,
+       10.464,
+       13.409
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_12",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -59.512,
+       -15.218,
+       -0.42
+      ],
+      "max": [
+       -52.548,
+       -8.247,
+       6.784
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -59.512,
+       -0.42,
+       8.247
+      ],
+      "max": [
+       -52.548,
+       6.784,
+       15.218
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_13",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       57.048,
+       -38.868,
+       -0.943
+      ],
+      "max": [
+       66.762,
+       -29.172,
+       12.212
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       57.048,
+       -0.943,
+       29.172
+      ],
+      "max": [
+       66.762,
+       12.212,
+       38.868
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_14",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       55.25,
+       -40.556,
+       -0.803
+      ],
+      "max": [
+       62.91,
+       -32.924,
+       7.745
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       55.25,
+       -0.803,
+       32.924
+      ],
+      "max": [
+       62.91,
+       7.745,
+       40.556
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_01",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -19.718,
+       46.574,
+       -0.572
+      ],
+      "max": [
+       6.086,
+       68.934,
+       2.604
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -19.718,
+       -0.572,
+       -68.934
+      ],
+      "max": [
+       6.086,
+       2.604,
+       -46.574
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_02",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -1.366,
+       -78.362,
+       -0.541
+      ],
+      "max": [
+       22.611,
+       -53.957,
+       2.573
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -1.366,
+       -0.541,
+       53.957
+      ],
+      "max": [
+       22.611,
+       2.573,
+       78.362
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -2.789,
+       -1.149,
+       -0.801
+      ],
+      "max": [
+       17.15,
+       19.185,
+       5.22
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -2.789,
+       -0.801,
+       -19.185
+      ],
+      "max": [
+       17.15,
+       5.22,
+       1.149
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_02",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -19.977,
+       -21.242,
+       -1.023
+      ],
+      "max": [
+       -2.682,
+       -4.106,
+       3.105
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -19.977,
+       -1.023,
+       4.106
+      ],
+      "max": [
+       -2.682,
+       3.105,
+       21.242
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_03",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       17.779,
+       -53.679,
+       -0.599
+      ],
+      "max": [
+       33.891,
+       -37.422,
+       3.707
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.779,
+       -0.599,
+       37.422
+      ],
+      "max": [
+       33.891,
+       3.707,
+       53.679
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_04",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -39.341,
+       -16.024,
+       -0.732
+      ],
+      "max": [
+       -19.794,
+       3.546,
+       4.153
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -39.341,
+       -0.732,
+       -3.546
+      ],
+      "max": [
+       -19.794,
+       4.153,
+       16.024
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_05",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -46.865,
+       55.432,
+       -0.72
+      ],
+      "max": [
+       -31.924,
+       70.061,
+       3.803
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -46.865,
+       -0.72,
+       -70.061
+      ],
+      "max": [
+       -31.924,
+       3.803,
+       -55.432
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_06",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       9.678,
+       -37.304,
+       -0.881
+      ],
+      "max": [
+       29.089,
+       -18.18,
+       3.885
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       9.678,
+       -0.881,
+       18.18
+      ],
+      "max": [
+       29.089,
+       3.885,
+       37.304
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_07",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       51.744,
+       -7.236,
+       -0.98
+      ],
+      "max": [
+       69.523,
+       11.053,
+       4.015
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       51.744,
+       -0.98,
+       -11.053
+      ],
+      "max": [
+       69.523,
+       4.015,
+       7.236
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_08",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       49.845,
+       18.051,
+       -0.893
+      ],
+      "max": [
+       65.842,
+       34.653,
+       3.875
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       49.845,
+       -0.893,
+       -34.653
+      ],
+      "max": [
+       65.842,
+       3.875,
+       -18.051
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       23.712,
+       -9.534,
+       -2.085
+      ],
+      "max": [
+       33.655,
+       0.378,
+       11.099
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       23.712,
+       -2.085,
+       -0.378
+      ],
+      "max": [
+       33.655,
+       11.099,
+       9.534
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_02",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       26.338,
+       -6.475,
+       -1.761
+      ],
+      "max": [
+       34.576,
+       1.756,
+       5.392
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       26.338,
+       -1.761,
+       -1.756
+      ],
+      "max": [
+       34.576,
+       5.392,
+       6.475
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -34.627,
+       -61.001,
+       -1.775
+      ],
+      "max": [
+       -15.047,
+       -41.556,
+       16.127
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.627,
+       -1.775,
+       41.556
+      ],
+      "max": [
+       -15.047,
+       16.127,
+       61.001
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -31.003,
+       -56.458,
+       -1.518
+      ],
+      "max": [
+       -11.9,
+       -37.391,
+       12.927
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -31.003,
+       -1.518,
+       37.391
+      ],
+      "max": [
+       -11.9,
+       12.927,
+       56.458
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_03",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       21.832,
+       -13.27,
+       -2.093
+      ],
+      "max": [
+       42.555,
+       7.436,
+       17.075
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.832,
+       -2.093,
+       -7.436
+      ],
+      "max": [
+       42.555,
+       17.075,
+       13.27
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -57.159,
+       30.788,
+       -1.884
+      ],
+      "max": [
+       -27.146,
+       62.016,
+       45.03
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -57.159,
+       -1.884,
+       -62.016
+      ],
+      "max": [
+       -27.146,
+       45.03,
+       -30.788
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       35.686,
+       -61.453,
+       -2.185
+      ],
+      "max": [
+       61.793,
+       -35.427,
+       38.599
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       35.686,
+       -2.185,
+       35.427
+      ],
+      "max": [
+       61.793,
+       38.599,
+       61.453
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_03",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       35.592,
+       31.835,
+       -1.266
+      ],
+      "max": [
+       59.911,
+       56.198,
+       30.455
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       35.592,
+       -1.266,
+       -56.198
+      ],
+      "max": [
+       59.911,
+       30.455,
+       -31.835
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_01",
+     "category": "PROP",
+     "tris": 258,
+     "mesh": "kit_mushroom_red_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -32.258,
+       -58.781,
+       -1.386
+      ],
+      "max": [
+       -12.697,
+       -39.123,
+       15.17
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -32.258,
+       -1.386,
+       39.123
+      ],
+      "max": [
+       -12.697,
+       15.17,
+       58.781
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_02",
+     "category": "PROP",
+     "tris": 258,
+     "mesh": "kit_mushroom_red_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -33.182,
+       -63.001,
+       -1.332
+      ],
+      "max": [
+       -14.09,
+       -43.833,
+       14.768
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -33.182,
+       -1.332,
+       43.833
+      ],
+      "max": [
+       -14.09,
+       14.768,
+       63.001
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_01",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       20.78,
+       -46.618,
+       -0.587
+      ],
+      "max": [
+       23.984,
+       -42.732,
+       0.804
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       20.78,
+       -0.587,
+       42.732
+      ],
+      "max": [
+       23.984,
+       0.804,
+       46.618
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_02",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       12.978,
+       24.769,
+       -0.611
+      ],
+      "max": [
+       16.029,
+       27.538,
+       0.409
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       12.978,
+       -0.611,
+       -27.538
+      ],
+      "max": [
+       16.029,
+       0.409,
+       -24.769
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_03",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -58.88,
+       11.864,
+       -0.24
+      ],
+      "max": [
+       -55.572,
+       14.787,
+       0.882
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -58.88,
+       -0.24,
+       -14.787
+      ],
+      "max": [
+       -55.572,
+       0.882,
+       -11.864
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_04",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -15.028,
+       -21.009,
+       -0.235
+      ],
+      "max": [
+       -12.712,
+       -18.512,
+       0.786
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -15.028,
+       -0.235,
+       18.512
+      ],
+      "max": [
+       -12.712,
+       0.786,
+       21.009
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_05",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       25.694,
+       -60.602,
+       -0.435
+      ],
+      "max": [
+       29.753,
+       -56.278,
+       0.997
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       25.694,
+       -0.435,
+       56.278
+      ],
+      "max": [
+       29.753,
+       0.997,
+       60.602
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_06",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -18.973,
+       28.593,
+       -0.246
+      ],
+      "max": [
+       -16.62,
+       30.609,
+       0.735
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -18.973,
+       -0.246,
+       -30.609
+      ],
+      "max": [
+       -16.62,
+       0.735,
+       -28.593
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -63.977,
+       -58.28,
+       -3.555
+      ],
+      "max": [
+       -39.77,
+       -37.403,
+       8.725
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -63.977,
+       -3.555,
+       37.403
+      ],
+      "max": [
+       -39.77,
+       8.725,
+       58.28
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -61.95,
+       -59.313,
+       3.479
+      ],
+      "max": [
+       -42.995,
+       -40.587,
+       13.835
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -61.95,
+       3.479,
+       40.587
+      ],
+      "max": [
+       -42.995,
+       13.835,
+       59.313
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -56.935,
+       -52.565,
+       9.908
+      ],
+      "max": [
+       -44.143,
+       -39.406,
+       15.388
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -56.935,
+       9.908,
+       39.406
+      ],
+      "max": [
+       -44.143,
+       15.388,
+       52.565
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_04",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       13.399,
+       43.858,
+       -3.895
+      ],
+      "max": [
+       33.687,
+       60.432,
+       7.608
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       13.399,
+       -3.895,
+       -60.432
+      ],
+      "max": [
+       33.687,
+       7.608,
+       -43.858
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_05",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       15.959,
+       44.965,
+       2.685
+      ],
+      "max": [
+       30.851,
+       60.884,
+       11.257
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.959,
+       2.685,
+       -60.884
+      ],
+      "max": [
+       30.851,
+       11.257,
+       -44.965
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -42.29,
+       2.447,
+       -0.828
+      ],
+      "max": [
+       -34.723,
+       8.641,
+       1.648
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -42.29,
+       -0.828,
+       -8.641
+      ],
+      "max": [
+       -34.723,
+       1.648,
+       -2.447
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       16.032,
+       -32.639,
+       -1.01
+      ],
+      "max": [
+       25.777,
+       -22.972,
+       3.0
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       16.032,
+       -1.01,
+       22.972
+      ],
+      "max": [
+       25.777,
+       3.0,
+       32.639
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Connector_N",
+     "type": "Connector",
+     "id": "N",
+     "blender": [
+      0.0,
+      80.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      -80.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -80.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      80.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_1",
+     "type": "EnemySpawn",
+     "id": "1",
+     "blender": [
+      -32.0,
+      22.0,
+      -0.1365
+     ],
+     "roblox": [
+      -32.0,
+      -0.1365,
+      -22.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_2",
+     "type": "EnemySpawn",
+     "id": "2",
+     "blender": [
+      32.0,
+      22.0,
+      -0.403
+     ],
+     "roblox": [
+      32.0,
+      -0.403,
+      -22.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_3",
+     "type": "EnemySpawn",
+     "id": "3",
+     "blender": [
+      -42.0,
+      -18.0,
+      -0.0199
+     ],
+     "roblox": [
+      -42.0,
+      -0.0199,
+      18.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_4",
+     "type": "EnemySpawn",
+     "id": "4",
+     "blender": [
+      42.0,
+      -18.0,
+      0.5296
+     ],
+     "roblox": [
+      42.0,
+      0.5296,
+      18.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_5",
+     "type": "EnemySpawn",
+     "id": "5",
+     "blender": [
+      0.0,
+      34.0,
+      -0.0676
+     ],
+     "roblox": [
+      0.0,
+      -0.0676,
+      -34.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_6",
+     "type": "EnemySpawn",
+     "id": "6",
+     "blender": [
+      0.0,
+      -30.0,
+      0.4489
+     ],
+     "roblox": [
+      0.0,
+      0.4489,
+      30.0
+     ]
+    }
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "footprint": [
+    160.0,
+    160.0
+   ],
+   "doors": [
+    "S",
+    "N"
+   ],
+   "doorways": {
+    "N": {
+     "connector": [
+      0.0,
+      80.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    },
+    "S": {
+     "connector": [
+      0.0,
+      -80.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_arena_large": {
+   "name": "mossy_arena_large",
+   "fbx": "exports/maps/mossy_hollow/mossy_arena_large.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 15000,
+   "totalTris": 11138,
+   "uniqueMeshTris": 8608,
+   "objectCounts": {
+    "COL": 28,
+    "PROP": 22,
+    "DECO": 23,
+    "MARKER": 10
+   },
+   "objects": [
+    {
+     "name": "COL_CeilingRoot_01",
+     "category": "COL",
+     "tris": 94,
+     "mesh": "mossy_arena_large_COL_CeilingRoot_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       27.741,
+       -78.528,
+       44.515
+      ],
+      "max": [
+       78.792,
+       -35.87,
+       59.485
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       27.741,
+       44.515,
+       35.87
+      ],
+      "max": [
+       78.792,
+       59.485,
+       78.528
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_large_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       15.112
+      ],
+      "max": [
+       -57.019,
+       -55.85,
+       44.138
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       15.112,
+       55.85
+      ],
+      "max": [
+       -57.019,
+       44.138,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_large_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       56.731,
+       -80.0,
+       12.259
+      ],
+      "max": [
+       80.0,
+       -56.221,
+       35.655
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       56.731,
+       12.259,
+       56.221
+      ],
+      "max": [
+       80.0,
+       35.655,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_large_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       56.726,
+       56.797,
+       16.828
+      ],
+      "max": [
+       80.0,
+       80.0,
+       47.312
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       56.726,
+       16.828,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       47.312,
+       -56.797
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_arena_large_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       58.28,
+       12.154
+      ],
+      "max": [
+       -58.744,
+       80.0,
+       34.529
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       12.154,
+       -80.0
+      ],
+      "max": [
+       -58.744,
+       34.529,
+       -58.28
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameE",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       64.892,
+       -28.346,
+       -2.027
+      ],
+      "max": [
+       72.854,
+       28.335,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       64.892,
+       -2.027,
+       -28.335
+      ],
+      "max": [
+       72.854,
+       36.181,
+       28.346
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -72.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -64.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       64.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       72.854
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameW",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -72.854,
+       -28.335,
+       -2.027
+      ],
+      "max": [
+       -64.892,
+       28.346,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -72.854,
+       -2.027,
+       -28.346
+      ],
+      "max": [
+       -64.892,
+       36.181,
+       28.335
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 702,
+     "mesh": "mossy_arena_large_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -6.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       0.508
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -6.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       0.508,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_large_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -51.844,
+       55.051,
+       19.468
+      ],
+      "max": [
+       -27.999,
+       74.816,
+       27.005
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -51.844,
+       19.468,
+       -74.816
+      ],
+      "max": [
+       -27.999,
+       27.005,
+       -55.051
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_large_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -51.787,
+       -74.958,
+       23.468
+      ],
+      "max": [
+       -28.419,
+       -54.61,
+       31.046
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -51.787,
+       23.468,
+       54.61
+      ],
+      "max": [
+       -28.419,
+       31.046,
+       74.958
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_03",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_arena_large_COL_Ledge_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       55.793,
+       -50.343,
+       27.468
+      ],
+      "max": [
+       74.235,
+       -29.246,
+       34.913
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       55.793,
+       27.468,
+       29.246
+      ],
+      "max": [
+       74.235,
+       34.913,
+       50.343
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_01",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_large_COL_Log_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -77.195,
+       50.0,
+       35.038
+      ],
+      "max": [
+       75.381,
+       60.935,
+       46.12
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -77.195,
+       35.038,
+       -60.935
+      ],
+      "max": [
+       75.381,
+       46.12,
+       -50.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_02",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_large_COL_Log_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -77.35,
+       50.0,
+       46.12
+      ],
+      "max": [
+       74.775,
+       60.935,
+       56.928
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -77.35,
+       46.12,
+       -60.935
+      ],
+      "max": [
+       74.775,
+       56.928,
+       -50.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_03",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_large_COL_Log_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -77.041,
+       39.079,
+       46.12
+      ],
+      "max": [
+       76.148,
+       50.0,
+       56.928
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -77.041,
+       46.12,
+       -50.0
+      ],
+      "max": [
+       76.148,
+       56.928,
+       -39.079
+      ]
+     }
+    },
+    {
+     "name": "COL_Log_04",
+     "category": "COL",
+     "tris": 136,
+     "mesh": "mossy_arena_large_COL_Log_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -77.041,
+       39.079,
+       35.038
+      ],
+      "max": [
+       76.148,
+       50.0,
+       46.12
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -77.041,
+       35.038,
+       -50.0
+      ],
+      "max": [
+       76.148,
+       46.12,
+       -39.079
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_01",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_arena_large_COL_RootArch_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -66.077,
+       -60.616,
+       -4.454
+      ],
+      "max": [
+       -30.263,
+       -24.846,
+       26.298
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -66.077,
+       -4.454,
+       24.846
+      ],
+      "max": [
+       -30.263,
+       26.298,
+       60.616
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       61.402,
+       14.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       61.457
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       61.402,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       61.457,
+       -14.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_02",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallE_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       62.298,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       -14.0,
+       57.833
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       62.298,
+       -2.0,
+       14.0
+      ],
+      "max": [
+       80.0,
+       57.833,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_arena_large_COL_WallE_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       70.0,
+       -14.0,
+       17.0
+      ],
+      "max": [
+       80.0,
+       14.0,
+       59.874
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       70.0,
+       17.0,
+       -14.0
+      ],
+      "max": [
+       80.0,
+       59.874,
+       14.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_large_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       61.871,
+       -2.0
+      ],
+      "max": [
+       0.0,
+       80.0,
+       59.135
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       0.0,
+       59.135,
+       -61.871
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_arena_large_COL_WallN_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       0.0,
+       61.045,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       80.0,
+       60.315
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       0.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       80.0,
+       60.315,
+       -61.045
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       80.0,
+       -61.952,
+       59.611
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       61.952
+      ],
+      "max": [
+       80.0,
+       59.611,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -61.982,
+       57.775
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       61.982
+      ],
+      "max": [
+       -14.0,
+       57.775,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_arena_large_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -80.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -70.0,
+       58.881
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       70.0
+      ],
+      "max": [
+       14.0,
+       58.881,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -80.0,
+       -2.0
+      ],
+      "max": [
+       -62.345,
+       -14.0,
+       60.086
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       14.0
+      ],
+      "max": [
+       -62.345,
+       60.086,
+       80.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_02",
+     "category": "COL",
+     "tris": 264,
+     "mesh": "mossy_arena_large_COL_WallW_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       14.0,
+       -2.0
+      ],
+      "max": [
+       -61.794,
+       80.0,
+       57.475
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       -2.0,
+       -80.0
+      ],
+      "max": [
+       -61.794,
+       57.475,
+       -14.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_arena_large_COL_WallW_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -80.0,
+       -14.0,
+       17.0
+      ],
+      "max": [
+       -70.0,
+       14.0,
+       58.46
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -80.0,
+       17.0,
+       -14.0
+      ],
+      "max": [
+       -70.0,
+       58.46,
+       14.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_01",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.455,
+       -61.408,
+       -0.817
+      ],
+      "max": [
+       -18.642,
+       -51.614,
+       14.934
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.455,
+       -0.817,
+       51.614
+      ],
+      "max": [
+       -18.642,
+       14.934,
+       61.408
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_02",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -26.28,
+       -61.998,
+       -0.645
+      ],
+      "max": [
+       -18.971,
+       -54.742,
+       11.404
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -26.28,
+       -0.645,
+       54.742
+      ],
+      "max": [
+       -18.971,
+       11.404,
+       61.998
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_03",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.915,
+       -60.172,
+       -0.55
+      ],
+      "max": [
+       -20.068,
+       -51.322,
+       8.553
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.915,
+       -0.55,
+       51.322
+      ],
+      "max": [
+       -20.068,
+       8.553,
+       60.172
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_04",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -64.891,
+       49.086,
+       -0.785
+      ],
+      "max": [
+       -57.547,
+       56.491,
+       11.167
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -64.891,
+       -0.785,
+       -56.491
+      ],
+      "max": [
+       -57.547,
+       11.167,
+       -49.086
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_05",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -62.089,
+       52.121,
+       -0.614
+      ],
+      "max": [
+       -55.714,
+       58.371,
+       11.675
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -62.089,
+       -0.614,
+       -58.371
+      ],
+      "max": [
+       -55.714,
+       11.675,
+       -52.121
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_06",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -65.802,
+       51.922,
+       -0.691
+      ],
+      "max": [
+       -60.214,
+       57.578,
+       9.918
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -65.802,
+       -0.691,
+       -57.578
+      ],
+      "max": [
+       -60.214,
+       9.918,
+       -51.922
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_07",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       13.387,
+       -61.128,
+       -0.826
+      ],
+      "max": [
+       22.538,
+       -51.875,
+       14.977
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       13.387,
+       -0.826,
+       51.875
+      ],
+      "max": [
+       22.538,
+       14.977,
+       61.128
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_08",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       20.809,
+       -56.101,
+       -0.68
+      ],
+      "max": [
+       26.118,
+       -50.849,
+       8.843
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       20.809,
+       -0.68,
+       50.849
+      ],
+      "max": [
+       26.118,
+       8.843,
+       56.101
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_09",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       14.038,
+       -59.936,
+       -0.4
+      ],
+      "max": [
+       19.006,
+       -54.901,
+       8.443
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.038,
+       -0.4,
+       54.901
+      ],
+      "max": [
+       19.006,
+       8.443,
+       59.936
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_10",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       6.798,
+       20.044,
+       -0.91
+      ],
+      "max": [
+       16.294,
+       29.493,
+       12.787
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       6.798,
+       -0.91,
+       -29.493
+      ],
+      "max": [
+       16.294,
+       12.787,
+       -20.044
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_11",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       11.203,
+       21.958,
+       -0.632
+      ],
+      "max": [
+       17.568,
+       28.338,
+       6.2
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       11.203,
+       -0.632,
+       -28.338
+      ],
+      "max": [
+       17.568,
+       6.2,
+       -21.958
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_12",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       8.667,
+       15.178,
+       -0.814
+      ],
+      "max": [
+       17.277,
+       23.757,
+       13.064
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       8.667,
+       -0.814,
+       -23.757
+      ],
+      "max": [
+       17.277,
+       13.064,
+       -15.178
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafOak_01",
+     "category": "DECO",
+     "tris": 138,
+     "mesh": "kit_leaf_oak_3",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       44.103,
+       49.423,
+       -0.475
+      ],
+      "max": [
+       78.769,
+       78.548,
+       2.858
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       44.103,
+       -0.475,
+       -78.548
+      ],
+      "max": [
+       78.769,
+       2.858,
+       -49.423
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafOak_02",
+     "category": "DECO",
+     "tris": 138,
+     "mesh": "kit_leaf_oak_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -47.95,
+       -14.588,
+       -0.483
+      ],
+      "max": [
+       -16.443,
+       13.744,
+       1.879
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -47.95,
+       -0.483,
+       -13.744
+      ],
+      "max": [
+       -16.443,
+       1.879,
+       14.588
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafOak_03",
+     "category": "DECO",
+     "tris": 138,
+     "mesh": "kit_leaf_oak_2",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       47.707,
+       -33.096,
+       -0.643
+      ],
+      "max": [
+       74.322,
+       3.242,
+       3.14
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       47.707,
+       -0.643,
+       -3.242
+      ],
+      "max": [
+       74.322,
+       3.14,
+       33.096
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       16.695,
+       36.14,
+       -0.923
+      ],
+      "max": [
+       36.51,
+       55.939,
+       4.313
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       16.695,
+       -0.923,
+       -55.939
+      ],
+      "max": [
+       36.51,
+       4.313,
+       -36.14
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_02",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -10.064,
+       -17.635,
+       -1.101
+      ],
+      "max": [
+       5.103,
+       -3.02,
+       3.255
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -10.064,
+       -1.101,
+       3.02
+      ],
+      "max": [
+       5.103,
+       3.255,
+       17.635
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_03",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       37.018,
+       -70.847,
+       -0.697
+      ],
+      "max": [
+       51.987,
+       -55.445,
+       3.576
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       37.018,
+       -0.697,
+       55.445
+      ],
+      "max": [
+       51.987,
+       3.576,
+       70.847
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_04",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -10.171,
+       2.279,
+       -0.612
+      ],
+      "max": [
+       3.085,
+       16.222,
+       3.666
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -10.171,
+       -0.612,
+       -16.222
+      ],
+      "max": [
+       3.085,
+       3.666,
+       -2.279
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_05",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -29.889,
+       -46.141,
+       -0.943
+      ],
+      "max": [
+       -14.261,
+       -31.115,
+       3.59
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -29.889,
+       -0.943,
+       31.115
+      ],
+      "max": [
+       -14.261,
+       3.59,
+       46.141
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_06",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -73.86,
+       -25.373,
+       -0.927
+      ],
+      "max": [
+       -51.346,
+       -3.273,
+       5.133
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -73.86,
+       -0.927,
+       3.273
+      ],
+      "max": [
+       -51.346,
+       5.133,
+       25.373
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_07",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -21.46,
+       19.438,
+       0.061
+      ],
+      "max": [
+       -5.111,
+       35.271,
+       4.658
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -21.46,
+       0.061,
+       -35.271
+      ],
+      "max": [
+       -5.111,
+       4.658,
+       -19.438
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_08",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -14.422,
+       -47.873,
+       -0.763
+      ],
+      "max": [
+       7.87,
+       -25.732,
+       4.924
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.422,
+       -0.763,
+       25.732
+      ],
+      "max": [
+       7.87,
+       4.924,
+       47.873
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -34.664,
+       43.784,
+       -1.728
+      ],
+      "max": [
+       -23.089,
+       55.355,
+       12.647
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -34.664,
+       -1.728,
+       -55.355
+      ],
+      "max": [
+       -23.089,
+       12.647,
+       -43.784
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       17.403,
+       -36.295,
+       -2.301
+      ],
+      "max": [
+       43.54,
+       -10.322,
+       23.825
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.403,
+       -2.301,
+       10.322
+      ],
+      "max": [
+       43.54,
+       23.825,
+       36.295
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       20.044,
+       -24.448,
+       -1.437
+      ],
+      "max": [
+       34.298,
+       -10.286,
+       11.279
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       20.044,
+       -1.437,
+       10.286
+      ],
+      "max": [
+       34.298,
+       11.279,
+       24.448
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_03",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       26.745,
+       -29.917,
+       -1.508
+      ],
+      "max": [
+       42.053,
+       -14.827,
+       15.055
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       26.745,
+       -1.508,
+       14.827
+      ],
+      "max": [
+       42.053,
+       15.055,
+       29.917
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomFlat_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_flat_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -30.35,
+       44.039,
+       -1.1
+      ],
+      "max": [
+       -13.353,
+       60.897,
+       15.014
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -30.35,
+       -1.1,
+       -60.897
+      ],
+      "max": [
+       -13.353,
+       15.014,
+       -44.039
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomFlat_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_flat_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -36.593,
+       38.813,
+       -1.246
+      ],
+      "max": [
+       -14.562,
+       60.856,
+       19.06
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -36.593,
+       -1.246,
+       -60.856
+      ],
+      "max": [
+       -14.562,
+       19.06,
+       -38.813
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -65.868,
+       -71.535,
+       -2.191
+      ],
+      "max": [
+       -27.886,
+       -34.349,
+       44.723
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -65.868,
+       -2.191,
+       34.349
+      ],
+      "max": [
+       -27.886,
+       44.723,
+       71.535
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       33.928,
+       -61.123,
+       -1.568
+      ],
+      "max": [
+       62.894,
+       -32.101,
+       36.951
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       33.928,
+       -1.568,
+       32.101
+      ],
+      "max": [
+       62.894,
+       36.951,
+       61.123
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_01",
+     "category": "PROP",
+     "tris": 266,
+     "mesh": "kit_mushroom_red_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       21.233,
+       -37.49,
+       -1.513
+      ],
+      "max": [
+       40.156,
+       -18.443,
+       19.507
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.233,
+       -1.513,
+       18.443
+      ],
+      "max": [
+       40.156,
+       19.507,
+       37.49
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_01",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -21.509,
+       -26.105,
+       -0.101
+      ],
+      "max": [
+       -18.953,
+       -23.395,
+       0.796
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -21.509,
+       -0.101,
+       23.395
+      ],
+      "max": [
+       -18.953,
+       0.796,
+       26.105
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_02",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       47.959,
+       59.097,
+       -0.547
+      ],
+      "max": [
+       51.795,
+       62.107,
+       0.897
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       47.959,
+       -0.547,
+       -62.107
+      ],
+      "max": [
+       51.795,
+       0.897,
+       -59.097
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_03",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       28.134,
+       -63.257,
+       -0.376
+      ],
+      "max": [
+       30.569,
+       -60.514,
+       0.552
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       28.134,
+       -0.376,
+       60.514
+      ],
+      "max": [
+       30.569,
+       0.552,
+       63.257
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_04",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -6.558,
+       18.183,
+       -0.393
+      ],
+      "max": [
+       -4.894,
+       20.455,
+       0.53
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -6.558,
+       -0.393,
+       -20.455
+      ],
+      "max": [
+       -4.894,
+       0.53,
+       -18.183
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_05",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -15.579,
+       -48.944,
+       -0.654
+      ],
+      "max": [
+       -12.666,
+       -46.029,
+       0.322
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -15.579,
+       -0.654,
+       46.029
+      ],
+      "max": [
+       -12.666,
+       0.322,
+       48.944
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -68.04,
+       16.565,
+       -3.521
+      ],
+      "max": [
+       -43.631,
+       40.096,
+       6.466
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -68.04,
+       -3.521,
+       -40.096
+      ],
+      "max": [
+       -43.631,
+       6.466,
+       -16.565
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -62.49,
+       19.983,
+       1.456
+      ],
+      "max": [
+       -45.529,
+       34.751,
+       11.148
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -62.49,
+       1.456,
+       -34.751
+      ],
+      "max": [
+       -45.529,
+       11.148,
+       -19.983
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       44.129,
+       12.38,
+       -3.747
+      ],
+      "max": [
+       67.238,
+       35.276,
+       7.741
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       44.129,
+       -3.747,
+       -35.276
+      ],
+      "max": [
+       67.238,
+       7.741,
+       -12.38
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_04",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       48.967,
+       16.621,
+       3.312
+      ],
+      "max": [
+       63.138,
+       32.931,
+       11.499
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       48.967,
+       3.312,
+       -32.931
+      ],
+      "max": [
+       63.138,
+       11.499,
+       -16.621
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_05",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       49.175,
+       16.8,
+       8.562
+      ],
+      "max": [
+       59.429,
+       28.175,
+       13.566
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       49.175,
+       8.562,
+       -28.175
+      ],
+      "max": [
+       59.429,
+       13.566,
+       -16.8
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_2",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       24.346,
+       48.505,
+       -1.004
+      ],
+      "max": [
+       35.117,
+       59.091,
+       2.607
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       24.346,
+       -1.004,
+       -59.091
+      ],
+      "max": [
+       35.117,
+       2.607,
+       -48.505
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_3",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       10.301,
+       53.666,
+       -1.273
+      ],
+      "max": [
+       22.377,
+       62.857,
+       4.253
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       10.301,
+       -1.273,
+       -62.857
+      ],
+      "max": [
+       22.377,
+       4.253,
+       -53.666
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_3",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       22.422,
+       -51.577,
+       -0.895
+      ],
+      "max": [
+       30.364,
+       -43.014,
+       2.711
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       22.422,
+       -0.895,
+       43.014
+      ],
+      "max": [
+       30.364,
+       2.711,
+       51.577
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Connector_E",
+     "type": "Connector",
+     "id": "E",
+     "blender": [
+      80.0,
+      0.0,
+      0.0
+     ],
+     "roblox": [
+      80.0,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -80.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      80.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_W",
+     "type": "Connector",
+     "id": "W",
+     "blender": [
+      -80.0,
+      0.0,
+      0.0
+     ],
+     "roblox": [
+      -80.0,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_1",
+     "type": "EnemySpawn",
+     "id": "1",
+     "blender": [
+      -30.0,
+      30.0,
+      0.0246
+     ],
+     "roblox": [
+      -30.0,
+      0.0246,
+      -30.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_2",
+     "type": "EnemySpawn",
+     "id": "2",
+     "blender": [
+      30.0,
+      30.0,
+      0.0668
+     ],
+     "roblox": [
+      30.0,
+      0.0668,
+      -30.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_3",
+     "type": "EnemySpawn",
+     "id": "3",
+     "blender": [
+      0.0,
+      44.0,
+      0.3809
+     ],
+     "roblox": [
+      0.0,
+      0.3809,
+      -44.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_4",
+     "type": "EnemySpawn",
+     "id": "4",
+     "blender": [
+      -45.0,
+      -30.0,
+      0.2192
+     ],
+     "roblox": [
+      -45.0,
+      0.2192,
+      30.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_5",
+     "type": "EnemySpawn",
+     "id": "5",
+     "blender": [
+      45.0,
+      -30.0,
+      0.141
+     ],
+     "roblox": [
+      45.0,
+      0.141,
+      30.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_6",
+     "type": "EnemySpawn",
+     "id": "6",
+     "blender": [
+      -22.0,
+      -8.0,
+      0.2643
+     ],
+     "roblox": [
+      -22.0,
+      0.2643,
+      8.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_7",
+     "type": "EnemySpawn",
+     "id": "7",
+     "blender": [
+      22.0,
+      6.0,
+      -0.2074
+     ],
+     "roblox": [
+      22.0,
+      -0.2074,
+      -6.0
+     ]
+    }
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "footprint": [
+    160.0,
+    160.0
+   ],
+   "doors": [
+    "S",
+    "E",
+    "W"
+   ],
+   "doorways": {
+    "E": {
+     "connector": [
+      80.0,
+      0.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    },
+    "S": {
+     "connector": [
+      0.0,
+      -80.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    },
+    "W": {
+     "connector": [
+      -80.0,
+      0.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_treasure": {
+   "name": "mossy_treasure",
+   "fbx": "exports/maps/mossy_hollow/mossy_treasure.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 8000,
+   "totalTris": 6814,
+   "uniqueMeshTris": 6452,
+   "objectCounts": {
+    "COL": 14,
+    "PROP": 7,
+    "DECO": 4,
+    "MARKER": 2
+   },
+   "objects": [
+    {
+     "name": "COL_ChestDais",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_treasure_COL_ChestDais",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -15.017,
+       -2.973,
+       -1.034
+      ],
+      "max": [
+       14.254,
+       26.694,
+       4.766
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -15.017,
+       -1.034,
+       -26.694
+      ],
+      "max": [
+       14.254,
+       4.766,
+       2.973
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_treasure_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       16.625
+      ],
+      "max": [
+       -16.353,
+       -16.246,
+       47.505
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       16.625,
+       16.246
+      ],
+      "max": [
+       -16.353,
+       47.505,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_treasure_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       17.34,
+       -40.0,
+       15.242
+      ],
+      "max": [
+       40.0,
+       -16.155,
+       43.053
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.34,
+       15.242,
+       16.155
+      ],
+      "max": [
+       40.0,
+       43.053,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_treasure_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       15.66,
+       16.452,
+       15.652
+      ],
+      "max": [
+       40.0,
+       40.0,
+       42.797
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.66,
+       15.652,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       42.797,
+       -16.452
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_treasure_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       18.576,
+       16.869
+      ],
+      "max": [
+       -18.648,
+       40.0,
+       47.285
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       16.869,
+       -40.0
+      ],
+      "max": [
+       -18.648,
+       47.285,
+       -18.576
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -32.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -24.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       24.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       32.854
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 222,
+     "mesh": "mossy_treasure_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -6.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       0.324
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -6.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       0.324,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_LeafCanopy_01",
+     "category": "COL",
+     "tris": 138,
+     "mesh": "mossy_treasure_COL_LeafCanopy_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -31.32,
+       -2.224,
+       48.83
+      ],
+      "max": [
+       31.348,
+       34.224,
+       56.606
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -31.32,
+       48.83,
+       -34.224
+      ],
+      "max": [
+       31.348,
+       56.606,
+       2.224
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_treasure_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       21.727,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       54.776
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       21.727,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       54.776,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_treasure_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       21.838,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       40.0,
+       55.665
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       40.0,
+       55.665,
+       -21.838
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_treasure_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       -22.777,
+       55.77
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       22.777
+      ],
+      "max": [
+       40.0,
+       55.77,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 144,
+     "mesh": "mossy_treasure_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -23.425,
+       54.321
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       23.425
+      ],
+      "max": [
+       -14.0,
+       54.321,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_treasure_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -40.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -30.0,
+       52.948
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       30.0
+      ],
+      "max": [
+       14.0,
+       52.948,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_treasure_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -21.8,
+       40.0,
+       55.536
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -21.8,
+       55.536,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Amber_01",
+     "category": "DECO",
+     "tris": 480,
+     "mesh": "mossy_treasure_DECO_Amber_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -15.732,
+       -3.426,
+       -0.6
+      ],
+      "max": [
+       16.104,
+       27.089,
+       2.271
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -15.732,
+       -0.6,
+       -27.089
+      ],
+      "max": [
+       16.104,
+       2.271,
+       3.426
+      ]
+     }
+    },
+    {
+     "name": "DECO_GlowBells_01",
+     "category": "DECO",
+     "tris": 776,
+     "mesh": "mossy_treasure_DECO_GlowBells_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.13,
+       -2.877,
+       -1.888
+      ],
+      "max": [
+       15.093,
+       26.828,
+       8.547
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.13,
+       -1.888,
+       -26.828
+      ],
+      "max": [
+       15.093,
+       8.547,
+       2.877
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -12.957,
+       -29.052,
+       -1.068
+      ],
+      "max": [
+       6.783,
+       -8.776,
+       4.523
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -12.957,
+       -1.068,
+       8.776
+      ],
+      "max": [
+       6.783,
+       4.523,
+       29.052
+      ]
+     }
+    },
+    {
+     "name": "DECO_OrbWeb_01",
+     "category": "DECO",
+     "tris": 948,
+     "mesh": "mossy_treasure_DECO_OrbWeb_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       13.123,
+       13.664,
+       9.713
+      ],
+      "max": [
+       28.336,
+       28.877,
+       31.163
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       13.123,
+       9.713,
+       -28.877
+      ],
+      "max": [
+       28.336,
+       31.163,
+       -13.664
+      ]
+     }
+    },
+    {
+     "name": "PROP_EggSacs_01",
+     "category": "PROP",
+     "tris": 1020,
+     "mesh": "mossy_treasure_PROP_EggSacs_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -27.418,
+       12.279,
+       -0.592
+      ],
+      "max": [
+       -14.695,
+       23.195,
+       9.004
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -27.418,
+       -0.592,
+       -23.195
+      ],
+      "max": [
+       -14.695,
+       9.004,
+       -12.279
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       24.119,
+       -28.25,
+       -1.11
+      ],
+      "max": [
+       30.016,
+       -22.353,
+       6.206
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       24.119,
+       -1.11,
+       22.353
+      ],
+      "max": [
+       30.016,
+       6.206,
+       28.25
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_02",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -29.078,
+       -27.214,
+       -2.012
+      ],
+      "max": [
+       -18.825,
+       -17.02,
+       13.52
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -29.078,
+       -2.012,
+       17.02
+      ],
+      "max": [
+       -18.825,
+       13.52,
+       27.214
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_03",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -25.431,
+       -26.126,
+       -1.275
+      ],
+      "max": [
+       -17.983,
+       -18.693,
+       6.739
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -25.431,
+       -1.275,
+       18.693
+      ],
+      "max": [
+       -17.983,
+       6.739,
+       26.126
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       17.975,
+       -33.05,
+       -1.782
+      ],
+      "max": [
+       34.75,
+       -16.119,
+       15.591
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       17.975,
+       -1.782,
+       16.119
+      ],
+      "max": [
+       34.75,
+       15.591,
+       33.05
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       14.098,
+       -29.664,
+       -1.211
+      ],
+      "max": [
+       27.173,
+       -16.544,
+       9.092
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.098,
+       -1.211,
+       16.544
+      ],
+      "max": [
+       27.173,
+       9.092,
+       29.664
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_01",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       19.838,
+       -6.331,
+       -0.551
+      ],
+      "max": [
+       23.93,
+       -2.186,
+       0.83
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       19.838,
+       -0.551,
+       2.186
+      ],
+      "max": [
+       23.93,
+       0.83,
+       6.331
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_Chest_1",
+     "type": "Chest",
+     "id": "1",
+     "blender": [
+      0.0,
+      12.0,
+      4.7661
+     ],
+     "roblox": [
+      0.0,
+      4.7661,
+      -12.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      40.0
+     ]
+    }
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "footprint": [
+    80.0,
+    80.0
+   ],
+   "doors": [
+    "S"
+   ],
+   "doorways": {
+    "S": {
+     "connector": [
+      0.0,
+      -40.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  },
+  "mossy_boss": {
+   "name": "mossy_boss",
+   "fbx": "exports/maps/mossy_hollow/mossy_boss.fbx",
+   "units": "1 Blender unit = 1 stud",
+   "axes": "Blender Z up, north = +Y. Roblox (x, y, z) = (x_b, z_b, -y_b).",
+   "budget": 25000,
+   "totalTris": 15810,
+   "uniqueMeshTris": 12782,
+   "objectCounts": {
+    "COL": 36,
+    "PROP": 24,
+    "DECO": 32,
+    "MARKER": 9
+   },
+   "objects": [
+    {
+     "name": "COL_AntNest",
+     "category": "COL",
+     "tris": 1056,
+     "mesh": "mossy_boss_COL_AntNest",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -41.379,
+       18.538,
+       -9.264
+      ],
+      "max": [
+       41.915,
+       101.047,
+       26.257
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -41.379,
+       -9.264,
+       -101.047
+      ],
+      "max": [
+       41.915,
+       26.257,
+       -18.538
+      ]
+     }
+    },
+    {
+     "name": "COL_CeilingRoot_01",
+     "category": "COL",
+     "tris": 94,
+     "mesh": "mossy_boss_COL_CeilingRoot_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -116.106,
+       50.165,
+       47.137
+      ],
+      "max": [
+       -50.39,
+       114.848,
+       66.572
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -116.106,
+       47.137,
+       -114.848
+      ],
+      "max": [
+       -50.39,
+       66.572,
+       -50.165
+      ]
+     }
+    },
+    {
+     "name": "COL_CeilingRoot_02",
+     "category": "COL",
+     "tris": 94,
+     "mesh": "mossy_boss_COL_CeilingRoot_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       44.775,
+       43.087,
+       45.465
+      ],
+      "max": [
+       116.775,
+       115.09,
+       65.105
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       44.775,
+       45.465,
+       -115.09
+      ],
+      "max": [
+       116.775,
+       65.105,
+       -43.087
+      ]
+     }
+    },
+    {
+     "name": "COL_CeilingRoot_03",
+     "category": "COL",
+     "tris": 94,
+     "mesh": "mossy_boss_COL_CeilingRoot_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       58.7,
+       -114.481,
+       45.854
+      ],
+      "max": [
+       115.444,
+       -58.866,
+       62.733
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       58.7,
+       45.854,
+       58.866
+      ],
+      "max": [
+       115.444,
+       62.733,
+       114.481
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_01",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_boss_COL_Corner_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -120.0,
+       15.359
+      ],
+      "max": [
+       -91.37,
+       -90.411,
+       43.296
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       15.359,
+       90.411
+      ],
+      "max": [
+       -91.37,
+       43.296,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_02",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_boss_COL_Corner_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       93.653,
+       -120.0,
+       15.615
+      ],
+      "max": [
+       120.0,
+       -91.543,
+       43.605
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       93.653,
+       15.615,
+       91.543
+      ],
+      "max": [
+       120.0,
+       43.605,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_03",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_boss_COL_Corner_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       91.411,
+       91.043,
+       18.531
+      ],
+      "max": [
+       120.0,
+       120.0,
+       50.196
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       91.411,
+       18.531,
+       -120.0
+      ],
+      "max": [
+       120.0,
+       50.196,
+       -91.043
+      ]
+     }
+    },
+    {
+     "name": "COL_Corner_04",
+     "category": "COL",
+     "tris": 80,
+     "mesh": "mossy_boss_COL_Corner_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       93.488,
+       16.434
+      ],
+      "max": [
+       -93.236,
+       120.0,
+       45.908
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       16.434,
+       -120.0
+      ],
+      "max": [
+       -93.236,
+       45.908,
+       -93.488
+      ]
+     }
+    },
+    {
+     "name": "COL_DoorFrameS",
+     "category": "COL",
+     "tris": 270,
+     "mesh": "mossy_door_frame",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.346,
+       -108.854,
+       -2.027
+      ],
+      "max": [
+       28.335,
+       -100.892,
+       36.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.346,
+       -2.027,
+       100.892
+      ],
+      "max": [
+       28.335,
+       36.181,
+       108.854
+      ]
+     }
+    },
+    {
+     "name": "COL_Floor",
+     "category": "COL",
+     "tris": 1438,
+     "mesh": "mossy_boss_COL_Floor",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -120.0,
+       -6.0
+      ],
+      "max": [
+       120.0,
+       120.0,
+       0.768
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -6.0,
+       -120.0
+      ],
+      "max": [
+       120.0,
+       0.768,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_LeafCanopy_01",
+     "category": "COL",
+     "tris": 138,
+     "mesh": "mossy_boss_COL_LeafCanopy_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -93.875,
+       -100.803,
+       56.94
+      ],
+      "max": [
+       -42.907,
+       -42.494,
+       65.253
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -93.875,
+       56.94,
+       42.494
+      ],
+      "max": [
+       -42.907,
+       65.253,
+       100.803
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_01",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_boss_COL_Ledge_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -110.932,
+       -23.925,
+       27.194
+      ],
+      "max": [
+       -89.757,
+       3.723,
+       35.599
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -110.932,
+       27.194,
+       -3.723
+      ],
+      "max": [
+       -89.757,
+       35.599,
+       23.925
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_02",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_boss_COL_Ledge_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       89.764,
+       -82.848,
+       23.194
+      ],
+      "max": [
+       110.841,
+       -57.501,
+       31.592
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       89.764,
+       23.194,
+       57.501
+      ],
+      "max": [
+       110.841,
+       31.592,
+       82.848
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_03",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_boss_COL_Ledge_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -73.718,
+       -110.149,
+       25.194
+      ],
+      "max": [
+       -46.058,
+       -89.538,
+       33.559
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -73.718,
+       25.194,
+       89.538
+      ],
+      "max": [
+       -46.058,
+       33.559,
+       110.149
+      ]
+     }
+    },
+    {
+     "name": "COL_Ledge_04",
+     "category": "COL",
+     "tris": 168,
+     "mesh": "mossy_boss_COL_Ledge_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       51.672,
+       -109.724,
+       31.468
+      ],
+      "max": [
+       76.081,
+       -89.313,
+       39.05
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       51.672,
+       31.468,
+       89.313
+      ],
+      "max": [
+       76.081,
+       39.05,
+       109.724
+      ]
+     }
+    },
+    {
+     "name": "COL_RootArch_01",
+     "category": "COL",
+     "tris": 178,
+     "mesh": "mossy_boss_COL_RootArch_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       35.191,
+       -101.466,
+       -5.075
+      ],
+      "max": [
+       95.149,
+       -52.311,
+       32.658
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       35.191,
+       -5.075,
+       52.311
+      ],
+      "max": [
+       95.149,
+       32.658,
+       101.466
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_01",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       26.637,
+       -2.383
+      ],
+      "max": [
+       -100.498,
+       53.044,
+       22.006
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.383,
+       -53.044
+      ],
+      "max": [
+       -100.498,
+       22.006,
+       -26.637
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_02",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -64.03,
+       0.581
+      ],
+      "max": [
+       -101.219,
+       -39.993,
+       23.097
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       0.581,
+       39.993
+      ],
+      "max": [
+       -101.219,
+       23.097,
+       64.03
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_03",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       100.488,
+       -43.149,
+       -2.364
+      ],
+      "max": [
+       120.0,
+       -17.172,
+       22.59
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       100.488,
+       -2.364,
+       17.172
+      ],
+      "max": [
+       120.0,
+       22.59,
+       43.149
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_04",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       102.482,
+       51.59,
+       18.65
+      ],
+      "max": [
+       120.0,
+       76.632,
+       41.694
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       102.482,
+       18.65,
+       -76.632
+      ],
+      "max": [
+       120.0,
+       41.694,
+       -51.59
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_05",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_05",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -85.333,
+       102.536,
+       -0.442
+      ],
+      "max": [
+       -58.853,
+       120.0,
+       24.568
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -85.333,
+       -0.442,
+       -120.0
+      ],
+      "max": [
+       -58.853,
+       24.568,
+       -102.536
+      ]
+     }
+    },
+    {
+     "name": "COL_Tunnel_06",
+     "category": "COL",
+     "tris": 192,
+     "mesh": "mossy_boss_COL_Tunnel_06",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       52.297,
+       102.137,
+       2.77
+      ],
+      "max": [
+       76.587,
+       120.0,
+       24.835
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       52.297,
+       2.77,
+       -120.0
+      ],
+      "max": [
+       76.587,
+       24.835,
+       -102.137
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallE_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       97.322,
+       40.0,
+       -2.0
+      ],
+      "max": [
+       120.0,
+       120.0,
+       62.967
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       97.322,
+       -2.0,
+       -120.0
+      ],
+      "max": [
+       120.0,
+       62.967,
+       -40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallE_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       97.322,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       120.0,
+       40.0,
+       62.326
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       97.322,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       120.0,
+       62.326,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallE_03",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallE_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       97.691,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       120.0,
+       -40.0,
+       62.181
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       97.691,
+       -2.0,
+       40.0
+      ],
+      "max": [
+       120.0,
+       62.181,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallN_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       98.027,
+       -2.0
+      ],
+      "max": [
+       -40.0,
+       120.0,
+       62.508
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.0,
+       -120.0
+      ],
+      "max": [
+       -40.0,
+       62.508,
+       -98.027
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallN_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -40.0,
+       97.315,
+       -2.0
+      ],
+      "max": [
+       40.0,
+       120.0,
+       62.571
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -40.0,
+       -2.0,
+       -120.0
+      ],
+      "max": [
+       40.0,
+       62.571,
+       -97.315
+      ]
+     }
+    },
+    {
+     "name": "COL_WallN_03",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallN_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       40.0,
+       98.478,
+       -2.0
+      ],
+      "max": [
+       120.0,
+       120.0,
+       63.035
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       40.0,
+       -2.0,
+       -120.0
+      ],
+      "max": [
+       120.0,
+       63.035,
+       -98.478
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_01",
+     "category": "COL",
+     "tris": 240,
+     "mesh": "mossy_boss_COL_WallS_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       67.0,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       120.0,
+       -97.381,
+       62.063
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       67.0,
+       -2.0,
+       97.381
+      ],
+      "max": [
+       120.0,
+       62.063,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_02",
+     "category": "COL",
+     "tris": 240,
+     "mesh": "mossy_boss_COL_WallS_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       14.0,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       67.0,
+       -97.381,
+       62.686
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       14.0,
+       -2.0,
+       97.381
+      ],
+      "max": [
+       67.0,
+       62.686,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_03",
+     "category": "COL",
+     "tris": 240,
+     "mesh": "mossy_boss_COL_WallS_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -67.0,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       -14.0,
+       -98.241,
+       61.914
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -67.0,
+       -2.0,
+       98.241
+      ],
+      "max": [
+       -14.0,
+       61.914,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_04",
+     "category": "COL",
+     "tris": 240,
+     "mesh": "mossy_boss_COL_WallS_04",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       -67.0,
+       -97.956,
+       63.45
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.0,
+       97.956
+      ],
+      "max": [
+       -67.0,
+       63.45,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallS_05",
+     "category": "COL",
+     "tris": 288,
+     "mesh": "mossy_boss_COL_WallS_05",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -14.0,
+       -120.0,
+       17.0
+      ],
+      "max": [
+       14.0,
+       -106.0,
+       64.05
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -14.0,
+       17.0,
+       106.0
+      ],
+      "max": [
+       14.0,
+       64.05,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_01",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallW_01",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -120.0,
+       -2.0
+      ],
+      "max": [
+       -97.464,
+       -40.0,
+       60.244
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.0,
+       40.0
+      ],
+      "max": [
+       -97.464,
+       60.244,
+       120.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_02",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallW_02",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       -40.0,
+       -2.0
+      ],
+      "max": [
+       -97.832,
+       40.0,
+       63.215
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.0,
+       -40.0
+      ],
+      "max": [
+       -97.832,
+       63.215,
+       40.0
+      ]
+     }
+    },
+    {
+     "name": "COL_WallW_03",
+     "category": "COL",
+     "tris": 312,
+     "mesh": "mossy_boss_COL_WallW_03",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -120.0,
+       40.0,
+       -2.0
+      ],
+      "max": [
+       -97.763,
+       120.0,
+       62.627
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -120.0,
+       -2.0,
+       -120.0
+      ],
+      "max": [
+       -97.763,
+       62.627,
+       -40.0
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_01",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       72.603,
+       -81.795,
+       -1.141
+      ],
+      "max": [
+       80.747,
+       -73.752,
+       13.011
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       72.603,
+       -1.141,
+       73.752
+      ],
+      "max": [
+       80.747,
+       13.011,
+       81.795
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_02",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       70.319,
+       -77.556,
+       -0.88
+      ],
+      "max": [
+       76.057,
+       -71.772,
+       8.38
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       70.319,
+       -0.88,
+       71.772
+      ],
+      "max": [
+       76.057,
+       8.38,
+       77.556
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_03",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       61.721,
+       -15.906,
+       -0.397
+      ],
+      "max": [
+       71.739,
+       -6.042,
+       17.686
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       61.721,
+       -0.397,
+       6.042
+      ],
+      "max": [
+       71.739,
+       17.686,
+       15.906
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_04",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       60.704,
+       -16.957,
+       -0.108
+      ],
+      "max": [
+       66.947,
+       -10.83,
+       11.736
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       60.704,
+       -0.108,
+       10.83
+      ],
+      "max": [
+       66.947,
+       11.736,
+       16.957
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_05",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       93.084,
+       39.805,
+       -0.562
+      ],
+      "max": [
+       101.918,
+       48.55,
+       14.382
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       93.084,
+       -0.562,
+       -48.55
+      ],
+      "max": [
+       101.918,
+       14.382,
+       -39.805
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_06",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       93.9,
+       38.682,
+       -0.398
+      ],
+      "max": [
+       101.199,
+       45.947,
+       11.427
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       93.9,
+       -0.398,
+       -45.947
+      ],
+      "max": [
+       101.199,
+       11.427,
+       -38.682
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_07",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -36.089,
+       -1.25,
+       -1.15
+      ],
+      "max": [
+       -24.177,
+       10.62,
+       18.064
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -36.089,
+       -1.15,
+       -10.62
+      ],
+      "max": [
+       -24.177,
+       18.064,
+       1.25
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_08",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -37.269,
+       -0.711,
+       -0.849
+      ],
+      "max": [
+       -28.701,
+       7.896,
+       9.247
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -37.269,
+       -0.849,
+       -7.896
+      ],
+      "max": [
+       -28.701,
+       9.247,
+       0.711
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_09",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -46.992,
+       -71.706,
+       -0.976
+      ],
+      "max": [
+       -40.567,
+       -65.209,
+       10.767
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -46.992,
+       -0.976,
+       65.209
+      ],
+      "max": [
+       -40.567,
+       10.767,
+       71.706
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_10",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -43.391,
+       -71.04,
+       -0.748
+      ],
+      "max": [
+       -36.472,
+       -64.164,
+       8.107
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -43.391,
+       -0.748,
+       64.164
+      ],
+      "max": [
+       -36.472,
+       8.107,
+       71.04
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_11",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -46.717,
+       -76.098,
+       -0.831
+      ],
+      "max": [
+       -40.012,
+       -69.34,
+       10.366
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -46.717,
+       -0.831,
+       69.34
+      ],
+      "max": [
+       -40.012,
+       10.366,
+       76.098
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_12",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       32.682,
+       -9.487,
+       -0.155
+      ],
+      "max": [
+       42.42,
+       0.235,
+       10.039
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       32.682,
+       -0.155,
+       -0.235
+      ],
+      "max": [
+       42.42,
+       10.039,
+       9.487
+      ]
+     }
+    },
+    {
+     "name": "DECO_Clover_13",
+     "category": "DECO",
+     "tris": 116,
+     "mesh": "kit_clover_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       33.622,
+       -10.71,
+       -0.061
+      ],
+      "max": [
+       39.123,
+       -5.095,
+       10.889
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       33.622,
+       -0.061,
+       5.095
+      ],
+      "max": [
+       39.123,
+       10.889,
+       10.71
+      ]
+     }
+    },
+    {
+     "name": "DECO_GrassClump_01",
+     "category": "DECO",
+     "tris": 128,
+     "mesh": "kit_grass_clump_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       84.713,
+       84.394,
+       -0.53
+      ],
+      "max": [
+       104.235,
+       103.49,
+       18.482
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       84.713,
+       -0.53,
+       -103.49
+      ],
+      "max": [
+       104.235,
+       18.482,
+       -84.394
+      ]
+     }
+    },
+    {
+     "name": "DECO_GrassClump_02",
+     "category": "DECO",
+     "tris": 128,
+     "mesh": "kit_grass_clump_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -99.214,
+       85.774,
+       -1.101
+      ],
+      "max": [
+       -82.362,
+       103.646,
+       17.619
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -99.214,
+       -1.101,
+       -103.646
+      ],
+      "max": [
+       -82.362,
+       17.619,
+       -85.774
+      ]
+     }
+    },
+    {
+     "name": "DECO_GrassClump_03",
+     "category": "DECO",
+     "tris": 128,
+     "mesh": "kit_grass_clump_2",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -66.905,
+       -48.238,
+       -1.304
+      ],
+      "max": [
+       -35.82,
+       -17.037,
+       27.92
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -66.905,
+       -1.304,
+       17.037
+      ],
+      "max": [
+       -35.82,
+       27.92,
+       48.238
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafOak_01",
+     "category": "DECO",
+     "tris": 138,
+     "mesh": "kit_leaf_oak_3",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       22.356,
+       -98.719,
+       -0.347
+      ],
+      "max": [
+       54.41,
+       -80.254,
+       3.125
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       22.356,
+       -0.347,
+       80.254
+      ],
+      "max": [
+       54.41,
+       3.125,
+       98.719
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_01",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       27.998,
+       -76.844,
+       -1.097
+      ],
+      "max": [
+       39.213,
+       -55.551,
+       0.983
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       27.998,
+       -1.097,
+       55.551
+      ],
+      "max": [
+       39.213,
+       0.983,
+       76.844
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_02",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -98.289,
+       -14.848,
+       -0.122
+      ],
+      "max": [
+       -88.25,
+       3.0,
+       1.581
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -98.289,
+       -0.122,
+       -3.0
+      ],
+      "max": [
+       -88.25,
+       1.581,
+       14.848
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_03",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       15.972,
+       -56.793,
+       -0.237
+      ],
+      "max": [
+       47.408,
+       -27.146,
+       3.71
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       15.972,
+       -0.237,
+       27.146
+      ],
+      "max": [
+       47.408,
+       3.71,
+       56.793
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_04",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -27.957,
+       -84.563,
+       -0.435
+      ],
+      "max": [
+       -3.351,
+       -59.808,
+       2.741
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -27.957,
+       -0.435,
+       59.808
+      ],
+      "max": [
+       -3.351,
+       2.741,
+       84.563
+      ]
+     }
+    },
+    {
+     "name": "DECO_LeafRound_05",
+     "category": "DECO",
+     "tris": 98,
+     "mesh": "kit_leaf_round_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       47.201,
+       -93.828,
+       -0.416
+      ],
+      "max": [
+       61.183,
+       -69.832,
+       1.845
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       47.201,
+       -0.416,
+       69.832
+      ],
+      "max": [
+       61.183,
+       1.845,
+       93.828
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_01",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       50.724,
+       -40.98,
+       -0.87
+      ],
+      "max": [
+       73.237,
+       -17.964,
+       5.383
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       50.724,
+       -0.87,
+       17.964
+      ],
+      "max": [
+       73.237,
+       5.383,
+       40.98
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_02",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -31.799,
+       -45.073,
+       -0.952
+      ],
+      "max": [
+       -12.085,
+       -25.319,
+       3.69
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -31.799,
+       -0.952,
+       25.319
+      ],
+      "max": [
+       -12.085,
+       3.69,
+       45.073
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_03",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       85.768,
+       -14.542,
+       -0.926
+      ],
+      "max": [
+       102.865,
+       2.161,
+       3.54
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       85.768,
+       -0.926,
+       -2.161
+      ],
+      "max": [
+       102.865,
+       3.54,
+       14.542
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_04",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -39.916,
+       -61.554,
+       -0.55
+      ],
+      "max": [
+       -24.939,
+       -46.357,
+       3.507
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -39.916,
+       -0.55,
+       46.357
+      ],
+      "max": [
+       -24.939,
+       3.507,
+       61.554
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_05",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -74.501,
+       40.14,
+       -0.453
+      ],
+      "max": [
+       -55.232,
+       59.316,
+       4.407
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -74.501,
+       -0.453,
+       -59.316
+      ],
+      "max": [
+       -55.232,
+       4.407,
+       -40.14
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_06",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       72.199,
+       54.164,
+       -1.323
+      ],
+      "max": [
+       88.887,
+       70.289,
+       3.414
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       72.199,
+       -1.323,
+       -70.289
+      ],
+      "max": [
+       88.887,
+       3.414,
+       -54.164
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_07",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -85.932,
+       55.289,
+       -0.746
+      ],
+      "max": [
+       -71.285,
+       69.241,
+       3.704
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -85.932,
+       -0.746,
+       -69.241
+      ],
+      "max": [
+       -71.285,
+       3.704,
+       -55.289
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_08",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       51.741,
+       42.979,
+       -0.418
+      ],
+      "max": [
+       67.681,
+       59.24,
+       3.713
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       51.741,
+       -0.418,
+       -59.24
+      ],
+      "max": [
+       67.681,
+       3.713,
+       -42.979
+      ]
+     }
+    },
+    {
+     "name": "DECO_MossMound_09",
+     "category": "DECO",
+     "tris": 72,
+     "mesh": "kit_moss_mound_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -91.325,
+       -77.955,
+       -0.544
+      ],
+      "max": [
+       -79.957,
+       -66.076,
+       3.26
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -91.325,
+       -0.544,
+       66.076
+      ],
+      "max": [
+       -79.957,
+       3.26,
+       77.955
+      ]
+     }
+    },
+    {
+     "name": "DECO_Twig_01",
+     "category": "DECO",
+     "tris": 142,
+     "mesh": "kit_twig_0",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       -64.306,
+       7.171,
+       0.042
+      ],
+      "max": [
+       -57.02,
+       30.317,
+       2.138
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -64.306,
+       0.042,
+       -30.317
+      ],
+      "max": [
+       -57.02,
+       2.138,
+       -7.171
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomBell_01",
+     "category": "PROP",
+     "tris": 168,
+     "mesh": "kit_mushroom_bell_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       56.705,
+       84.991,
+       -1.421
+      ],
+      "max": [
+       64.108,
+       92.378,
+       6.572
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       56.705,
+       -1.421,
+       -92.378
+      ],
+      "max": [
+       64.108,
+       6.572,
+       -84.991
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -64.813,
+       65.35,
+       -1.576
+      ],
+      "max": [
+       -46.95,
+       82.849,
+       20.439
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -64.813,
+       -1.576,
+       -82.849
+      ],
+      "max": [
+       -46.95,
+       20.439,
+       -65.35
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomDome_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_dome_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -57.95,
+       68.276,
+       -1.354
+      ],
+      "max": [
+       -46.559,
+       79.598,
+       8.677
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -57.95,
+       -1.354,
+       -79.598
+      ],
+      "max": [
+       -46.559,
+       8.677,
+       -68.276
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomFlat_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_flat_1",
+     "sharedMesh": false,
+     "boundsBlender": {
+      "min": [
+       46.586,
+       64.938,
+       -2.019
+      ],
+      "max": [
+       80.701,
+       99.172,
+       27.822
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       46.586,
+       -2.019,
+       -99.172
+      ],
+      "max": [
+       80.701,
+       27.822,
+       -64.938
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomFlat_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_flat_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       57.315,
+       73.653,
+       -0.988
+      ],
+      "max": [
+       76.14,
+       92.472,
+       16.354
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       57.315,
+       -0.988,
+       -92.472
+      ],
+      "max": [
+       76.14,
+       16.354,
+       -73.653
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_01",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -99.63,
+       -66.05,
+       -2.359
+      ],
+      "max": [
+       -57.624,
+       -24.901,
+       49.247
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -99.63,
+       -2.359,
+       24.901
+      ],
+      "max": [
+       -57.624,
+       49.247,
+       66.05
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_02",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       65.226,
+       -46.021,
+       -2.11
+      ],
+      "max": [
+       97.319,
+       -15.101,
+       44.804
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       65.226,
+       -2.11,
+       15.101
+      ],
+      "max": [
+       97.319,
+       44.804,
+       46.021
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomPillar_03",
+     "category": "PROP",
+     "tris": 194,
+     "mesh": "kit_mushroom_pillar_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -99.681,
+       13.06,
+       -1.095
+      ],
+      "max": [
+       -67.123,
+       45.226,
+       36.436
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -99.681,
+       -1.095,
+       -45.226
+      ],
+      "max": [
+       -67.123,
+       36.436,
+       -13.06
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_01",
+     "category": "PROP",
+     "tris": 266,
+     "mesh": "kit_mushroom_red_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -67.504,
+       68.059,
+       -0.64
+      ],
+      "max": [
+       -54.121,
+       81.575,
+       16.029
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -67.504,
+       -0.64,
+       -81.575
+      ],
+      "max": [
+       -54.121,
+       16.029,
+       -68.059
+      ]
+     }
+    },
+    {
+     "name": "PROP_MushroomRed_02",
+     "category": "PROP",
+     "tris": 266,
+     "mesh": "kit_mushroom_red_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -64.7,
+       61.4,
+       -0.893
+      ],
+      "max": [
+       -49.786,
+       76.414,
+       15.733
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -64.7,
+       -0.893,
+       -76.414
+      ],
+      "max": [
+       -49.786,
+       15.733,
+       -61.4
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_01",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -98.205,
+       89.552,
+       -0.458
+      ],
+      "max": [
+       -94.631,
+       92.986,
+       0.725
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -98.205,
+       -0.458,
+       -92.986
+      ],
+      "max": [
+       -94.631,
+       0.725,
+       -89.552
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_02",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       59.643,
+       -21.996,
+       -0.483
+      ],
+      "max": [
+       63.247,
+       -19.013,
+       1.048
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       59.643,
+       -0.483,
+       19.013
+      ],
+      "max": [
+       63.247,
+       1.048,
+       21.996
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_03",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       51.038,
+       -46.474,
+       -0.653
+      ],
+      "max": [
+       54.365,
+       -42.842,
+       0.557
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       51.038,
+       -0.653,
+       42.842
+      ],
+      "max": [
+       54.365,
+       0.557,
+       46.474
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleSmall_04",
+     "category": "PROP",
+     "tris": 20,
+     "mesh": "kit_pebble_small_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       41.205,
+       -26.797,
+       -0.485
+      ],
+      "max": [
+       44.589,
+       -24.217,
+       1.037
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       41.205,
+       -0.485,
+       24.217
+      ],
+      "max": [
+       44.589,
+       1.037,
+       26.797
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       58.628,
+       6.968,
+       -6.263
+      ],
+      "max": [
+       88.698,
+       33.637,
+       11.879
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       58.628,
+       -6.263,
+       -33.637
+      ],
+      "max": [
+       88.698,
+       11.879,
+       -6.968
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       63.414,
+       8.665,
+       5.341
+      ],
+      "max": [
+       81.04,
+       28.677,
+       12.944
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       63.414,
+       5.341,
+       -28.677
+      ],
+      "max": [
+       81.04,
+       12.944,
+       -8.665
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       67.183,
+       13.476,
+       9.678
+      ],
+      "max": [
+       80.272,
+       24.315,
+       17.108
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       67.183,
+       9.678,
+       -24.315
+      ],
+      "max": [
+       80.272,
+       17.108,
+       -13.476
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_04",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -70.675,
+       -95.547,
+       -4.633
+      ],
+      "max": [
+       -49.492,
+       -77.279,
+       8.757
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -70.675,
+       -4.633,
+       77.279
+      ],
+      "max": [
+       -49.492,
+       8.757,
+       95.547
+      ]
+     }
+    },
+    {
+     "name": "PROP_PebbleStack_05",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_big_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -67.266,
+       -91.305,
+       3.144
+      ],
+      "max": [
+       -51.95,
+       -78.446,
+       12.342
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -67.266,
+       3.144,
+       78.446
+      ],
+      "max": [
+       -51.95,
+       12.342,
+       91.305
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_01",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -63.439,
+       3.891,
+       -0.903
+      ],
+      "max": [
+       -55.805,
+       11.135,
+       1.327
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -63.439,
+       -0.903,
+       -11.135
+      ],
+      "max": [
+       -55.805,
+       1.327,
+       -3.891
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_02",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       37.925,
+       -66.439,
+       -1.039
+      ],
+      "max": [
+       48.551,
+       -55.927,
+       3.392
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       37.925,
+       -1.039,
+       55.927
+      ],
+      "max": [
+       48.551,
+       3.392,
+       66.439
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_03",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_1",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       69.707,
+       -69.223,
+       -0.359
+      ],
+      "max": [
+       75.575,
+       -62.759,
+       1.561
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       69.707,
+       -0.359,
+       62.759
+      ],
+      "max": [
+       75.575,
+       1.561,
+       69.223
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_04",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_0",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -62.724,
+       -60.13,
+       -0.72
+      ],
+      "max": [
+       -56.052,
+       -53.502,
+       2.011
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -62.724,
+       -0.72,
+       53.502
+      ],
+      "max": [
+       -56.052,
+       2.011,
+       60.13
+      ]
+     }
+    },
+    {
+     "name": "PROP_Pebble_05",
+     "category": "PROP",
+     "tris": 80,
+     "mesh": "kit_pebble_2",
+     "sharedMesh": true,
+     "boundsBlender": {
+      "min": [
+       -28.643,
+       -44.608,
+       -1.148
+      ],
+      "max": [
+       -20.055,
+       -35.545,
+       2.548
+      ]
+     },
+     "boundsRoblox": {
+      "min": [
+       -28.643,
+       -1.148,
+       35.545
+      ],
+      "max": [
+       -20.055,
+       2.548,
+       44.608
+      ]
+     }
+    }
+   ],
+   "markers": [
+    {
+     "name": "MARKER_BossSpawn",
+     "type": "BossSpawn",
+     "id": null,
+     "blender": [
+      0.0,
+      6.0,
+      0.1438
+     ],
+     "roblox": [
+      0.0,
+      0.1438,
+      -6.0
+     ]
+    },
+    {
+     "name": "MARKER_Connector_S",
+     "type": "Connector",
+     "id": "S",
+     "blender": [
+      0.0,
+      -120.0,
+      0.0
+     ],
+     "roblox": [
+      0.0,
+      0.0,
+      120.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_1",
+     "type": "EnemySpawn",
+     "id": "1",
+     "blender": [
+      -92.6382,
+      40.0,
+      -0.1805
+     ],
+     "roblox": [
+      -92.6382,
+      -0.1805,
+      -40.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_2",
+     "type": "EnemySpawn",
+     "id": "2",
+     "blender": [
+      -93.2522,
+      -52.0,
+      -0.0126
+     ],
+     "roblox": [
+      -93.2522,
+      -0.0126,
+      52.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_3",
+     "type": "EnemySpawn",
+     "id": "3",
+     "blender": [
+      92.5476,
+      -30.0,
+      -0.0424
+     ],
+     "roblox": [
+      92.5476,
+      -0.0424,
+      30.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_4",
+     "type": "EnemySpawn",
+     "id": "4",
+     "blender": [
+      94.6055,
+      64.0,
+      0.4278
+     ],
+     "roblox": [
+      94.6055,
+      0.4278,
+      -64.0
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_5",
+     "type": "EnemySpawn",
+     "id": "5",
+     "blender": [
+      -72.0,
+      94.7644,
+      0.1756
+     ],
+     "roblox": [
+      -72.0,
+      0.1756,
+      -94.7644
+     ]
+    },
+    {
+     "name": "MARKER_EnemySpawn_6",
+     "type": "EnemySpawn",
+     "id": "6",
+     "blender": [
+      64.0,
+      94.2743,
+      0.0732
+     ],
+     "roblox": [
+      64.0,
+      0.0732,
+      -94.2743
+     ]
+    },
+    {
+     "name": "MARKER_Extraction",
+     "type": "Extraction",
+     "id": null,
+     "blender": [
+      0.0,
+      -44.0,
+      0.3498
+     ],
+     "roblox": [
+      0.0,
+      0.3498,
+      44.0
+     ]
+    }
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "footprint": [
+    240.0,
+    240.0
+   ],
+   "doors": [
+    "S"
+   ],
+   "doorways": {
+    "S": {
+     "connector": [
+      0.0,
+      -120.0,
+      0.0
+     ],
+     "openingWidth": 28.0,
+     "openingHeight": 29.0
+    }
+   }
+  }
+ }
+}
